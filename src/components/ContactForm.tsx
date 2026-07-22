@@ -123,6 +123,43 @@ export function ContactForm() {
         </select>
       </div>
 
+      {/* Insider intake — optional, but shows we know the business */}
+      <div className="mt-5 grid gap-5 sm:grid-cols-3">
+        <div>
+          <label className={label} htmlFor="serviceModel">
+            Service model
+          </label>
+          <select id="serviceModel" name="serviceModel" className={field} defaultValue="">
+            <option value="" className="bg-ink-800">Select…</option>
+            <option value="mobile" className="bg-ink-800">Mobile only</option>
+            <option value="in-shop" className="bg-ink-800">In-shop only</option>
+            <option value="both" className="bg-ink-800">Mobile &amp; in-shop</option>
+          </select>
+        </div>
+        <div>
+          <label className={label} htmlFor="jobMix">
+            Insurance vs. cash
+          </label>
+          <select id="jobMix" name="jobMix" className={field} defaultValue="">
+            <option value="" className="bg-ink-800">Select…</option>
+            <option value="mostly-insurance" className="bg-ink-800">Mostly insurance</option>
+            <option value="mostly-cash" className="bg-ink-800">Mostly cash &amp; fleet</option>
+            <option value="even" className="bg-ink-800">About 50/50</option>
+          </select>
+        </div>
+        <div>
+          <label className={label} htmlFor="calibration">
+            ADAS calibration
+          </label>
+          <select id="calibration" name="calibration" className={field} defaultValue="">
+            <option value="" className="bg-ink-800">Select…</option>
+            <option value="in-house" className="bg-ink-800">In-house</option>
+            <option value="sublet" className="bg-ink-800">I sublet it out</option>
+            <option value="not-yet" className="bg-ink-800">Not yet</option>
+          </select>
+        </div>
+      </div>
+
       <div className="mt-5">
         <label className={label} htmlFor="message">
           Tell us about your shop
@@ -132,7 +169,7 @@ export function ContactForm() {
           name="message"
           rows={4}
           className={field}
-          placeholder="Where are you located, and what's your biggest growth challenge right now?"
+          placeholder="Your service area or radius, how many trucks & techs, any fleet/dealer accounts — and your biggest growth challenge right now."
         />
       </div>
 

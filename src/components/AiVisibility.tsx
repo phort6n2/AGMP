@@ -66,8 +66,9 @@ export function AiVisibility() {
                       <span className="font-semibold text-white">
                         your shop
                       </span>
-                      . They offer mobile service, work with insurance, and have
-                      excellent local reviews.{" "}
+                      . They offer mobile service, bill most insurance directly,
+                      do in-house ADAS calibration, and have excellent local
+                      reviews.{" "}
                       <span className="text-glass-300">
                         Would you like their number?
                       </span>

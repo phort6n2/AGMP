@@ -74,9 +74,11 @@ export default function Home() {
               </span>
             </h1>
             <p className="animate-fade-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-300">
-              More windshields in your bays — from local drivers already
-              searching for a shop like yours. The only marketing system built
-              exclusively for auto glass, and measured only in booked jobs.
+              More glass jobs — windshields, back glass, door and quarter glass,
+              chip repairs, and the ADAS calibrations that come with them — from
+              local drivers already searching for a shop like yours. The only
+              marketing system built exclusively for auto glass, and measured
+              only in booked jobs.
             </p>
             <div className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/contact" size="lg" withArrow>
@@ -149,6 +151,7 @@ export default function Home() {
             </div>
             <div className="grid gap-4">
               {[
+                "Insurers steering your customers straight to the national chain",
                 "Empty calls from tire-kickers and spam",
                 "Ad spend that vanishes with nothing to show",
                 "A website that looks fine but never books a job",

@@ -47,6 +47,14 @@ export const servicesContent: Record<string, ServiceContent> = {
         body: "Purpose-built pages for every town and service you cover, so you rank for the exact searches drivers are typing.",
       },
       {
+        title: "Capture the calibration searches",
+        body: "Every windshield with a forward-facing camera needs an ADAS recalibration after replacement — and drivers now search for it by name. We build the pages and profile signals that put you in front of 'windshield calibration near me,' so the shops still subletting that work don't eat your ticket.",
+      },
+      {
+        title: "Land fleet & dealer accounts",
+        body: "The steady bread-and-butter isn't just walk-ins — it's fleet contracts, dealer and body-shop wholesale, and municipal accounts that call every week. We build the pages and outreach that put your shop in front of the fleet managers and service writers searching for a glass partner.",
+      },
+      {
         title: "Review generation system",
         body: "A simple, automated way to earn more 5-star reviews — the single biggest lever for local ranking and trust.",
       },
@@ -80,6 +88,10 @@ export const servicesContent: Record<string, ServiceContent> = {
       "A steady stream of new 5-star reviews",
     ],
     faqs: [
+      {
+        q: "My customers all have insurance — does search marketing even matter?",
+        a: "It matters more, not less. When a driver files a glass claim, the insurer's script usually steers them to a network shop. The shops that win are the ones the customer already found and decided on before they ever call it in — so they say 'I want your shop' and the insurer has to honor it. Ranking in the Map Pack and AI answers is how you become that name. We also make sure your site tells drivers, in plain English, that they have the right to choose their own shop and that you bill the insurance directly.",
+      },
       {
         q: "Can you actually get my shop recommended by ChatGPT?",
         a: "Yes — it's a core part of our Local SEO service. AI assistants like ChatGPT, Google AI Overviews, Perplexity, and Gemini pull from structured content, business entities, reviews, and trusted citations across the web. We build your presence the way those models source their answers, so when a driver asks 'where can I get my windshield replaced near me,' your shop is one they name. It's the same discipline as classic SEO, extended to how AI now recommends local businesses.",
@@ -115,7 +127,7 @@ export const servicesContent: Record<string, ServiceContent> = {
     features: [
       {
         title: "High-intent keyword targeting",
-        body: "We bid on the searches that mean business — 'windshield replacement,' 'auto glass near me,' 'chip repair today' — and filter out the tire-kickers.",
+        body: "We bid on the searches that mean business — 'windshield replacement,' 'auto glass near me,' 'chip repair today,' 'cash windshield price' — and separate the cash and out-of-pocket-deductible shoppers from the tire-kickers, because those are the jobs where you set the price and keep the margin.",
       },
       {
         title: "Call-focused campaigns",
@@ -127,7 +139,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       },
       {
         title: "Geo & schedule targeting",
-        body: "Show up only in your service area, during your hours, where and when you can actually take the job.",
+        body: "Show up only in your service area, during your hours, and weighted toward the zip codes where you can actually route a van without deadheading an hour each way — so your mobile techs stay billable, not stuck in traffic.",
       },
       {
         title: "Landing pages built to book",
@@ -206,7 +218,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       },
       {
         title: "Trust signals that close",
-        body: "Reviews, guarantees, insurance/OEM info, and service areas — the proof drivers need to choose you with confidence.",
+        body: "Reviews, your warranty, insurance direct-billing, OEM vs. aftermarket glass options, in-house ADAS calibration, and safe drive-away time — the proof drivers (and their insurers) need to choose you with confidence.",
       },
       {
         title: "Instant quote & booking forms",
@@ -268,7 +280,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       "The Auto Glass Marketing Pros directory is an extra discovery channel that sends local drivers straight to your booking line — more visibility, more shots at the job, with zero extra effort from you.",
     problem: {
       title: "Drivers call three shops. Be one of them.",
-      body: "Drivers comparison-shop for glass work across Google, maps, and directories. Every quality listing you appear in is another door to your shop. Our directory is purpose-built for auto glass — no clutter, just shops ready to help drivers now.",
+      body: "Drivers comparison-shop for glass work — and half of them are trying to figure out whether to file a claim or pay cash before they even call. Every quality listing you appear in is another door to your shop. Our directory is purpose-built for auto glass — no clutter, just shops ready to help drivers now.",
     },
     features: [
       {

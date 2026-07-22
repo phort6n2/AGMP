@@ -116,7 +116,7 @@ export const posts: Post[] = [
       { type: "h2", text: "5. Set-and-forget management" },
       {
         type: "p",
-        text: "Auto glass demand shifts with weather, seasons, and competitors. Accounts need regular pruning and testing. If you'd rather focus on the glass than the dashboard, that's what our Google Ads management handles for you.",
+        text: "Auto glass demand is seasonal and weather-driven — the first hard freeze turns every chip into a run-across crack, gravel season and temperature swings spike your call volume, then it goes quiet. Your ad budget has to flex with that, not sit flat. If you'd rather focus on the glass than the dashboard, that's what our Google Ads management handles for you.",
       },
     ],
   },

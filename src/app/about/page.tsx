@@ -51,7 +51,7 @@ const timeline = [
   {
     year: "The idea",
     title: "Specialize or go home",
-    body: "We built a framework around how drivers actually search for glass work — from a highway chip to a full replacement — and how shops win those jobs.",
+    body: "We learned the business owners actually run — NAGS pricing and insurance direct-bill on one side, cash and fleet tickets on the other, OEM versus aftermarket glass, calibration liability, and safe drive-away time. Then we built a marketing framework around how drivers search for all of it — from a highway chip to a full replacement — and how shops win those jobs.",
   },
   {
     year: "Today",
@@ -89,9 +89,12 @@ export default function AboutPage() {
                 <span className="text-gradient">busy and profitable.</span>
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-ink-300">
-                The big national chains have entire marketing departments. The
-                independent shop down the street has a great tech, a fair price,
-                and no time to figure out Google. We level that playing field.
+                The national chains don&apos;t just outspend you on marketing —
+                they answer the insurance claim line, run the TPA network, and
+                steer your customer into their own bay before you ever get a
+                shot. You&apos;ve got a better tech and a fair price. Our job is
+                to get the driver to call you first — and to know they have the
+                right to choose your shop.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-ink-300">
                 Our whole company is organized around one question:{" "}
