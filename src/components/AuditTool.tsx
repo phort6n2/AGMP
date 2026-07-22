@@ -259,7 +259,7 @@ export function AuditTool() {
             <label className={label} htmlFor="a-phone">
               Phone <span className="text-ink-400">(fastest way to reach you)</span>
             </label>
-            <input id="a-phone" type="tel" className={field} placeholder="(555) 010-2025" value={data.phone} onChange={set("phone")} />
+            <input id="a-phone" type="tel" className={field} placeholder="Your best mobile number" value={data.phone} onChange={set("phone")} />
           </div>
         </div>
       )}
@@ -308,9 +308,9 @@ export function AuditTool() {
         )}
       </div>
       <p className="mt-4 text-center text-xs text-ink-400">
-        Free · No obligation · We never sell your info. Prefer to talk?{" "}
-        <a href={site.phoneHref} className="text-glass-200 hover:text-white">
-          Call {site.phone}
+        Free · No obligation · We never sell your info. Prefer to text?{" "}
+        <a href={site.smsHref} className="text-glass-200 hover:text-white">
+          Text {site.phone}
         </a>
       </p>
     </div>

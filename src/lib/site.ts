@@ -7,8 +7,10 @@ export const site = {
   description:
     "The only marketing agency built exclusively for auto glass repair & replacement shops. We turn your shop from invisible to fully booked with local SEO, Google Ads, and high-converting websites.",
   email: "matt@autoglassmarketingpros.com",
-  phone: "(555) 010-2025",
-  phoneHref: "tel:+15550102025",
+  phone: "(855) 712-8500",
+  // We answer texts fast — outreach CTAs point to SMS, not a phone call.
+  smsHref:
+    "sms:+18557128500?&body=Hi%20Matt%2C%20I%27d%20like%20help%20getting%20more%20auto%20glass%20jobs.",
   owner: "Matt Lubbes",
   ctaText: "Book a Free Growth Call",
   social: {

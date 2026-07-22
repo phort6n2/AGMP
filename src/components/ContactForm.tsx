@@ -105,7 +105,7 @@ export function ContactForm() {
             name="phone"
             type="tel"
             className={field}
-            placeholder="(555) 010-2025"
+            placeholder="Your best mobile number"
           />
         </div>
       </div>

@@ -10,7 +10,7 @@ import {
   IconChart,
   IconCheck,
   IconClock,
-  IconPhone,
+  IconMessage,
   IconShield,
   IconSparkle,
   IconX,
@@ -89,11 +89,11 @@ export default function Home() {
               </Button>
             </div>
             <a
-              href={site.phoneHref}
+              href={site.smsHref}
               className="animate-fade-up mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink-200 hover:text-white"
             >
-              <IconPhone className="h-4 w-4 text-glass-300" />
-              Or call {site.phone}
+              <IconMessage className="h-4 w-4 text-glass-300" />
+              Or text us at {site.phone} — we actually answer texts
             </a>
             <p className="animate-fade-up mt-5 flex items-center justify-center gap-2 text-sm text-ink-300">
               <IconShield className="h-4 w-4 text-glass-300" />

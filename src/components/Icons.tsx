@@ -161,6 +161,15 @@ export function IconMail(p: IconProps) {
   );
 }
 
+export function IconMessage(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H8l-4 4V6a1 1 0 0 1 1-1Z" />
+      <path d="M8 10h8M8 13h5" />
+    </svg>
+  );
+}
+
 export const iconMap = {
   map: IconMap,
   target: IconTarget,

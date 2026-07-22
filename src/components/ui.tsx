@@ -46,7 +46,11 @@ export function Button({
       "border border-ink-500 text-ink-100 hover:border-glass-300 hover:text-white hover:bg-white/5",
     ghost: "text-ink-200 hover:text-white",
   };
-  const external = href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:");
+  const external =
+    href.startsWith("http") ||
+    href.startsWith("tel:") ||
+    href.startsWith("sms:") ||
+    href.startsWith("mailto:");
   const cls = `group inline-flex items-center justify-center gap-2 rounded-full transition-all duration-200 ${sizes[size]} ${variants[variant]} ${className}`;
   const inner = (
     <>

@@ -3,7 +3,7 @@ import { Container } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { site } from "@/lib/site";
-import { IconPhone, IconClock, IconCheck, IconChart, IconMail } from "@/components/Icons";
+import { IconMessage, IconClock, IconCheck, IconChart, IconMail } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact — Book a Free Growth Call",
@@ -27,8 +27,8 @@ const expect = [
   },
   {
     icon: IconClock,
-    title: "Just 30 minutes",
-    body: "Quick, focused, and worth your time — whether or not we end up working together.",
+    title: "A quick 30-minute phone call",
+    body: "A real phone call — no Zoom, no Google Meet. Quick, focused, and worth your time whether or not we end up working together.",
   },
   {
     icon: IconCheck,
@@ -80,11 +80,11 @@ export default function ContactPage() {
                   Prefer to reach out directly?
                 </p>
                 <a
-                  href={site.phoneHref}
+                  href={site.smsHref}
                   className="flex items-center gap-3 text-lg font-semibold text-white hover:text-glass-200"
                 >
-                  <IconPhone className="h-5 w-5 text-glass-300" />
-                  {site.phone}
+                  <IconMessage className="h-5 w-5 text-glass-300" />
+                  Text {site.phone}
                 </a>
                 <a
                   href={`mailto:${site.email}`}
@@ -93,8 +93,10 @@ export default function ContactPage() {
                   <IconMail className="h-5 w-5 text-glass-300" />
                   {site.email}
                 </a>
-                <p className="text-sm text-ink-300">
-                  Serving auto glass shops nationwide · Mon–Fri, 8am–6pm
+                <p className="text-sm leading-relaxed text-ink-300">
+                  Texting is the fastest way to reach us — we answer texts
+                  quickly. From there we&apos;ll set up a time and call you.
+                  Serving auto glass shops nationwide.
                 </p>
               </div>
             </div>

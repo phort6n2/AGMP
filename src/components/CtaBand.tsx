@@ -1,10 +1,10 @@
 import { Button, Container } from "./ui";
 import { site } from "@/lib/site";
-import { IconPhone } from "./Icons";
+import { IconMessage } from "./Icons";
 
 export function CtaBand({
   title = "Ready to keep your bays full?",
-  subtitle = "Book a free 30-minute growth call. We'll map out exactly how to get your shop more jobs — no jargon, no pressure.",
+  subtitle = "Start with a free marketing audit — see exactly where your shop is losing jobs. Or text us and we'll take it from there. No pressure, no contracts.",
 }: {
   title?: string;
   subtitle?: string;
@@ -22,15 +22,15 @@ export function CtaBand({
               {subtitle}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact" size="lg" withArrow>
-                {site.ctaText}
+              <Button href="/audit" size="lg" withArrow>
+                Get Your Free Audit
               </Button>
               <a
-                href={site.phoneHref}
+                href={site.smsHref}
                 className="inline-flex items-center gap-2 text-base font-medium text-ink-100 hover:text-white"
               >
-                <IconPhone className="h-5 w-5 text-glass-300" />
-                {site.phone}
+                <IconMessage className="h-5 w-5 text-glass-300" />
+                Text us — we reply fast
               </a>
             </div>
             <p className="mt-5 text-sm text-ink-300">

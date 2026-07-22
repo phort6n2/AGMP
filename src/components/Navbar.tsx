@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { nav, site } from "@/lib/site";
 import { Button } from "./ui";
-import { IconPhone } from "./Icons";
+import { IconMessage } from "./Icons";
 import { Logo } from "./Logo";
 
 export function Navbar() {
@@ -98,11 +98,11 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href={site.phoneHref}
+            href={site.smsHref}
             className="flex items-center gap-1.5 text-sm font-medium text-ink-200 transition-colors hover:text-white"
           >
-            <IconPhone className="h-4 w-4 text-glass-300" />
-            {site.phone}
+            <IconMessage className="h-4 w-4 text-glass-300" />
+            Text us
           </a>
           <Button href="/audit" size="md" withArrow>
             Free Audit
@@ -191,11 +191,11 @@ export function Navbar() {
             )}
             <div className="flex flex-col gap-3 pt-4">
               <a
-                href={site.phoneHref}
+                href={site.smsHref}
                 className="flex items-center gap-2 text-sm font-medium text-ink-200"
               >
-                <IconPhone className="h-4 w-4 text-glass-300" />
-                {site.phone}
+                <IconMessage className="h-4 w-4 text-glass-300" />
+                Text us — {site.phone}
               </a>
               <Button href="/audit" size="lg" withArrow className="w-full">
                 Get Your Free Audit

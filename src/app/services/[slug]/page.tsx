@@ -6,7 +6,7 @@ import { CtaBand } from "@/components/CtaBand";
 import {
   IconArrow,
   IconCheck,
-  IconPhone,
+  IconMessage,
   iconMap,
 } from "@/components/Icons";
 import { AiVisibility } from "@/components/AiVisibility";
@@ -118,15 +118,15 @@ export default async function ServiceDetailPage({
                 {s.heroSub}
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button href="/contact" size="lg" withArrow>
-                  {site.ctaText}
+                <Button href="/audit" size="lg" withArrow>
+                  Get Your Free Audit
                 </Button>
                 <a
-                  href={site.phoneHref}
+                  href={site.smsHref}
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-ink-600 px-6 py-3.5 text-base font-medium text-ink-100 transition-colors hover:border-glass-300 hover:text-white"
                 >
-                  <IconPhone className="h-5 w-5 text-glass-300" />
-                  {site.phone}
+                  <IconMessage className="h-5 w-5 text-glass-300" />
+                  Text us
                 </a>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { services, site } from "@/lib/site";
 import { Logo } from "./Logo";
-import { IconPhone } from "./Icons";
+import { IconMessage } from "./Icons";
 
 const cols = [
   {
@@ -48,11 +48,11 @@ export function Footer() {
               not clicks.
             </p>
             <a
-              href={site.phoneHref}
+              href={site.smsHref}
               className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-ink-200 hover:text-white"
             >
-              <IconPhone className="h-4 w-4 text-glass-300" />
-              {site.phone}
+              <IconMessage className="h-4 w-4 text-glass-300" />
+              Text us — {site.phone}
             </a>
           </div>
 

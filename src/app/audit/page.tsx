@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui";
 import { AuditTool } from "@/components/AuditTool";
-import { IconCheck, IconChart, IconPhone, IconShield } from "@/components/Icons";
+import { IconCheck, IconChart, IconMessage, IconShield } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const steps = [
   {
     n: "02",
     title: "Schedule your strategy call",
-    body: "A focused 30-minute call to walk through the findings and what they mean for your shop. No jargon, no pressure.",
+    body: "A focused 30-minute phone call — no Zoom, no Google Meet — to walk through the findings and what they mean for your shop. No jargon, no pressure.",
   },
   {
     n: "03",
@@ -77,11 +77,11 @@ export default function AuditPage() {
                 ))}
               </ul>
               <a
-                href={site.phoneHref}
+                href={site.smsHref}
                 className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-ink-200 hover:text-white"
               >
-                <IconPhone className="h-4 w-4 text-glass-300" />
-                Prefer to talk? {site.phone}
+                <IconMessage className="h-4 w-4 text-glass-300" />
+                Prefer to text? {site.phone} — we reply fast
               </a>
             </div>
 
