@@ -23,8 +23,8 @@ const cols = [
   {
     heading: "Get Started",
     links: [
+      { label: "Free Marketing Audit", href: "/audit" },
       { label: "Book a Growth Call", href: "/contact" },
-      { label: "Get a Quote", href: "/contact" },
       { label: "Shop Directory", href: "/services/directory" },
     ],
   },

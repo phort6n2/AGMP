@@ -19,10 +19,10 @@ export function MobileCtaBar() {
           Call now
         </a>
         <Link
-          href="/contact"
+          href="/audit"
           className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-amber-500 px-4 py-3 text-sm font-semibold text-ink-950"
         >
-          Book free call
+          Free audit
           <IconArrow className="h-4 w-4" />
         </Link>
       </div>

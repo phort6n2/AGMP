@@ -55,6 +55,7 @@ export const nav: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
   { label: "Resources", href: "/blog" },
+  { label: "Free Audit", href: "/audit" },
 ];
 
 export type Service = {

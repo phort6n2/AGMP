@@ -81,17 +81,20 @@ export default function Home() {
               only in booked jobs.
             </p>
             <div className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact" size="lg" withArrow>
-                {site.ctaText}
+              <Button href="/audit" size="lg" withArrow>
+                Get Your Free Audit
               </Button>
-              <a
-                href={site.phoneHref}
-                className="inline-flex items-center gap-2 rounded-full border border-ink-600 px-6 py-3.5 text-base font-medium text-ink-100 transition-colors hover:border-glass-300 hover:text-white"
-              >
-                <IconPhone className="h-5 w-5 text-glass-300" />
-                {site.phone}
-              </a>
+              <Button href="/contact" variant="outline" size="lg">
+                Book a growth call
+              </Button>
             </div>
+            <a
+              href={site.phoneHref}
+              className="animate-fade-up mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink-200 hover:text-white"
+            >
+              <IconPhone className="h-4 w-4 text-glass-300" />
+              Or call {site.phone}
+            </a>
             <p className="animate-fade-up mt-5 flex items-center justify-center gap-2 text-sm text-ink-300">
               <IconShield className="h-4 w-4 text-glass-300" />
               Built by auto glass marketing specialists — not a generalist agency

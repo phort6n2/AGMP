@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     "",
+    "/audit",
     "/services",
     "/about",
     "/reviews",
@@ -20,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${path}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: path === "" ? 1 : 0.7,
+    priority: path === "" ? 1 : path === "/audit" ? 0.9 : 0.7,
   }));
 
   const serviceRoutes = serviceSlugs.map((slug) => ({

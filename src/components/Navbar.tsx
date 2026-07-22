@@ -104,8 +104,8 @@ export function Navbar() {
             <IconPhone className="h-4 w-4 text-glass-300" />
             {site.phone}
           </a>
-          <Button href="/contact" size="md" withArrow>
-            Get Started
+          <Button href="/audit" size="md" withArrow>
+            Free Audit
           </Button>
         </div>
 
@@ -197,8 +197,8 @@ export function Navbar() {
                 <IconPhone className="h-4 w-4 text-glass-300" />
                 {site.phone}
               </a>
-              <Button href="/contact" size="lg" withArrow className="w-full">
-                Get Started
+              <Button href="/audit" size="lg" withArrow className="w-full">
+                Get Your Free Audit
               </Button>
             </div>
           </div>
