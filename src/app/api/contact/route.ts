@@ -5,9 +5,9 @@ export async function POST(request: Request) {
     const data = await request.json();
     const { name, shop, email, phone } = data ?? {};
 
-    if (!name || !email || !phone) {
+    if (!name || !email) {
       return NextResponse.json(
-        { ok: false, error: "Please include your name, email, and phone." },
+        { ok: false, error: "Please include your name and email." },
         { status: 400 }
       );
     }

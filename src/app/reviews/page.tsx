@@ -3,12 +3,20 @@ import { Container, SectionHeading, Button } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
 import { IconStar, IconCheck } from "@/components/Icons";
-import { clientLogos, site } from "@/lib/site";
+import { shopTypes, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Reviews",
+  title: "Reviews & Results",
   description:
     "See why auto glass shops choose Auto Glass Marketing Pros. Clear communication, industry expertise, month-to-month service, and real performance data.",
+  alternates: { canonical: "/reviews" },
+  openGraph: {
+    title: "Reviews & Results — Auto Glass Marketing Pros",
+    description:
+      "Why auto glass shops trust AGMP: honest communication, deep industry focus, and month-to-month accountability.",
+    url: `${site.url}/reviews`,
+    type: "website",
+  },
 };
 
 const reviews = [
@@ -144,17 +152,17 @@ export default function ReviewsPage() {
         </Container>
       </section>
 
-      {/* Logo wall */}
+      {/* Shop types wall */}
       <section className="py-12">
         <Container>
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">
-            Shops in the AGMP network
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink-400">
+            The kinds of auto glass shops we&apos;re built for
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {clientLogos.map((name) => (
+            {shopTypes.map((name) => (
               <div
                 key={name}
-                className="flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-4 py-6 text-center text-sm font-semibold text-ink-400"
+                className="flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-4 py-6 text-center text-sm font-semibold text-ink-300"
               >
                 {name}
               </div>

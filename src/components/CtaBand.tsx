@@ -33,7 +33,7 @@ export function CtaBand({
                 {site.phone}
               </a>
             </div>
-            <p className="mt-5 text-sm text-ink-500">
+            <p className="mt-5 text-sm text-ink-300">
               No contracts. Month-to-month. Just booked jobs.
             </p>
           </div>

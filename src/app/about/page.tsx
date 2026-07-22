@@ -6,9 +6,17 @@ import { IconCheck, IconShield, IconChart, IconClock, IconBolt } from "@/compone
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About the Agency",
   description:
     "Auto Glass Marketing Pros is the only marketing agency built exclusively for auto glass shops. Meet the team obsessed with keeping your bays full.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About the Agency — Auto Glass Marketing Pros",
+    description:
+      "The only marketing agency built exclusively for auto glass repair & replacement shops.",
+    url: `${site.url}/about`,
+    type: "website",
+  },
 };
 
 const values = [

@@ -25,9 +25,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const s = servicesContent[slug];
   if (!s) return {};
+  const title = `${s.name} for Auto Glass Shops`;
   return {
-    title: `${s.name} for Auto Glass Shops`,
-    description: s.heroSub,
+    title,
+    description: s.metaDescription,
+    alternates: { canonical: `/services/${slug}` },
+    openGraph: {
+      title: `${title} — ${site.name}`,
+      description: s.metaDescription,
+      url: `${site.url}/services/${slug}`,
+      type: "website",
+    },
   };
 }
 
@@ -43,8 +51,53 @@ export default async function ServiceDetailPage({
   const Icon = iconMap[s.icon as keyof typeof iconMap];
   const others = services.filter((o) => o.slug !== slug);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        serviceType: s.name,
+        name: `${s.name} for Auto Glass Shops`,
+        description: s.metaDescription,
+        areaServed: "United States",
+        provider: { "@type": "Organization", name: site.name, url: site.url },
+        url: `${site.url}/services/${slug}`,
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: s.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: `${site.url}/services`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: s.name,
+            item: `${site.url}/services/${slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden pt-32 pb-16 sm:pt-40">
         <div className="bg-grid pointer-events-none absolute inset-0 opacity-50" />

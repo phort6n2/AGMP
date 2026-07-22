@@ -128,7 +128,7 @@ export function Stat({ value, label }: { value: string; label: string }) {
       <div className="font-display text-3xl font-bold text-white sm:text-4xl">
         <span className="text-gradient">{value}</span>
       </div>
-      <div className="mt-1 text-sm text-ink-400">{label}</div>
+      <div className="mt-1 text-sm text-ink-300">{label}</div>
     </div>
   );
 }

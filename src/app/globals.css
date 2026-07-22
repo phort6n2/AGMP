@@ -128,3 +128,30 @@ body {
 ::selection {
   background: rgba(56, 189, 248, 0.3);
 }
+
+/* Accessible focus ring for keyboard users across all interactive elements */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+summary:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--color-ink-900),
+    0 0 0 4px var(--color-glass-300);
+  border-radius: 0.5rem;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

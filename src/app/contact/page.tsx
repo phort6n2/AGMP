@@ -3,12 +3,20 @@ import { Container } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { site } from "@/lib/site";
-import { IconPhone, IconClock, IconCheck, IconChart } from "@/components/Icons";
+import { IconPhone, IconClock, IconCheck, IconChart, IconMail } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact — Book a Free Growth Call",
   description:
     "Book a free 30-minute growth call with Auto Glass Marketing Pros. We'll map out exactly how to get your auto glass shop more paying jobs.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact — Book a Free Growth Call",
+    description:
+      "Book a free 30-minute growth call. A real plan for your shop — no jargon, no pressure.",
+    url: `${site.url}/contact`,
+    type: "website",
+  },
 };
 
 const expect = [
@@ -82,10 +90,10 @@ export default function ContactPage() {
                   href={`mailto:${site.email}`}
                   className="flex items-center gap-3 text-ink-200 hover:text-white"
                 >
-                  <span className="text-glass-300">✉</span>
+                  <IconMail className="h-5 w-5 text-glass-300" />
                   {site.email}
                 </a>
-                <p className="text-sm text-ink-500">
+                <p className="text-sm text-ink-300">
                   Serving auto glass shops nationwide · Mon–Fri, 8am–6pm
                 </p>
               </div>

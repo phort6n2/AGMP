@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { serviceSlugs } from "@/lib/services-content";
-import { postSlugs } from "@/lib/posts";
+import { posts } from "@/lib/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -30,9 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const postRoutes = postSlugs.map((slug) => ({
-    url: `${base}/blog/${slug}`,
-    lastModified: now,
+  const postRoutes = posts.map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: new Date(`${post.date}T00:00:00Z`),
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

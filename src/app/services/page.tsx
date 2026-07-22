@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Services — SEO, Google Ads, Web Design & Directory",
   description:
     "The complete auto glass growth system: Local SEO, Google Ads, conversion-focused web design, and our driver directory. Everything your shop needs to stay booked.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services — Auto Glass Marketing Pros",
+    description:
+      "Local SEO (with AI visibility), Google Ads, web design, and a driver directory — one system to get your shop found and booked.",
+    url: `${site.url}/services`,
+    type: "website",
+  },
 };
 
 const included = [

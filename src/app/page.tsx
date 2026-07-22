@@ -13,7 +13,7 @@ import {
   IconPhone,
   IconShield,
   IconSparkle,
-  IconStar,
+  IconX,
   iconMap,
 } from "@/components/Icons";
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const stats = [
   { value: "30 days", label: "To your first new jobs" },
   { value: "100%", label: "Focused on auto glass" },
-  { value: "4 stages", label: "Proven growth framework" },
+  { value: "AI + Maps", label: "Visible where drivers search" },
   { value: "Month-to-month", label: "No lock-in contracts" },
 ];
 
@@ -64,7 +64,7 @@ export default function Home() {
             <div className="animate-fade-up">
               <Badge>
                 <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-                The auto glass growth agency
+                100% auto glass. Nothing else.
               </Badge>
             </div>
             <h1 className="animate-fade-up mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl">
@@ -74,9 +74,9 @@ export default function Home() {
               </span>
             </h1>
             <p className="animate-fade-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-300">
-              We&apos;re not here to bill you for busy work — we&apos;re here to
-              keep your shop busy with paying jobs. The only marketing framework
-              built exclusively for auto glass shops.
+              More windshields in your bays — from local drivers already
+              searching for a shop like yours. The only marketing system built
+              exclusively for auto glass, and measured only in booked jobs.
             </p>
             <div className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/contact" size="lg" withArrow>
@@ -90,13 +90,9 @@ export default function Home() {
                 {site.phone}
               </a>
             </div>
-            <p className="animate-fade-up mt-5 flex items-center justify-center gap-2 text-sm text-ink-500">
-              <span className="flex text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <IconStar key={i} className="h-4 w-4" />
-                ))}
-              </span>
-              Trusted by auto glass shops from coast to coast
+            <p className="animate-fade-up mt-5 flex items-center justify-center gap-2 text-sm text-ink-300">
+              <IconShield className="h-4 w-4 text-glass-300" />
+              Built by auto glass marketing specialists — not a generalist agency
             </p>
           </div>
 
@@ -117,8 +113,8 @@ export default function Home() {
       {/* ---------- LOGO MARQUEE ---------- */}
       <section className="border-y border-white/5 bg-ink-950/50">
         <Container>
-          <p className="pt-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">
-            Shops we help stay booked
+          <p className="pt-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink-400">
+            Built for every kind of auto glass shop
           </p>
         </Container>
         <LogoMarquee />
@@ -131,8 +127,8 @@ export default function Home() {
             <div>
               <Eyebrow>The hard truth</Eyebrow>
               <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
-                Most local marketing agencies are full of{" "}
-                <span className="text-gradient-amber">🤖 fluff.</span>
+                Most marketing agencies sell you everything{" "}
+                <span className="text-gradient-amber">except more jobs.</span>
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-ink-300">
                 They sell you rankings you can&apos;t cash, dashboards no one
@@ -163,7 +159,7 @@ export default function Home() {
                   className="glass-card flex items-start gap-4 rounded-2xl p-5 transition-all"
                 >
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-amber-400">
-                    ✕
+                    <IconX className="h-4 w-4" />
                   </span>
                   <p className="text-ink-200">{pain}</p>
                 </div>
@@ -219,7 +215,7 @@ export default function Home() {
                     {s.summary}
                   </p>
                   <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-white">
-                    Explore {s.name}
+                    See how it works
                     <IconArrow className="h-4 w-4 text-glass-300 transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>
@@ -309,27 +305,23 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ---------- TESTIMONIAL ---------- */}
+      {/* ---------- FOUNDER PROMISE ---------- */}
       <section className="py-16">
         <Container>
-          <figure className="glass-card mx-auto max-w-3xl rounded-3xl p-8 text-center sm:p-12">
-            <div className="flex justify-center gap-1 text-amber-400">
-              {[...Array(5)].map((_, i) => (
-                <IconStar key={i} className="h-5 w-5" />
-              ))}
-            </div>
-            <blockquote className="mt-6 font-display text-xl font-medium leading-relaxed text-white sm:text-2xl">
-              &quot;We stopped guessing about marketing. The framework gave us a
-              clear path — and the phone hasn&apos;t stopped ringing with real
-              windshield jobs since.&quot;
+          <div className="glass-card mx-auto max-w-3xl rounded-3xl p-8 text-center sm:p-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-glass-300">
+              The only result we count
+            </p>
+            <blockquote className="mt-5 font-display text-xl font-medium leading-relaxed text-white sm:text-2xl">
+              &quot;Not impressions. Not rankings you can&apos;t cash. The number
+              of paying windshield jobs we put on your calendar — and we report
+              it to you every single month.&quot;
             </blockquote>
-            <figcaption className="mt-6 text-sm text-ink-400">
-              <span className="font-semibold text-white">
-                A growing auto glass shop
-              </span>{" "}
-              · Illustrative of the results our framework is built to deliver
+            <figcaption className="mt-6 text-sm text-ink-300">
+              <span className="font-semibold text-white">{site.owner}</span> ·
+              Founder, {site.name}
             </figcaption>
-          </figure>
+          </div>
         </Container>
       </section>
 
@@ -342,8 +334,8 @@ export default function Home() {
               <div>
                 <Eyebrow>Simple, honest partnership</Eyebrow>
                 <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-                  A plan built around{" "}
-                  <span className="text-gradient-amber">your shop</span>
+                  One plan. Your market, your margins,{" "}
+                  <span className="text-gradient-amber">your calendar.</span>
                 </h2>
                 <p className="mt-4 max-w-lg text-lg text-ink-300">
                   Get highly targeted paid search, top rankings in Google&apos;s
@@ -373,7 +365,13 @@ export default function Home() {
                 </ul>
               </div>
               <div className="text-center lg:text-left">
-                <Button href="/contact" size="lg" withArrow className="w-full sm:w-auto">
+                <Button
+                  href="/contact"
+                  variant="glass"
+                  size="lg"
+                  withArrow
+                  className="w-full sm:w-auto"
+                >
                   Get your custom quote
                 </Button>
                 <p className="mt-4 text-sm text-ink-500">

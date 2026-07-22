@@ -3,6 +3,8 @@ export type ServiceContent = {
   name: string;
   icon: string;
   eyebrow: string;
+  /** ≤155 chars, front-loaded — used as the SEO meta description. */
+  metaDescription: string;
   hero: string;
   heroSub: string;
   problem: { title: string; body: string };
@@ -18,6 +20,8 @@ export const servicesContent: Record<string, ServiceContent> = {
     name: "Local SEO",
     icon: "map",
     eyebrow: "Local SEO",
+    metaDescription:
+      "Get your auto glass shop ranking in the Google Map Pack, organic search, and AI answers like ChatGPT. Local SEO built only for glass shops.",
     hero: "Be the first shop drivers find — everywhere they look.",
     heroSub:
       "When someone cracks a windshield, they grab their phone or ask an AI assistant. We make sure your shop owns the Google Map Pack, organic results, AND the AI answers from ChatGPT, Google AI Overviews, Perplexity, and Gemini — so the job is yours before a competitor even shows up.",
@@ -71,7 +75,7 @@ export const servicesContent: Record<string, ServiceContent> = {
     ],
     outcomes: [
       "Top-3 Map Pack visibility in your service area",
-      "Recommended by ChatGPT, AI Overviews & Perplexity",
+      "Built to be recommended by ChatGPT & AI Overviews",
       "More calls from high-intent local searches",
       "A steady stream of new 5-star reviews",
     ],
@@ -99,11 +103,13 @@ export const servicesContent: Record<string, ServiceContent> = {
     name: "Google Ads",
     icon: "target",
     eyebrow: "Google Ads",
+    metaDescription:
+      "Google Ads for auto glass shops, engineered for phone calls — not clicks. High-intent targeting that fills your calendar with booked jobs.",
     hero: "Put your shop at the top the moment a driver is ready to book.",
     heroSub:
       "Paid search is the fastest way to fill your calendar. We build tightly targeted campaigns that show up for high-intent searches and are engineered for one thing: phone calls from drivers who need glass work now.",
     problem: {
-      title: "Most auto glass ad spend is quietly wasted.",
+      title: "Most auto glass shops are lighting ad budget on fire — and can't even see it.",
       body: "Broad keywords, no call tracking, and generic landing pages burn budget on clicks that never book. We do the opposite — surgical targeting, tight negative keyword lists, and conversion-first landing pages so every dollar works toward a job.",
     },
     features: [
@@ -176,6 +182,8 @@ export const servicesContent: Record<string, ServiceContent> = {
     name: "Web Design",
     icon: "layout",
     eyebrow: "Web Design",
+    metaDescription:
+      "Fast, mobile-first auto glass websites built to convert clicks into booked jobs — with click-to-call, instant quotes, and SEO baked in.",
     hero: "A website that actually books the appointment.",
     heroSub:
       "Your website is your hardest-working salesperson — if it's built right. We design fast, mobile-first sites for auto glass shops that turn a curious click into a scheduled job.",
@@ -253,11 +261,13 @@ export const servicesContent: Record<string, ServiceContent> = {
     name: "Shop Directory",
     icon: "list",
     eyebrow: "Shop Directory",
+    metaDescription:
+      "Get your auto glass shop listed in the Auto Glass Marketing Pros directory — an extra discovery channel that sends local drivers straight to you.",
     hero: "Get found in the directory built for auto glass drivers.",
     heroSub:
       "The Auto Glass Marketing Pros directory is an extra discovery channel that sends local drivers straight to your booking line — more visibility, more shots at the job, with zero extra effort from you.",
     problem: {
-      title: "More visibility means more chances to win the job.",
+      title: "Drivers call three shops. Be one of them.",
       body: "Drivers comparison-shop for glass work across Google, maps, and directories. Every quality listing you appear in is another door to your shop. Our directory is purpose-built for auto glass — no clutter, just shops ready to help drivers now.",
     },
     features: [

@@ -5,11 +5,20 @@ import { PageHeader } from "@/components/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
 import { IconArrow } from "@/components/Icons";
 import { posts, formatDate } from "@/lib/posts";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Resources — Auto Glass Marketing Guides",
   description:
     "Practical marketing guides for auto glass shops: local SEO, Google Ads, web design, and growth strategy from Auto Glass Marketing Pros.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Resources — Auto Glass Marketing Guides",
+    description:
+      "Practical, no-fluff marketing guides written specifically for auto glass shops.",
+    url: `${site.url}/blog`,
+    type: "website",
+  },
 };
 
 export default function BlogPage() {

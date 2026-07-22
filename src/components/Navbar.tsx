@@ -65,7 +65,7 @@ export function Navbar() {
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </Link>
-                <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <div className="glass-card overflow-hidden rounded-2xl p-2 shadow-card">
                     {item.children.map((c) => (
                       <Link
@@ -112,8 +112,10 @@ export function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-white lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-white lg:hidden"
           aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           <div className="space-y-1.5">
             <span
@@ -137,7 +139,10 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-white/5 bg-ink-950/95 backdrop-blur-xl lg:hidden">
+        <div
+          id="mobile-menu"
+          className="border-t border-white/5 bg-ink-950/95 backdrop-blur-xl lg:hidden"
+        >
           <div className="space-y-1 px-5 py-4">
             {nav.map((item) =>
               item.children ? (
@@ -145,6 +150,7 @@ export function Navbar() {
                   <button
                     onClick={() => setServicesOpen((v) => !v)}
                     className="flex w-full items-center justify-between py-2.5 text-left text-base font-medium text-white"
+                    aria-expanded={servicesOpen}
                   >
                     {item.label}
                     <svg

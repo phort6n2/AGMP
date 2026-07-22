@@ -5,6 +5,8 @@ export type Post = {
   category: string;
   date: string;
   readingTime: string;
+  /** Contextual internal link to the most relevant service page. */
+  relatedService?: { slug: string; anchor: string };
   /** Body as an array of blocks for simple, safe rendering. */
   body: Block[];
 };
@@ -24,6 +26,7 @@ export const posts: Post[] = [
     category: "Local SEO",
     date: "2026-06-18",
     readingTime: "6 min read",
+    relatedService: { slug: "local-seo", anchor: "auto glass Local SEO service" },
     body: [
       {
         type: "p",
@@ -76,6 +79,7 @@ export const posts: Post[] = [
     category: "Google Ads",
     date: "2026-05-30",
     readingTime: "5 min read",
+    relatedService: { slug: "google-ads", anchor: "auto glass Google Ads management" },
     body: [
       {
         type: "p",
@@ -124,6 +128,7 @@ export const posts: Post[] = [
     category: "Web Design",
     date: "2026-05-12",
     readingTime: "5 min read",
+    relatedService: { slug: "web-design", anchor: "auto glass web design service" },
     body: [
       {
         type: "p",
@@ -168,6 +173,7 @@ export const posts: Post[] = [
     category: "Strategy",
     date: "2026-04-22",
     readingTime: "4 min read",
+    relatedService: { slug: "local-seo", anchor: "auto glass Local SEO service" },
     body: [
       {
         type: "p",

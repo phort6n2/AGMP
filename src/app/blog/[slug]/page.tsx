@@ -22,7 +22,15 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
-    openGraph: { title: post.title, description: post.excerpt, type: "article" },
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      url: `${site.url}/blog/${slug}`,
+      publishedTime: post.date,
+      authors: [site.name],
+    },
   };
 }
 
@@ -37,8 +45,48 @@ export default async function PostPage({
 
   const related = posts.filter((p) => p.slug !== slug).slice(0, 3);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: post.date,
+        dateModified: post.date,
+        articleSection: post.category,
+        author: { "@type": "Organization", name: site.name, url: site.url },
+        publisher: { "@type": "Organization", name: site.name, url: site.url },
+        mainEntityOfPage: `${site.url}/blog/${slug}`,
+        url: `${site.url}/blog/${slug}`,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Resources",
+            item: `${site.url}/blog`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: post.title,
+            item: `${site.url}/blog/${slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <article>
         {/* Header */}
         <section className="relative overflow-hidden pt-32 pb-10 sm:pt-40">
@@ -123,8 +171,18 @@ export default async function PostPage({
                   Want this handled for your shop?
                 </h3>
                 <p className="mx-auto mt-2 max-w-md text-ink-300">
-                  We do this every day for auto glass shops. Book a free growth
-                  call and we&apos;ll build the plan for you.
+                  We do this every day for auto glass shops. Explore our{" "}
+                  {post.relatedService ? (
+                    <Link
+                      href={`/services/${post.relatedService.slug}`}
+                      className="font-semibold text-glass-200 underline decoration-glass-400/40 underline-offset-2 hover:text-white"
+                    >
+                      {post.relatedService.anchor}
+                    </Link>
+                  ) : (
+                    "services"
+                  )}{" "}
+                  or book a free growth call and we&apos;ll build the plan for you.
                 </p>
                 <div className="mt-5">
                   <Button href="/contact" size="lg" withArrow>

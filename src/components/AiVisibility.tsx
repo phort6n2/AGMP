@@ -79,7 +79,7 @@ export function AiVisibility() {
                   </div>
                 </div>
               </div>
-              <p className="mt-3 text-center text-xs text-ink-500">
+              <p className="mt-3 text-center text-xs text-ink-400">
                 Illustrative example of an AI assistant recommending your shop.
               </p>
             </div>

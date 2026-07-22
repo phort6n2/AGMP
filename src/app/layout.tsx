@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { site } from "@/lib/site";
 
 const inter = Inter({
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.description,
+  alternates: { canonical: "/" },
   keywords: [
     "auto glass marketing",
     "windshield repair marketing",
@@ -50,19 +52,20 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "Organization"],
   name: site.name,
   description: site.description,
   url: site.url,
   email: site.email,
-  telephone: site.phone,
   areaServed: "United States",
   priceRange: "$$",
   slogan: site.tagline,
+  sameAs: Object.values(site.social),
   knowsAbout: [
     "Auto glass marketing",
     "Local SEO",
     "Google Ads",
+    "AI search visibility",
     "Web design",
     "Windshield repair marketing",
   ],
@@ -85,8 +88,11 @@ export default function RootLayout({
           Skip to content
         </a>
         <Navbar />
-        <main id="main">{children}</main>
+        <main id="main" className="pb-16 lg:pb-0">
+          {children}
+        </main>
         <Footer />
+        <MobileCtaBar />
       </body>
     </html>
   );

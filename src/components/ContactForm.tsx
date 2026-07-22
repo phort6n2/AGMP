@@ -41,7 +41,11 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="glass-card flex flex-col items-center rounded-3xl p-10 text-center">
+      <div
+        role="status"
+        aria-live="polite"
+        className="glass-card flex flex-col items-center rounded-3xl p-10 text-center"
+      >
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-signal/15 text-signal">
           <IconCheck className="h-8 w-8" />
         </span>
@@ -61,7 +65,11 @@ export function ContactForm() {
   const label = "mb-1.5 block text-sm font-medium text-ink-200";
 
   return (
-    <form onSubmit={onSubmit} className="glass-card rounded-3xl p-7 sm:p-9">
+    <form
+      onSubmit={onSubmit}
+      aria-busy={status === "loading"}
+      className="glass-card rounded-3xl p-7 sm:p-9"
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label className={label} htmlFor="name">
@@ -90,13 +98,12 @@ export function ContactForm() {
         </div>
         <div>
           <label className={label} htmlFor="phone">
-            Phone *
+            Phone <span className="text-ink-400">(fastest way to reach you)</span>
           </label>
           <input
             id="phone"
             name="phone"
             type="tel"
-            required
             className={field}
             placeholder="(555) 010-2025"
           />
@@ -130,7 +137,10 @@ export function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-400">
+        <p
+          role="alert"
+          className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-400"
+        >
           {error}
         </p>
       )}
@@ -144,8 +154,8 @@ export function ContactForm() {
           {status === "loading" ? "Sending…" : "Book my free growth call"}
         </button>
       </div>
-      <p className="mt-4 text-center text-xs text-ink-500">
-        No spam, ever. We&apos;ll only use your details to plan your growth call.
+      <p className="mt-4 text-center text-xs text-ink-300">
+        Free 30-min call · We reply within 1 business day · No contracts, no spam.
       </p>
     </form>
   );

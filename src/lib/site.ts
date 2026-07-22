@@ -130,13 +130,15 @@ export const stages = [
   },
 ];
 
-export const clientLogos = [
-  "Speedy Windshield Repair",
-  "Noble Glass",
-  "American Auto Glass",
-  "A1 Windshield",
-  "ClearView Auto Glass",
-  "Precision Glass Co.",
-  "Summit Windshield",
-  "Coastal Auto Glass",
+// Types of auto glass shops AGMP is built to serve — honest descriptors,
+// not client names. Swap for real client logos once available.
+export const shopTypes = [
+  "Mobile windshield repair",
+  "Single-location shops",
+  "Multi-location chains",
+  "Same-day replacement",
+  "ADAS calibration",
+  "Insurance & cash jobs",
+  "Chip & crack repair",
+  "Fleet glass services",
 ];
