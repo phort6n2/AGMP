@@ -24,7 +24,7 @@ const cols = [
     heading: "Get Started",
     links: [
       { label: "Book a Growth Call", href: "/contact" },
-      { label: "Pricing", href: "/services" },
+      { label: "Get a Quote", href: "/contact" },
       { label: "Shop Directory", href: "/services/directory" },
     ],
   },

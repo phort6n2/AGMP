@@ -155,7 +155,7 @@ export const servicesContent: Record<string, ServiceContent> = {
     faqs: [
       {
         q: "How much should I budget for ads?",
-        a: "It depends on your market and job value, but our campaigns start at $99/mo in management. We'll recommend an ad budget on your growth call based on what it takes to compete in your area — and never push you to overspend.",
+        a: "It depends on your market and the value of a job in your area. On your free growth call we'll recommend an ad budget based on what it actually takes to compete where you are — and we'll never push you to overspend.",
       },
       {
         q: "How fast will the phone ring?",

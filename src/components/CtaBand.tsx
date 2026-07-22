@@ -34,7 +34,7 @@ export function CtaBand({
               </a>
             </div>
             <p className="mt-5 text-sm text-ink-500">
-              No contracts. Month-to-month. Starting at {site.startingPrice}/mo.
+              No contracts. Month-to-month. Just booked jobs.
             </p>
           </div>
         </div>

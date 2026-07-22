@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const stats = [
   { value: "30 days", label: "To your first new jobs" },
   { value: "100%", label: "Focused on auto glass" },
-  { value: "$99/mo", label: "Campaigns start here" },
+  { value: "4 stages", label: "Proven growth framework" },
   { value: "Month-to-month", label: "No lock-in contracts" },
 ];
 
@@ -331,15 +331,16 @@ export default function Home() {
             <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-glass-500/15 blur-3xl" />
             <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-                <Eyebrow>Simple, honest pricing</Eyebrow>
+                <Eyebrow>Simple, honest partnership</Eyebrow>
                 <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-                  Campaigns that start at{" "}
-                  <span className="text-gradient-amber">$99/month</span>
+                  A plan built around{" "}
+                  <span className="text-gradient-amber">your shop</span>
                 </h2>
                 <p className="mt-4 max-w-lg text-lg text-ink-300">
                   Get highly targeted paid search, top rankings in Google&apos;s
                   Map Pack, and visibility in AI search — with no long-term
-                  contracts. Scale up as the jobs roll in.
+                  contracts. We&apos;ll put together a quote that fits your
+                  market and your goals, and scale up as the jobs roll in.
                 </p>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {[

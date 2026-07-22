@@ -16,7 +16,7 @@ const included = [
   "A dedicated auto glass marketing expert",
   "Transparent reporting tied to booked jobs",
   "Month-to-month — cancel anytime",
-  "Campaigns starting at $99/month",
+  "A custom plan built around your goals",
 ];
 
 export default function ServicesPage() {

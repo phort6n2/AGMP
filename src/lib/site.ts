@@ -10,7 +10,6 @@ export const site = {
   phone: "(555) 010-2025",
   phoneHref: "tel:+15550102025",
   owner: "Matt Lubbes",
-  startingPrice: "$99",
   ctaText: "Book a Free Growth Call",
   social: {
     facebook: "https://facebook.com",
