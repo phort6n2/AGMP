@@ -95,6 +95,19 @@ export default async function PostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      {/* Article + FAQ schema supplied by BabyLoveGrowth, when present */}
+      {post.jsonLd != null && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(post.jsonLd) }}
+        />
+      )}
+      {post.faqJsonLd != null && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(post.faqJsonLd) }}
+        />
+      )}
       <article>
         {/* Header */}
         <section className="relative overflow-hidden pt-32 pb-10 sm:pt-40">
@@ -114,7 +127,8 @@ export default async function PostPage({
                   {post.category}
                 </span>
                 <span className="text-ink-400">
-                  {formatDate(post.date)} · {post.readingTime}
+                  {formatDate(post.date)}
+                  {post.readingTime ? ` · ${post.readingTime}` : ""}
                 </span>
               </div>
               <h1 className="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">

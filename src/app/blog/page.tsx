@@ -56,7 +56,8 @@ export default async function BlogPage() {
                     {featured.category}
                   </span>
                   <span className="text-ink-400">
-                    {formatDate(featured.date)} · {featured.readingTime}
+                    {formatDate(featured.date)}
+                    {featured.readingTime ? ` · ${featured.readingTime}` : ""}
                   </span>
                 </div>
                 <h2 className="mt-4 font-display text-2xl font-bold leading-tight text-white sm:text-3xl">
@@ -112,7 +113,7 @@ export default async function BlogPage() {
                 </p>
                 <div className="mt-5 flex items-center justify-between text-xs text-ink-400">
                   <span>{formatDate(p.date)}</span>
-                  <span>{p.readingTime}</span>
+                  {p.readingTime && <span>{p.readingTime}</span>}
                 </div>
               </Link>
             ))}
