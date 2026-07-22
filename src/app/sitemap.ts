@@ -1,9 +1,12 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { serviceSlugs } from "@/lib/services-content";
-import { posts } from "@/lib/posts";
+import { getArticles } from "@/lib/blog-source";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Regenerate so newly auto-published articles enter the sitemap.
+export const revalidate = 600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = site.url;
   const now = new Date();
 
@@ -31,12 +34,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const postRoutes = posts.map((post) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastModified: new Date(`${post.date}T00:00:00Z`),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  const articles = await getArticles();
+  const postRoutes = articles.map((post) => {
+    const d = new Date(post.date);
+    return {
+      url: `${base}/blog/${post.slug}`,
+      lastModified: Number.isNaN(d.getTime()) ? now : d,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    };
+  });
 
   return [...staticRoutes, ...serviceRoutes, ...postRoutes];
 }

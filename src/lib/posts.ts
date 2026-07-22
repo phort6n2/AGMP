@@ -217,8 +217,13 @@ export function getPost(slug: string) {
 
 export const postSlugs = posts.map((p) => p.slug);
 
-export function formatDate(iso: string) {
-  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+export function formatDate(input: string) {
+  // Accept both "2026-06-18" and full ISO timestamps.
+  const d = /^\d{4}-\d{2}-\d{2}$/.test(input)
+    ? new Date(`${input}T00:00:00`)
+    : new Date(input);
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",

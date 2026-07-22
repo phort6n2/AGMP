@@ -4,12 +4,16 @@ import { notFound } from "next/navigation";
 import { Container, Button } from "@/components/ui";
 import { CtaBand } from "@/components/CtaBand";
 import { IconArrow } from "@/components/Icons";
-import { getPost, postSlugs, posts, formatDate } from "@/lib/posts";
+import { getArticle, getArticles, staticArticleSlugs } from "@/lib/blog-source";
+import { formatDate } from "@/lib/posts";
 import { site } from "@/lib/site";
 
+// Pre-render static posts; BabyLoveGrowth articles render on-demand + cache.
 export function generateStaticParams() {
-  return postSlugs.map((slug) => ({ slug }));
+  return staticArticleSlugs.map((slug) => ({ slug }));
 }
+export const dynamicParams = true;
+export const revalidate = 600;
 
 export async function generateMetadata({
   params,
@@ -17,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getArticle(slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -30,6 +34,7 @@ export async function generateMetadata({
       url: `${site.url}/blog/${slug}`,
       publishedTime: post.date,
       authors: [site.name],
+      images: post.image ? [post.image] : undefined,
     },
   };
 }
@@ -40,10 +45,12 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getArticle(slug);
   if (!post) notFound();
 
-  const related = posts.filter((p) => p.slug !== slug).slice(0, 3);
+  const related = (await getArticles())
+    .filter((p) => p.slug !== slug)
+    .slice(0, 3);
 
   const schema = {
     "@context": "https://schema.org",
@@ -55,6 +62,7 @@ export default async function PostPage({
         datePublished: post.date,
         dateModified: post.date,
         articleSection: post.category,
+        image: post.image,
         author: { "@type": "Organization", name: site.name, url: site.url },
         publisher: { "@type": "Organization", name: site.name, url: site.url },
         mainEntityOfPage: `${site.url}/blog/${slug}`,
@@ -105,7 +113,7 @@ export default async function PostPage({
                 <span className="rounded-full bg-glass-500/15 px-3 py-1 font-semibold text-glass-200">
                   {post.category}
                 </span>
-                <span className="text-ink-500">
+                <span className="text-ink-400">
                   {formatDate(post.date)} · {post.readingTime}
                 </span>
               </div>
@@ -123,47 +131,60 @@ export default async function PostPage({
         <section className="pb-12">
           <Container>
             <div className="mx-auto max-w-3xl">
-              <div className="space-y-5">
-                {post.body.map((block, i) => {
-                  if (block.type === "h2")
+              {post.image && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="mb-8 w-full rounded-2xl border border-white/10"
+                />
+              )}
+
+              {post.html ? (
+                <div
+                  className="article-prose"
+                  dangerouslySetInnerHTML={{ __html: post.html }}
+                />
+              ) : (
+                <div className="space-y-5">
+                  {post.body?.map((block, i) => {
+                    if (block.type === "h2")
+                      return (
+                        <h2
+                          key={i}
+                          className="pt-4 font-display text-2xl font-bold text-white"
+                        >
+                          {block.text}
+                        </h2>
+                      );
+                    if (block.type === "quote")
+                      return (
+                        <blockquote
+                          key={i}
+                          className="border-l-2 border-glass-400 pl-5 font-display text-xl font-medium italic leading-relaxed text-white"
+                        >
+                          {block.text}
+                        </blockquote>
+                      );
+                    if (block.type === "ul")
+                      return (
+                        <ul key={i} className="space-y-2.5">
+                          {block.items.map((item) => (
+                            <li key={item} className="flex gap-3 text-ink-200">
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-glass-300" />
+                              <span className="leading-relaxed">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      );
                     return (
-                      <h2
-                        key={i}
-                        className="pt-4 font-display text-2xl font-bold text-white"
-                      >
+                      <p key={i} className="text-lg leading-relaxed text-ink-200">
                         {block.text}
-                      </h2>
+                      </p>
                     );
-                  if (block.type === "quote")
-                    return (
-                      <blockquote
-                        key={i}
-                        className="border-l-2 border-glass-400 pl-5 font-display text-xl font-medium italic leading-relaxed text-white"
-                      >
-                        {block.text}
-                      </blockquote>
-                    );
-                  if (block.type === "ul")
-                    return (
-                      <ul key={i} className="space-y-2.5">
-                        {block.items.map((item) => (
-                          <li key={item} className="flex gap-3 text-ink-200">
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-glass-300" />
-                            <span className="leading-relaxed">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    );
-                  return (
-                    <p
-                      key={i}
-                      className="text-lg leading-relaxed text-ink-200"
-                    >
-                      {block.text}
-                    </p>
-                  );
-                })}
-              </div>
+                  })}
+                </div>
+              )}
 
               {/* Inline CTA */}
               <div className="mt-12 rounded-2xl border border-glass-300/20 bg-glass-500/5 p-7 text-center">
@@ -171,22 +192,12 @@ export default async function PostPage({
                   Want this handled for your shop?
                 </h3>
                 <p className="mx-auto mt-2 max-w-md text-ink-300">
-                  We do this every day for auto glass shops. Explore our{" "}
-                  {post.relatedService ? (
-                    <Link
-                      href={`/services/${post.relatedService.slug}`}
-                      className="font-semibold text-glass-200 underline decoration-glass-400/40 underline-offset-2 hover:text-white"
-                    >
-                      {post.relatedService.anchor}
-                    </Link>
-                  ) : (
-                    "services"
-                  )}{" "}
-                  or book a free growth call and we&apos;ll build the plan for you.
+                  We do this every day for auto glass shops. Start with a free
+                  marketing audit and we&apos;ll build the plan for you.
                 </p>
                 <div className="mt-5">
-                  <Button href="/contact" size="lg" withArrow>
-                    {site.ctaText}
+                  <Button href="/audit" size="lg" withArrow>
+                    Get Your Free Audit
                   </Button>
                 </div>
               </div>
@@ -196,33 +207,35 @@ export default async function PostPage({
       </article>
 
       {/* Related */}
-      <section className="py-12">
-        <Container>
-          <h2 className="font-display text-2xl font-bold text-white">
-            Keep reading
-          </h2>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {related.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/blog/${p.slug}`}
-                className="glass-card group flex flex-col rounded-2xl p-6"
-              >
-                <span className="w-fit rounded-full bg-glass-500/15 px-2.5 py-0.5 text-xs font-semibold text-glass-200">
-                  {p.category}
-                </span>
-                <h3 className="mt-4 flex-1 font-display text-lg font-bold leading-snug text-white">
-                  {p.title}
-                </h3>
-                <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-glass-200">
-                  Read
-                  <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </section>
+      {related.length > 0 && (
+        <section className="py-12">
+          <Container>
+            <h2 className="font-display text-2xl font-bold text-white">
+              Keep reading
+            </h2>
+            <div className="mt-6 grid gap-5 md:grid-cols-3">
+              {related.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="glass-card group flex flex-col rounded-2xl p-6"
+                >
+                  <span className="w-fit rounded-full bg-glass-500/15 px-2.5 py-0.5 text-xs font-semibold text-glass-200">
+                    {p.category}
+                  </span>
+                  <h3 className="mt-4 flex-1 font-display text-lg font-bold leading-snug text-white">
+                    {p.title}
+                  </h3>
+                  <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-glass-200">
+                    Read
+                    <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       <CtaBand />
     </>
