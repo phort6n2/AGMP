@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — dark, premium, "glass" inspired */
+  --color-ink-950: #05070f;
+  --color-ink-900: #0a0e1a;
+  --color-ink-850: #0f1424;
+  --color-ink-800: #141b2e;
+  --color-ink-700: #1e2740;
+  --color-ink-600: #2c3856;
+  --color-ink-500: #47536f;
+  --color-ink-400: #6b7794;
+  --color-ink-300: #98a2bd;
+  --color-ink-200: #c4cbdc;
+  --color-ink-100: #e6e9f2;
+
+  /* Glass accent — electric blue → cyan */
+  --color-glass-600: #0b63d6;
+  --color-glass-500: #2563eb;
+  --color-glass-400: #3b82f6;
+  --color-glass-300: #38bdf8;
+  --color-glass-200: #7dd3fc;
+
+  /* Conversion accent — warm amber */
+  --color-amber-600: #e2560f;
+  --color-amber-500: #ff6b1a;
+  --color-amber-400: #ff8438;
+
+  --color-signal: #34d399;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-display), var(--font-inter), ui-sans-serif,
+    system-ui, sans-serif;
+
+  --radius-xl2: 1.25rem;
+
+  --shadow-glow: 0 0 60px -15px rgba(56, 189, 248, 0.45);
+  --shadow-amber: 0 12px 30px -10px rgba(255, 107, 26, 0.55);
+  --shadow-card: 0 20px 50px -25px rgba(0, 0, 0, 0.8);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink-900);
+  color: var(--color-ink-100);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Utility: subtle grid / glow backdrop for hero sections */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-radial-glow {
+  background:
+    radial-gradient(600px circle at 50% -10%, rgba(37, 99, 235, 0.28), transparent 60%),
+    radial-gradient(500px circle at 85% 20%, rgba(56, 189, 248, 0.18), transparent 55%);
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #7dd3fc 0%, #3b82f6 45%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-amber {
+  background: linear-gradient(100deg, #ff8438 0%, #ff6b1a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glassy card surface */
+.glass-card {
+  background: linear-gradient(
+    160deg,
+    rgba(30, 39, 64, 0.7) 0%,
+    rgba(15, 20, 36, 0.75) 100%
+  );
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+/* Marquee for logo strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+}
