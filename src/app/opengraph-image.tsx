@@ -1,11 +1,16 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { site } from "@/lib/site";
 
 export const alt = `${site.name} — More Auto Glass Jobs, Not Clicks`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const logo = await readFile(join(process.cwd(), "public", "logo-white.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -21,33 +26,15 @@ export default function OpengraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <div
-            style={{
-              width: "64px",
-              height: "64px",
-              borderRadius: "18px",
-              background: "linear-gradient(135deg, #7dd3fc, #2563eb)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "34px",
-              fontWeight: 800,
-              color: "#05070f",
-            }}
-          >
-            A
-          </div>
-          <div style={{ display: "flex", fontSize: "26px", color: "#98a2bd", fontWeight: 600 }}>
-            {site.name}
-          </div>
-        </div>
+        {/* Real logo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logoSrc} alt={site.name} height={132} style={{ height: 132 }} />
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div
             style={{
               display: "flex",
-              fontSize: "40px",
+              fontSize: "38px",
               color: "#38bdf8",
               fontWeight: 700,
             }}
@@ -57,7 +44,7 @@ export default function OpengraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: "78px",
+              fontSize: "76px",
               lineHeight: 1.05,
               fontWeight: 800,
               color: "#ffffff",
