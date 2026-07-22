@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { services, site } from "@/lib/site";
-import { Logo } from "./Logo";
 import { IconMessage } from "./Icons";
 
 const cols = [
@@ -36,11 +35,15 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5">
-              <Logo className="h-9 w-9" />
-              <span className="font-display text-base font-bold text-white">
-                Auto Glass Marketing Pros
-              </span>
+            <Link href="/" className="inline-flex" aria-label={site.name}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-white.png"
+                alt={site.name}
+                width={500}
+                height={200}
+                className="h-11 w-auto"
+              />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-400">
               The only marketing agency built exclusively for auto glass repair

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { nav, site } from "@/lib/site";
 import { Button } from "./ui";
 import { IconMessage } from "./Icons";
-import { Logo } from "./Logo";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,14 +34,15 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <Link href="/" className="flex items-center gap-2.5" aria-label={site.name}>
-          <Logo className="h-8 w-8" />
-          <span className="font-display text-[15px] font-bold leading-none text-white">
-            Auto Glass
-            <span className="block text-[11px] font-semibold tracking-[0.18em] text-glass-300">
-              MARKETING PROS
-            </span>
-          </span>
+        <Link href="/" className="flex items-center" aria-label={site.name}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-white.png"
+            alt={site.name}
+            width={500}
+            height={200}
+            className="h-9 w-auto sm:h-10"
+          />
         </Link>
 
         {/* Desktop nav */}
