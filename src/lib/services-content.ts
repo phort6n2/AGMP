@@ -20,10 +20,10 @@ export const servicesContent: Record<string, ServiceContent> = {
     eyebrow: "Local SEO",
     hero: "Be the first shop drivers find — everywhere they look.",
     heroSub:
-      "When someone cracks a windshield, they grab their phone and search. We make sure your shop owns the Google Map Pack, organic results, and AI answers — so the job is yours before a competitor even shows up.",
+      "When someone cracks a windshield, they grab their phone or ask an AI assistant. We make sure your shop owns the Google Map Pack, organic results, AND the AI answers from ChatGPT, Google AI Overviews, Perplexity, and Gemini — so the job is yours before a competitor even shows up.",
     problem: {
-      title: "If you're not in the top 3, you're basically invisible.",
-      body: "Most drivers never scroll past the Map Pack. If your shop isn't ranking there — and increasingly, inside AI answers like ChatGPT and Google's AI Overviews — you're handing those jobs to whoever is. Local SEO is how you claim that top spot and keep it.",
+      title: "Search moved. Most shops haven't.",
+      body: "Drivers no longer just scroll the Map Pack — they ask ChatGPT and read Google's AI Overviews to decide who to call. If your shop isn't showing up in both the classic results AND the AI answers, you're invisible exactly where the next generation of customers is looking. We get you found in both.",
     },
     features: [
       {
@@ -35,12 +35,12 @@ export const servicesContent: Record<string, ServiceContent> = {
         body: "Targeted local optimization so your shop appears in the coveted 3-pack for 'windshield repair near me' across your entire service area.",
       },
       {
-        title: "Local + service-area pages",
-        body: "Purpose-built pages for every town and service you cover, so you rank for the exact searches drivers are typing.",
+        title: "AI & LLM search visibility",
+        body: "We optimize your shop to be recommended by ChatGPT, Google AI Overviews, Perplexity, and Gemini — structuring your content, entities, and citations the way large language models actually pull from, so you're the shop the AI names.",
       },
       {
-        title: "AI search visibility",
-        body: "We structure your content and citations so AI assistants recommend your shop when drivers ask them where to get glass work done.",
+        title: "Local + service-area pages",
+        body: "Purpose-built pages for every town and service you cover, so you rank for the exact searches drivers are typing.",
       },
       {
         title: "Review generation system",
@@ -71,11 +71,15 @@ export const servicesContent: Record<string, ServiceContent> = {
     ],
     outcomes: [
       "Top-3 Map Pack visibility in your service area",
+      "Recommended by ChatGPT, AI Overviews & Perplexity",
       "More calls from high-intent local searches",
-      "Visibility inside AI search answers",
       "A steady stream of new 5-star reviews",
     ],
     faqs: [
+      {
+        q: "Can you actually get my shop recommended by ChatGPT?",
+        a: "Yes — it's a core part of our Local SEO service. AI assistants like ChatGPT, Google AI Overviews, Perplexity, and Gemini pull from structured content, business entities, reviews, and trusted citations across the web. We build your presence the way those models source their answers, so when a driver asks 'where can I get my windshield replaced near me,' your shop is one they name. It's the same discipline as classic SEO, extended to how AI now recommends local businesses.",
+      },
       {
         q: "How long until I see results?",
         a: "Local SEO compounds, but many shops see meaningful movement in the Map Pack and a lift in calls within the first 30–90 days. We focus on quick foundational wins first, then build lasting authority.",
