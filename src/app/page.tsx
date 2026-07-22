@@ -12,6 +12,7 @@ import {
   IconClock,
   IconPhone,
   IconShield,
+  IconSparkle,
   IconStar,
   iconMap,
 } from "@/components/Icons";
@@ -200,9 +201,17 @@ export default function Home() {
                       <Icon className="h-6 w-6" />
                     </span>
                     <div>
-                      <h3 className="font-display text-xl font-bold text-white">
-                        {s.name}
-                      </h3>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="font-display text-xl font-bold text-white">
+                          {s.name}
+                        </h3>
+                        {s.badge && (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-glass-300/30 bg-glass-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-glass-200">
+                            <IconSparkle className="h-3 w-3" />
+                            {s.badge}
+                          </span>
+                        )}
+                      </div>
                       <p className="text-sm text-glass-300">{s.short}</p>
                     </div>
                   </div>

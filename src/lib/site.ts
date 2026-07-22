@@ -57,12 +57,23 @@ export const nav: NavItem[] = [
   { label: "Resources", href: "/blog" },
 ];
 
-export const services = [
+export type Service = {
+  slug: string;
+  name: string;
+  short: string;
+  icon: string;
+  tagline: string;
+  summary: string;
+  badge?: string;
+};
+
+export const services: Service[] = [
   {
     slug: "local-seo",
     name: "Local SEO",
     short: "Own the Map Pack & AI search",
     icon: "map",
+    badge: "Includes AI visibility",
     tagline: "Show up first when a cracked windshield needs you.",
     summary:
       "We get your shop ranking in the Google Map Pack, organic results, and AI answers like ChatGPT — so the next driver with a chip finds you before your competitors.",

@@ -9,6 +9,7 @@ import {
   IconPhone,
   iconMap,
 } from "@/components/Icons";
+import { AiVisibility } from "@/components/AiVisibility";
 import { servicesContent, serviceSlugs } from "@/lib/services-content";
 import { services, site } from "@/lib/site";
 
@@ -107,6 +108,9 @@ export default async function ServiceDetailPage({
           </div>
         </Container>
       </section>
+
+      {/* AI/LLM visibility highlight — Local SEO only */}
+      {slug === "local-seo" && <AiVisibility />}
 
       {/* Features */}
       <section className="py-12">

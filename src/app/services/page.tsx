@@ -4,7 +4,7 @@ import { Container, SectionHeading, Button, Eyebrow } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
 import { services, site } from "@/lib/site";
-import { IconArrow, IconCheck, iconMap } from "@/components/Icons";
+import { IconArrow, IconCheck, IconSparkle, iconMap } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Services — SEO, Google Ads, Web Design & Directory",
@@ -53,9 +53,17 @@ export default function ServicesPage() {
                       <Icon className="h-7 w-7" />
                     </span>
                     <div>
-                      <h2 className="font-display text-2xl font-bold text-white">
-                        {s.name}
-                      </h2>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h2 className="font-display text-2xl font-bold text-white">
+                          {s.name}
+                        </h2>
+                        {s.badge && (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-glass-300/30 bg-glass-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-glass-200">
+                            <IconSparkle className="h-3 w-3" />
+                            {s.badge}
+                          </span>
+                        )}
+                      </div>
                       <p className="text-sm text-glass-300">{s.tagline}</p>
                     </div>
                   </div>
