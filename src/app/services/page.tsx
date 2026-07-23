@@ -40,7 +40,7 @@ export default function ServicesPage() {
         }
         subtitle="Four channels that work together to turn local drivers into scheduled installs. Use one, or stack them into a complete growth engine."
       >
-        <Button href="/contact" size="lg" withArrow>
+        <Button href="/audit" size="lg" withArrow>
           {site.ctaText}
         </Button>
       </PageHeader>
@@ -135,15 +135,15 @@ export default function ServicesPage() {
                 Not sure where to start?
               </h3>
               <p className="text-sm text-ink-300">
-                Tell us about your shop and we&apos;ll recommend the right mix —
-                no upsell, just what will move the needle.
+                Run your free audit and we&apos;ll recommend the right mix — no
+                upsell, just what will move the needle.
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/audit"
               className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-glass-200 hover:text-white"
             >
-              Get a recommendation
+              Get your free audit
               <IconArrow className="h-4 w-4" />
             </Link>
           </div>

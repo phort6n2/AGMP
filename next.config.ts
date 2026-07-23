@@ -12,6 +12,8 @@ const redirectMap: Record<string, string> = {
   // Lead / legal pages
   "/get-started": "/audit",
   "/ranking-roadmap-auto-glass-kings": "/audit",
+  // All lead collection funnels to the audit page
+  "/contact": "/audit",
   "/terms-conditions": "/terms",
   "/privacy-policy": "/privacy",
 

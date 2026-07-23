@@ -169,7 +169,7 @@ export default function ReviewsPage() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Button href="/contact" size="lg" withArrow>
+            <Button href="/audit" size="lg" withArrow>
               {site.ctaText}
             </Button>
           </div>

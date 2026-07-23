@@ -73,7 +73,7 @@ export default function AboutPage() {
         }
         subtitle="Auto Glass Marketing Pros exists because auto glass shops deserve a marketing partner who actually understands their business — and is measured by the jobs they book, not the reports they send."
       >
-        <Button href="/contact" size="lg" withArrow>
+        <Button href="/audit" size="lg" withArrow>
           {site.ctaText}
         </Button>
       </PageHeader>

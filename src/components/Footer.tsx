@@ -16,14 +16,13 @@ const cols = [
       { label: "About", href: "/about" },
       { label: "Reviews", href: "/reviews" },
       { label: "Resources", href: "/blog" },
-      { label: "Contact", href: "/contact" },
     ],
   },
   {
     heading: "Get Started",
     links: [
       { label: "Free Marketing Audit", href: "/audit" },
-      { label: "Book a Growth Call", href: "/contact" },
+      { label: "Our Services", href: "/services" },
       { label: "Shop Directory", href: "/services/directory" },
     ],
   },

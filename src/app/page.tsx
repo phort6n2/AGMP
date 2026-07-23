@@ -84,17 +84,15 @@ export default function Home() {
               <Button href="/audit" size="lg" withArrow>
                 Get Your Free Audit
               </Button>
-              <Button href="/contact" variant="outline" size="lg">
-                Book a growth call
+              <Button href={site.smsHref} variant="outline" size="lg">
+                <IconMessage className="h-5 w-5 text-glass-300" />
+                Text us instead
               </Button>
             </div>
-            <a
-              href={site.smsHref}
-              className="animate-fade-up mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink-200 hover:text-white"
-            >
-              <IconMessage className="h-4 w-4 text-glass-300" />
-              Or text us at {site.phone} — we actually answer texts
-            </a>
+            <p className="animate-fade-up mt-4 text-sm text-ink-400">
+              Free 60-second audit · or text {site.phone} — we actually answer
+              texts
+            </p>
             <p className="animate-fade-up mt-5 flex items-center justify-center gap-2 text-sm text-ink-300">
               <IconShield className="h-4 w-4 text-glass-300" />
               Built by auto glass marketing specialists — not a generalist agency
@@ -372,16 +370,16 @@ export default function Home() {
               </div>
               <div className="text-center lg:text-left">
                 <Button
-                  href="/contact"
+                  href="/audit"
                   variant="glass"
                   size="lg"
                   withArrow
                   className="w-full sm:w-auto"
                 >
-                  Get your custom quote
+                  Get your free audit
                 </Button>
-                <p className="mt-4 text-sm text-ink-500">
-                  30-minute call. A real plan for your shop. Zero pressure.
+                <p className="mt-4 text-sm text-ink-400">
+                  Free 60-second audit. A real plan for your shop. Zero pressure.
                 </p>
               </div>
             </div>

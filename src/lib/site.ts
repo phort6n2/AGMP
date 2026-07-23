@@ -12,7 +12,7 @@ export const site = {
   smsHref:
     "sms:+18557128500?&body=Hi%20Matt%2C%20I%27d%20like%20help%20getting%20more%20auto%20glass%20jobs.",
   owner: "Matt Lubbes",
-  ctaText: "Book a Free Growth Call",
+  ctaText: "Get Your Free Audit",
   social: {
     facebook: "https://facebook.com",
     twitter: "https://x.com",
