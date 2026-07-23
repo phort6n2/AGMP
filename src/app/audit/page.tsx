@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui";
-import { AuditTool } from "@/components/AuditTool";
+import { MyWebAuditWidget } from "@/components/MyWebAuditWidget";
 import { IconCheck, IconChart, IconMessage, IconShield } from "@/components/Icons";
 import { site } from "@/lib/site";
 
@@ -85,13 +85,9 @@ export default function AuditPage() {
               </a>
             </div>
 
-            {/*
-              NATIVE AUDIT TOOL — webhook-ready lead capture.
-              To use a third-party audit embed instead, replace <AuditTool />
-              with the provider's <iframe> (keep it responsive + lazy-loaded).
-            */}
+            {/* MyWebAudit lead widget (key 925479) — the real audit tool. */}
             <div>
-              <AuditTool />
+              <MyWebAuditWidget />
             </div>
           </div>
         </Container>
