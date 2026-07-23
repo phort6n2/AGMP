@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container, SectionHeading, Button, Eyebrow } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
-import { IconCheck, IconShield, IconChart, IconClock, IconBolt } from "@/components/Icons";
+import { IconCheck, IconShield, IconChart, IconClock, IconBolt, IconMessage } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -127,6 +127,64 @@ export default function AboutPage() {
                 <p className="mt-3 text-sm font-semibold text-white">
                   {site.owner} · Founder, {site.name}
                 </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Meet the founder */}
+      <section className="py-16 sm:py-20">
+        <Container>
+          <div className="glass-card grid gap-8 rounded-3xl p-8 sm:p-10 lg:grid-cols-[300px_1fr] lg:items-center">
+            {/*
+              FOUNDER PHOTO SLOT — drop a real photo at /public/founder.jpg and
+              replace this placeholder block with:
+              <img src="/founder.jpg" alt="Matt Lubbes, founder" className="aspect-square w-full rounded-2xl object-cover" />
+              A real, casual shot (in a shop / by a windshield) beats a stock headshot.
+            */}
+            <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-ink-700 to-ink-850 lg:w-full">
+              <div className="bg-radial-glow pointer-events-none absolute inset-0" />
+              <div className="relative flex h-full flex-col items-center justify-center gap-2">
+                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-glass-400 to-glass-600 font-display text-2xl font-extrabold text-ink-950">
+                  ML
+                </span>
+                <span className="text-xs text-ink-500">Photo coming soon</span>
+              </div>
+            </div>
+
+            <div>
+              <Eyebrow>Meet the founder</Eyebrow>
+              <h2 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
+                I only work with auto glass shops. Not restaurants, not dentists
+                — glass.
+              </h2>
+              <div className="mt-4 space-y-4 text-lg leading-relaxed text-ink-300">
+                <p>
+                  I got tired of watching good independent shops get steered out
+                  of jobs by the TPAs and buried in the Map Pack by the national
+                  chains. I know NAGS pricing, I know what a calibration job is
+                  worth, and I know the cash-vs-claim math you&apos;re running in
+                  your head. So I built {site.directory.name} to prove I could
+                  rank glass shops — and now I do it for shops one at a time.
+                </p>
+                <p className="text-ink-200">
+                  Text me. I answer my own messages, and text is faster — you can
+                  do it between jobs. We&apos;ll start with a free audit. No
+                  pitch, no contract.
+                </p>
+              </div>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href={site.smsHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-ink-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-glass-300"
+                >
+                  <IconMessage className="h-4 w-4 text-glass-300" />
+                  Text {site.owner.split(" ")[0]} — {site.phone}
+                </a>
+                <span className="text-sm text-ink-400">
+                  {site.owner} · Founder, {site.name}
+                </span>
               </div>
             </div>
           </div>

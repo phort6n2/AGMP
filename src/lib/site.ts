@@ -13,6 +13,13 @@ export const site = {
     "sms:+18557128500?&body=Hi%20Matt%2C%20I%27d%20like%20help%20getting%20more%20auto%20glass%20jobs.",
   owner: "Matt Lubbes",
   ctaText: "Get Your Free Audit",
+  // The consumer directory AGMP operates — our real, verifiable proof asset.
+  directory: {
+    name: "Windshield Repair HQ",
+    url: "https://windshieldrepairhq.com",
+    shops: "300+",
+    reach: "all 50 states",
+  },
   social: {
     facebook: "https://facebook.com",
     twitter: "https://x.com",
@@ -101,12 +108,12 @@ export const services: Service[] = [
   },
   {
     slug: "directory",
-    name: "Shop Directory",
-    short: "Get found in our driver directory",
+    name: "Directory Placement",
+    short: "Featured on Windshield Repair HQ",
     icon: "list",
-    tagline: "Extra visibility where drivers are already looking.",
+    tagline: "Get featured on the directory we operate.",
     summary:
-      "Get listed in the Auto Glass Marketing Pros shop directory — a discovery channel built to send local drivers straight to your booking line.",
+      "We place and promote your shop on Windshield Repair HQ — the consumer auto glass directory we operate, used by drivers across all 50 states. Real, inspectable proof, and another channel sending drivers straight to your booking line.",
   },
 ];
 

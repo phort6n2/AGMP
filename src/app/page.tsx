@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Container, Button, Badge, SectionHeading, Eyebrow } from "@/components/ui";
 import { CtaBand } from "@/components/CtaBand";
 import { LogoMarquee } from "@/components/LogoMarquee";
+import { DirectoryProof } from "@/components/DirectoryProof";
+import { Guarantee } from "@/components/Guarantee";
 import { services, stages, site } from "@/lib/site";
 import {
   IconArrow,
@@ -309,6 +311,9 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* ---------- DIRECTORY PROOF ---------- */}
+      <DirectoryProof />
+
       {/* ---------- FOUNDER PROMISE ---------- */}
       <section className="py-16">
         <Container>
@@ -328,6 +333,9 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      {/* ---------- GUARANTEE ---------- */}
+      <Guarantee />
 
       {/* ---------- PRICING TEASER ---------- */}
       <section className="py-20 sm:py-24">

@@ -270,17 +270,17 @@ export const servicesContent: Record<string, ServiceContent> = {
   },
   directory: {
     slug: "directory",
-    name: "Shop Directory",
+    name: "Directory Placement",
     icon: "list",
-    eyebrow: "Shop Directory",
+    eyebrow: "Featured Directory Placement",
     metaDescription:
-      "Get your auto glass shop listed in the Auto Glass Marketing Pros directory — an extra discovery channel that sends local drivers straight to you.",
-    hero: "Get found in the directory built for auto glass drivers.",
+      "Get your auto glass shop featured on Windshield Repair HQ — the consumer directory we operate, used by drivers across all 50 states.",
+    hero: "Get featured on the directory we actually operate.",
     heroSub:
-      "The Auto Glass Marketing Pros directory is an extra discovery channel that sends local drivers straight to your booking line — more visibility, more shots at the job, with zero extra effort from you.",
+      "We run Windshield Repair HQ — a consumer auto glass directory drivers use across all 50 states. We place and promote your shop on it, so you get another channel of real driver traffic. It's also live proof we can do exactly what we sell.",
     problem: {
       title: "Drivers call three shops. Be one of them.",
-      body: "Drivers comparison-shop for glass work — and half of them are trying to figure out whether to file a claim or pay cash before they even call. Every quality listing you appear in is another door to your shop. Our directory is purpose-built for auto glass — no clutter, just shops ready to help drivers now.",
+      body: "Drivers comparison-shop for glass work — and half of them are trying to figure out whether to file a claim or pay cash before they even call. Windshield Repair HQ is the directory we built and run for exactly that moment: purpose-built for auto glass, no clutter, just shops ready to help drivers now. Getting featured puts you in front of them.",
     },
     features: [
       {
@@ -334,12 +334,16 @@ export const servicesContent: Record<string, ServiceContent> = {
         a: "Never. Every inquiry from your listing goes directly to you. We're not in the lead-reselling business — we're in the keep-your-shop-busy business.",
       },
       {
-        q: "Can mobile-only shops get listed?",
-        a: "Yes. The directory supports service-area listings so mobile shops appear across every town they cover.",
+        q: "Can I see the directory before I sign up?",
+        a: "Please do — that's the whole point. Windshield Repair HQ is live at windshieldrepairhq.com. Search a city, see how it ranks, and see where your shop would stand. It's real, inspectable proof, not a mockup.",
+      },
+      {
+        q: "Can mobile-only shops get featured?",
+        a: "Yes. Windshield Repair HQ supports service-area listings, so mobile shops appear across every town they cover.",
       },
       {
         q: "How does this work with your other services?",
-        a: "The directory is a great add-on to SEO and ads — more places drivers can find you means more booked jobs. We'll help you choose the right mix on your growth call.",
+        a: "Featured placement is a great add-on to SEO and ads — more places drivers can find you means more booked jobs. We'll help you choose the right mix after your free audit.",
       },
     ],
   },
