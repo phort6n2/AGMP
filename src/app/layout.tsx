@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { MyWebAuditLoader } from "@/components/MyWebAuditLoader";
-import { site } from "@/lib/site";
+import { site, socialProfiles } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,7 +70,9 @@ const jsonLd = {
   areaServed: "United States",
   priceRange: "$$",
   slogan: site.tagline,
-  sameAs: Object.values(site.social),
+  // Omitted entirely until real profile URLs exist — an empty or placeholder
+  // sameAs misidentifies the entity.
+  ...(socialProfiles.length > 0 && { sameAs: socialProfiles }),
   knowsAbout: [
     "Auto glass marketing",
     "Local SEO",

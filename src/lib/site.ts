@@ -20,13 +20,20 @@ export const site = {
     shops: "300+",
     reach: "all 50 states",
   },
+  // Real profile URLs only — these feed schema.org `sameAs`, which search
+  // engines and LLMs use to resolve the AGMP entity. Placeholder or generic
+  // links (e.g. "https://facebook.com") assert the wrong identity, so empty
+  // values are filtered out instead. Fill each in as the profile goes live.
   social: {
-    facebook: "https://facebook.com",
-    twitter: "https://x.com",
-    youtube: "https://youtube.com",
-    linkedin: "https://linkedin.com",
+    facebook: "",
+    twitter: "",
+    youtube: "",
+    linkedin: "",
   },
 };
+
+/** Real social profile URLs, in a form safe to emit as schema.org `sameAs`. */
+export const socialProfiles = Object.values(site.social).filter(Boolean);
 
 export type NavItem = {
   label: string;
