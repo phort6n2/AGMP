@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { MyWebAuditLoader } from "@/components/MyWebAuditLoader";
+import { AuditConversion } from "@/components/AuditConversion";
 import { site, socialProfiles } from "@/lib/site";
 
 const inter = Inter({
@@ -106,6 +107,7 @@ export default function RootLayout({
         <Footer />
         <MobileCtaBar />
         <MyWebAuditLoader />
+        <AuditConversion />
       </body>
     </html>
   );
