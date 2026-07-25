@@ -3,16 +3,36 @@
 import { useEffect, useState } from "react";
 import { IconSparkle, IconShield } from "./Icons";
 
+type Props = {
+  /** MyWebAudit widget key. Defaults to the GBP marketing audit (925479). */
+  widgetKey?: string;
+  /** Header title inside the branded frame. */
+  title?: string;
+  /** Header subtitle. */
+  subtitle?: string;
+  /** Small pill in the header (hidden on mobile). */
+  badge?: string;
+  /** Loading message. */
+  loadingLabel?: string;
+};
+
 /**
- * MyWebAudit lead widget (key 925479) — the audit tool from the current site,
- * wrapped in a branded frame (dark header/footer + white tool body) so the
- * third-party form sits cleanly inside the dark design. The widget's own
- * styling is controlled in the MyWebAudit dashboard.
+ * MyWebAudit lead widget, wrapped in a branded frame (dark header/footer)
+ * so the third-party form sits cleanly inside the dark design. The widget's
+ * own styling is controlled in the MyWebAudit dashboard.
  *
  * Loads mywebaudit.com/w/js/lead-widget.js and re-injects on mount so it also
- * initializes on client-side navigation into /audit.
+ * initializes on client-side navigation into the page. Parameterized by
+ * `widgetKey` so the same frame powers both the GBP marketing audit (/audit)
+ * and the AI Visibility audit (Local SEO page).
  */
-export function MyWebAuditWidget() {
+export function MyWebAuditWidget({
+  widgetKey = "925479",
+  title = "Free Auto Glass Marketing Audit",
+  subtitle = "Takes about 60 seconds",
+  badge = "No cost",
+  loadingLabel = "Loading your free audit tool…",
+}: Props) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -24,7 +44,7 @@ export function MyWebAuditWidget() {
     document.body.appendChild(j);
     const t = setTimeout(() => setReady(true), 1500);
     return () => clearTimeout(t);
-  }, []);
+  }, [widgetKey]);
 
   return (
     <div className="relative">
@@ -40,18 +60,16 @@ export function MyWebAuditWidget() {
               <IconSparkle className="h-4 w-4" />
             </span>
             <div className="leading-tight">
-              <div className="text-sm font-semibold text-white">
-                Free Auto Glass Marketing Audit
-              </div>
-              <div className="text-[11px] text-ink-400">
-                Takes about 60 seconds
-              </div>
+              <div className="text-sm font-semibold text-white">{title}</div>
+              <div className="text-[11px] text-ink-400">{subtitle}</div>
             </div>
           </div>
-          <span className="hidden items-center gap-1.5 rounded-full border border-white/10 px-2.5 py-1 text-[11px] font-medium text-ink-300 sm:flex">
-            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-            No cost
-          </span>
+          {badge && (
+            <span className="hidden items-center gap-1.5 rounded-full border border-white/10 px-2.5 py-1 text-[11px] font-medium text-ink-300 sm:flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+              {badge}
+            </span>
+          )}
         </div>
 
         {/* tool body — the MyWebAudit widget brings its own card, so keep this
@@ -60,15 +78,13 @@ export function MyWebAuditWidget() {
           {!ready && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
               <span className="h-8 w-8 animate-spin rounded-full border-2 border-white/15 border-t-glass-300" />
-              <p className="text-sm text-ink-400">
-                Loading your free audit tool…
-              </p>
+              <p className="text-sm text-ink-400">{loadingLabel}</p>
             </div>
           )}
           <div
             role="main"
-            id="mwa-key-925479"
-            data-key="925479"
+            id={`mwa-key-${widgetKey}`}
+            data-key={widgetKey}
             className="mwa-widget-container w-full"
           />
         </div>

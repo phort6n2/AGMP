@@ -1,5 +1,6 @@
 import { Container, Eyebrow } from "./ui";
 import { IconSparkle, IconCheck } from "./Icons";
+import { MyWebAuditWidget } from "./MyWebAuditWidget";
 
 const surfaces = [
   { name: "ChatGPT", desc: "The assistant millions now ask first" },
@@ -107,6 +108,29 @@ export function AiVisibility() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Free AI Visibility check — turns the pitch into a lead-capture moment */}
+        <div className="mx-auto mt-12 max-w-2xl text-center">
+          <Eyebrow>Free AI visibility check</Eyebrow>
+          <h3 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
+            Curious what AI says about your shop{" "}
+            <span className="text-gradient">right now?</span>
+          </h3>
+          <p className="mt-3 text-ink-300">
+            Run a free 60-second check to see whether ChatGPT, Google&apos;s AI,
+            and the other assistants can find and recommend your shop — or if
+            they&apos;re sending your customers to a competitor.
+          </p>
+        </div>
+        <div className="mx-auto mt-8 max-w-xl">
+          <MyWebAuditWidget
+            widgetKey="f20501"
+            title="Free AI Visibility Check"
+            subtitle="See if AI recommends your shop"
+            badge="60 seconds"
+            loadingLabel="Loading your AI visibility check…"
+          />
         </div>
       </Container>
     </section>
