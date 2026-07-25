@@ -16,9 +16,36 @@ or trust with consumers (drivers).
 > shop owners backfires — this audience is burned and hypersensitive to "who's really
 > behind this." Disclosing it at the moment they're deciding to spend money builds trust.
 
-AGMP's live audit tool (the shared handoff point) is a **MyWebAudit lead widget, key
-`925479`**, embedded on AGMP at `/audit`. When WRHQ needs to send a shop into the AGMP
-funnel, link to `https://autoglassmarketingpros.com/audit`.
+---
+
+## 0. The handoff link — use this exact URL
+
+**AGMP has built a dedicated landing page for WRHQ traffic: `/rank`.** Do not link shops
+to `/audit` directly — `/rank` continues the rank-reveal narrative, then hands off to the
+audit itself. Sending them to `/audit` restarts the pitch and loses the moment.
+
+```
+https://autoglassmarketingpros.com/rank?rank=7&of=23&city=Denver&shop=Rocky%20Mountain%20Glass
+```
+
+| Param  | Required | Purpose |
+|--------|----------|---------|
+| `rank` | strongly recommended | The shop's position in its city. Drives the headline and the visual. |
+| `of`   | optional | Total shops in that city — renders as "of 23". |
+| `city` | recommended | Personalizes headline and visual ("Auto glass shops in Denver"). |
+| `shop` | optional | Shop name, used in the opening line. |
+
+The page handles three cases automatically:
+- **rank 1–3** → "You're in the top 3 in [City]. Now hold it." (retention angle)
+- **rank 4+** → "You're #7 in [City]. Here's what that's costing you." (the wedge)
+- **no params** → a clean generic fallback, so a bare link still works
+
+It carries `utm_source=windshieldrepairhq` through to the audit automatically, so AGMP can
+attribute conversions back to WRHQ instead of seeing them as direct traffic. **Pass the
+params and the attribution is handled — no tagging work needed on the WRHQ side.**
+
+Sanity-check any link you build by opening it; if the headline doesn't show the rank, the
+param name is wrong.
 
 ---
 
@@ -42,9 +69,15 @@ outbound list):
 Immediately after claim, show the shop **its current rank position within its city on
 WRHQ** and a one-line gap framed as lost jobs, e.g.:
 > **You're #7 of 9 auto glass shops in [City].**
-> The top 3 shops get roughly 75% of the driver clicks. Want to see exactly why — and
-> the fastest way to move up?
-> **[ Run my free 60-second audit → ]** → links to `https://autoglassmarketingpros.com/audit`
+> The top 3 shops get the overwhelming majority of driver clicks. Want to see exactly
+> why — and the fastest way to move up?
+> **[ Run my free 60-second audit → ]**
+> → links to `https://autoglassmarketingpros.com/rank?rank=7&of=9&city=[City]` (see §0)
+
+**On stats:** say "the overwhelming majority" rather than inventing a precise figure like
+"75%." Shop owners have been lied to with fake numbers by every agency that called them —
+a directionally true claim you can defend beats a specific one you can't. This matters more
+than it sounds; it's the whole trust position.
 
 This screen is the moment the two sites finally touch. Make the CTA prominent.
 
@@ -107,11 +140,33 @@ every market. Systematize it:
   status (claimed vs unclaimed), tier (free/featured/managed). This powers AGMP's cold
   outbound ("you're #X in [City]") and the nurture sequences.
 - **Lead events → AGMP:** when a shop claims a listing or clicks "run my audit," send an
-  event (webhook) to AGMP so the Day 0–10 nurture sequence can start. AGMP's audit tool is
-  MyWebAudit key `925479`.
+  event (webhook) to AGMP so the Day 0–10 nurture sequence can start.
+- **AGMP's audit stack (current):** the shop-facing capture is MyWebAudit. Key `925479` is
+  the Google Business Profile audit embedded at `/audit`; key `f20501` is an AI Visibility
+  modal that fires on exit-intent site-wide. WRHQ does **not** need to embed either — just
+  link to `/rank` per §0 and AGMP handles capture. Do not duplicate the widgets on WRHQ;
+  that would split lead data across two dashboards.
 - Keep AGMP's promise consistent: **never resell or share consumer leads between shops** —
   directory inquiries go directly to the one listed shop. It's a genuine differentiator;
   don't undercut it.
+
+---
+
+## 4b. AGMP pages you can link to (shop-owner side only)
+
+These exist and are live. Linking to them is better than re-explaining AGMP on WRHQ —
+it keeps the sales argument in one place and keeps WRHQ's own copy short.
+
+| URL | What it is | Use it when |
+|-----|-----------|-------------|
+| `/rank` | The rank-reveal landing page (see §0) | **The primary handoff.** Every "improve my ranking" CTA. |
+| `/framework` | The Auto Glass Marketing Framework™ — a four-stage methodology (Invisible → Visible → Growing → Dominant) with the symptoms, bottleneck and fix for each stage | A shop owner who wants to understand the *approach* before talking to anyone. Strong trust asset — link it from the Free/Featured/Managed table. |
+| `/framework#invisible` … `#dominant` | Deep links to a single stage | You can send a shop straight to the stage matching their rank: rank 4+ → `#visible`, unranked → `#invisible`. |
+| `/services/directory` | AGMP's "Directory Placement" service page — describes being featured on WRHQ | The "what does Featured actually get me" question. |
+| `/audit` | The audit itself | Only if you need a bare audit link with no rank context. Prefer `/rank`. |
+
+**Do not link any of these from consumer-facing pages.** They're all AGMP-branded and
+would break the directory's neutrality. Shop-owner areas only.
 
 ---
 
@@ -135,7 +190,8 @@ every market. Systematize it:
 ---
 
 ## Priority order for the WRHQ build
-1. Claim form (expanded capture) + **rank-reveal confirmation screen** linking to AGMP `/audit`.
+1. Claim form (expanded capture) + **rank-reveal confirmation screen** linking to AGMP
+   `/rank` with rank params (see §0).
 2. "For shop owners" page: AGMP disclosure + Free/Featured/Managed table.
 3. Rank history storage + "you got passed" trigger.
 4. Shop database export/API + lead webhooks to AGMP.
