@@ -54,12 +54,13 @@ export function MyWebAuditWidget() {
           </span>
         </div>
 
-        {/* white tool body — houses the MyWebAudit widget */}
-        <div className="relative min-h-[520px] bg-white p-3 sm:p-4">
+        {/* tool body — the MyWebAudit widget brings its own card, so keep this
+            surface transparent (no double-boxing) and let it sit in the panel */}
+        <div className="relative flex min-h-[520px] items-start justify-center p-3 sm:p-4">
           {!ready && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
-              <span className="h-8 w-8 animate-spin rounded-full border-2 border-slate-200 border-t-slate-500" />
-              <p className="text-sm text-slate-500">
+              <span className="h-8 w-8 animate-spin rounded-full border-2 border-white/15 border-t-glass-300" />
+              <p className="text-sm text-ink-400">
                 Loading your free audit tool…
               </p>
             </div>
@@ -68,7 +69,7 @@ export function MyWebAuditWidget() {
             role="main"
             id="mwa-key-925479"
             data-key="925479"
-            className="mwa-widget-container"
+            className="mwa-widget-container w-full"
           />
         </div>
 
