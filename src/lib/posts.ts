@@ -7,6 +7,8 @@ export type Post = {
   readingTime: string;
   /** Contextual internal link to the most relevant service page. */
   relatedService?: { slug: string; anchor: string };
+  /** Contextual internal link to a non-service page (e.g. the framework). */
+  relatedGuide?: { href: string; anchor: string };
   /** Body as an array of blocks for simple, safe rendering. */
   body: Block[];
 };
@@ -174,6 +176,10 @@ export const posts: Post[] = [
     date: "2026-04-22",
     readingTime: "4 min read",
     relatedService: { slug: "local-seo", anchor: "auto glass Local SEO service" },
+    relatedGuide: {
+      href: "/framework",
+      anchor: "the full Auto Glass Marketing Framework",
+    },
     body: [
       {
         type: "p",
@@ -205,7 +211,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "Want to know which stage your shop is in — and exactly what the next step looks like? That's what our free growth call is for.",
+        text: "Want to know which stage your shop is in — and exactly what the next step looks like? That's what the free audit is for.",
       },
     ],
   },

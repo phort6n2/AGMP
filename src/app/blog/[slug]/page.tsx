@@ -200,8 +200,40 @@ export default async function PostPage({
                 </div>
               )}
 
+              {/* Contextual internal links — keeps topical relevance flowing to
+                  the service and methodology pages this article supports. */}
+              {(post.relatedService || post.relatedGuide) && (
+                <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
+                    Keep reading
+                  </h3>
+                  <ul className="mt-3 space-y-2">
+                    {post.relatedGuide && (
+                      <li>
+                        <Link
+                          href={post.relatedGuide.href}
+                          className="inline-flex items-center gap-2 text-glass-200 underline decoration-glass-300/40 underline-offset-2 hover:text-white"
+                        >
+                          Explore {post.relatedGuide.anchor}
+                        </Link>
+                      </li>
+                    )}
+                    {post.relatedService && (
+                      <li>
+                        <Link
+                          href={`/services/${post.relatedService.slug}`}
+                          className="inline-flex items-center gap-2 text-glass-200 underline decoration-glass-300/40 underline-offset-2 hover:text-white"
+                        >
+                          Learn about our {post.relatedService.anchor}
+                        </Link>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              )}
+
               {/* Inline CTA */}
-              <div className="mt-12 rounded-2xl border border-glass-300/20 bg-glass-500/5 p-7 text-center">
+              <div className="mt-8 rounded-2xl border border-glass-300/20 bg-glass-500/5 p-7 text-center">
                 <h3 className="font-display text-xl font-bold text-white">
                   Want this handled for your shop?
                 </h3>

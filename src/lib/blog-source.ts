@@ -13,6 +13,8 @@ export type Article = {
   readingTime: string;
   image?: string;
   relatedService?: { slug: string; anchor: string };
+  /** Contextual internal link to a non-service page (e.g. the framework). */
+  relatedGuide?: { href: string; anchor: string };
   /** Rendered HTML (external articles, e.g. BabyLoveGrowth). */
   html?: string;
   /** Structured blocks (static posts). */

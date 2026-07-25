@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container, SectionHeading, Button } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
@@ -88,8 +89,14 @@ export default function ReviewsPage() {
               <span className="font-semibold text-white">
                 Straight with you:
               </span>{" "}
-              the stories below illustrate the outcomes our framework is
-              designed to deliver. As shops opt in to be featured, we&apos;ll
+              the stories below illustrate the outcomes{" "}
+              <Link
+                href="/framework"
+                className="font-medium text-glass-200 underline decoration-glass-300/40 underline-offset-2 hover:text-white"
+              >
+                our framework
+              </Link>{" "}
+              is designed to deliver. As shops opt in to be featured, we&apos;ll
               replace them with named, verifiable reviews — because honest
               reporting is the whole point.
             </p>
