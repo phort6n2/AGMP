@@ -11,6 +11,9 @@ type Props = {
   badge?: string;
   /** Loading message. */
   loadingLabel?: string;
+  /** Minimum height (px) of the tool body — the frame grows past this to fit
+   *  the form, so shorter forms don't leave a void. */
+  minHeight?: number;
 };
 
 /**
@@ -27,6 +30,7 @@ export function MyWebAuditWidget({
   widgetKey = "925479",
   badge = "No cost",
   loadingLabel = "Loading your free audit tool…",
+  minHeight = 520,
 }: Props) {
   const [ready, setReady] = useState(false);
 
@@ -65,7 +69,10 @@ export function MyWebAuditWidget({
 
         {/* tool body — the MyWebAudit widget brings its own card, so keep this
             surface transparent (no double-boxing) and let it sit in the panel */}
-        <div className="relative flex min-h-[520px] items-start justify-center p-3 sm:p-4">
+        <div
+          className="relative flex items-start justify-center p-3 sm:p-4"
+          style={{ minHeight }}
+        >
           {!ready && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
               <span className="h-8 w-8 animate-spin rounded-full border-2 border-white/15 border-t-glass-300" />

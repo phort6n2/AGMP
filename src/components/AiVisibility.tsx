@@ -135,6 +135,7 @@ export function AiVisibility() {
                 widgetKey={INLINE_AV_KEY}
                 badge="60 seconds"
                 loadingLabel="Loading your AI visibility check…"
+                minHeight={300}
               />
             </div>
           </>
