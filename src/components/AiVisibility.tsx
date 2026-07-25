@@ -4,7 +4,7 @@ import { MyWebAuditWidget } from "./MyWebAuditWidget";
 
 // Inline AI Visibility widget key from MyWebAudit. Set this once the inline
 // (non-modal) widget is created and the block below goes live automatically.
-const INLINE_AV_KEY = "";
+const INLINE_AV_KEY = "9ac9e4";
 
 const surfaces = [
   { name: "ChatGPT", desc: "The assistant millions now ask first" },
