@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { services, site } from "@/lib/site";
 import { IconMessage } from "./Icons";
 
@@ -29,6 +32,12 @@ const cols = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // The /audit page uses its own minimal footer (no nav) to stay focused
+  // on a single conversion path.
+  if (pathname === "/audit" || pathname.startsWith("/audit/")) return null;
+
   return (
     <footer className="relative border-t border-white/5 bg-ink-950">
       <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">

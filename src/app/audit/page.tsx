@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui";
 import { MyWebAuditWidget } from "@/components/MyWebAuditWidget";
-import { IconCheck, IconChart, IconMessage, IconShield } from "@/components/Icons";
+import { AuditHeader } from "@/components/AuditHeader";
+import { AuditFooter } from "@/components/AuditFooter";
+import { IconCheck, IconChart, IconShield } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -44,8 +46,11 @@ const steps = [
 export default function AuditPage() {
   return (
     <>
+      {/* Minimal header — logo only, returns to the home page */}
+      <AuditHeader />
+
       {/* Hero + tool */}
-      <section className="relative overflow-hidden pt-28 pb-16 sm:pt-36">
+      <section className="relative overflow-hidden pt-24 pb-16 sm:pt-28">
         <div className="bg-grid pointer-events-none absolute inset-0 opacity-50" />
         <div className="bg-radial-glow pointer-events-none absolute inset-0" />
         <Container className="relative">
@@ -76,13 +81,6 @@ export default function AuditPage() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={site.smsHref}
-                className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-ink-200 hover:text-white"
-              >
-                <IconMessage className="h-4 w-4 text-glass-300" />
-                Prefer to text? {site.phone} — we reply fast
-              </a>
             </div>
 
             {/* MyWebAudit lead widget (key 925479) — the real audit tool. */}
@@ -156,6 +154,9 @@ export default function AuditPage() {
           </div>
         </Container>
       </section>
+
+      {/* Minimal footer — no navigation, keeps the page focused */}
+      <AuditFooter />
     </>
   );
 }

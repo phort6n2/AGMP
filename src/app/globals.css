@@ -129,6 +129,18 @@ body {
   background: rgba(56, 189, 248, 0.3);
 }
 
+/* Center the MyWebAudit widget's injected card within its container */
+.mwa-widget-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.mwa-widget-container > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Rendered article HTML (e.g. BabyLoveGrowth auto-posts) — dark prose */
 .article-prose {
   color: var(--color-ink-200);

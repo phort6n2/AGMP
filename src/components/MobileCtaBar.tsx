@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
 import { IconMessage, IconArrow } from "./Icons";
 
@@ -8,6 +11,11 @@ import { IconMessage, IconArrow } from "./Icons";
  * primary conversion paths one thumb-tap away on every page.
  */
 export function MobileCtaBar() {
+  const pathname = usePathname();
+
+  // Hidden on /audit so the only actions there are the form and the logo.
+  if (pathname === "/audit" || pathname.startsWith("/audit/")) return null;
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-ink-950/95 backdrop-blur-xl lg:hidden">
       <div className="grid grid-cols-2 gap-2 p-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))]">

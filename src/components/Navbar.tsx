@@ -25,6 +25,10 @@ export function Navbar() {
     setServicesOpen(false);
   }, [pathname]);
 
+  // The /audit page uses its own minimal header (logo only) so the sole
+  // conversion path is the form — hide the full site nav there.
+  if (pathname === "/audit" || pathname.startsWith("/audit/")) return null;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
