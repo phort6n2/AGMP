@@ -25,10 +25,10 @@ export const site = {
   // links (e.g. "https://facebook.com") assert the wrong identity, so empty
   // values are filtered out instead. Fill each in as the profile goes live.
   social: {
-    facebook: "",
-    twitter: "",
-    youtube: "",
-    linkedin: "",
+    facebook: "https://www.facebook.com/autoglassmarketingpros",
+    twitter: "https://x.com/autoglassppc",
+    youtube: "https://www.youtube.com/@autoglassmarketingpros",
+    poyst: "https://www.poyst.com/business/auto-glass-marketing-pros",
   },
 };
 
@@ -68,10 +68,12 @@ export const nav: NavItem[] = [
       },
     ],
   },
+  { label: "Framework", href: "/framework" },
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
   { label: "Resources", href: "/blog" },
-  { label: "Free Audit", href: "/audit" },
+  // "Free Audit" is intentionally absent — the navbar renders it as a CTA
+  // button beside the nav, so listing it here duplicated the link.
 ];
 
 export type Service = {

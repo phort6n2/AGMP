@@ -16,6 +16,7 @@ const cols = [
   {
     heading: "Company",
     links: [
+      { label: "The Framework", href: "/framework" },
       { label: "About", href: "/about" },
       { label: "Reviews", href: "/reviews" },
       { label: "Resources", href: "/blog" },

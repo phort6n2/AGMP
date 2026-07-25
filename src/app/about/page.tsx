@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container, SectionHeading, Button, Eyebrow } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
-import { IconCheck, IconShield, IconChart, IconClock, IconBolt, IconMessage } from "@/components/Icons";
+import { IconCheck, IconShield, IconChart, IconClock, IconBolt, IconMessage, IconArrow } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -57,6 +58,8 @@ const timeline = [
     year: "Today",
     title: "The Auto Glass Marketing Framework™",
     body: "A repeatable system that moves shops from invisible to fully booked across Maps, search, ads, and AI — measured by paying jobs, nothing else.",
+    href: "/framework",
+    linkLabel: "See how the framework works",
   },
 ];
 
@@ -206,6 +209,15 @@ export default function AboutPage() {
                     {t.title}
                   </h3>
                   <p className="mt-2 leading-relaxed text-ink-300">{t.body}</p>
+                  {t.href && (
+                    <Link
+                      href={t.href}
+                      className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-glass-300 hover:text-white"
+                    >
+                      {t.linkLabel}
+                      <IconArrow className="h-3.5 w-3.5" />
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

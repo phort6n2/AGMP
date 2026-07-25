@@ -275,6 +275,11 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="mt-12 text-center">
+            <Button href="/framework" variant="outline" size="lg" withArrow>
+              Explore the full framework
+            </Button>
+          </div>
         </Container>
       </section>
 
