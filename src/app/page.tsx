@@ -318,6 +318,14 @@ export default function Home() {
       <section className="py-16">
         <Container>
           <div className="glass-card mx-auto max-w-3xl rounded-3xl p-8 text-center sm:p-12">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/founder.webp"
+              alt={`${site.owner}, founder of ${site.name}`}
+              width={860}
+              height={860}
+              className="mx-auto mb-6 h-16 w-16 rounded-full border border-white/15 object-cover"
+            />
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-glass-300">
               The only result we count
             </p>

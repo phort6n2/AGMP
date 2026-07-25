@@ -137,21 +137,14 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20">
         <Container>
           <div className="glass-card grid gap-8 rounded-3xl p-8 sm:p-10 lg:grid-cols-[300px_1fr] lg:items-center">
-            {/*
-              FOUNDER PHOTO SLOT — drop a real photo at /public/founder.jpg and
-              replace this placeholder block with:
-              <img src="/founder.jpg" alt="Matt Lubbes, founder" className="aspect-square w-full rounded-2xl object-cover" />
-              A real, casual shot (in a shop / by a windshield) beats a stock headshot.
-            */}
-            <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-ink-700 to-ink-850 lg:w-full">
-              <div className="bg-radial-glow pointer-events-none absolute inset-0" />
-              <div className="relative flex h-full flex-col items-center justify-center gap-2">
-                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-glass-400 to-glass-600 font-display text-2xl font-extrabold text-ink-950">
-                  ML
-                </span>
-                <span className="text-xs text-ink-500">Photo coming soon</span>
-              </div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/founder.webp"
+              alt={`${site.owner}, founder of ${site.name}`}
+              width={860}
+              height={860}
+              className="mx-auto aspect-square w-56 rounded-2xl border border-white/10 object-cover shadow-card lg:w-full"
+            />
 
             <div>
               <Eyebrow>Meet the founder</Eyebrow>

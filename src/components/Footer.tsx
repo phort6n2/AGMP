@@ -90,10 +90,15 @@ export function Footer() {
             <Link href="/terms" className="hover:text-ink-300">
               Terms
             </Link>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-2.5 py-1">
+            <a
+              href="https://www.google.com/partners/agency?id=9428693803"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-2.5 py-1 transition-colors hover:border-glass-300/40 hover:text-ink-200"
+            >
               <span className="h-1.5 w-1.5 rounded-full bg-signal" />
               Google Partner
-            </span>
+            </a>
           </div>
         </div>
       </div>
