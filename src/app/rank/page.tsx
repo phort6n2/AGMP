@@ -49,9 +49,24 @@ export default async function RankPage({
 
   // Carry directory attribution into the audit so conversions are traceable
   // back to Windshield Repair HQ rather than looking like direct traffic.
-  const auditHref = `/audit?utm_source=windshieldrepairhq&utm_medium=referral&utm_campaign=rank-reveal${
-    rank ? `&rank=${rank}` : ""
-  }${city ? `&city=${encodeURIComponent(city)}` : ""}`;
+  //
+  // rank and city ride in utm_term / utm_content on purpose: MyWebAudit
+  // natively captures the five standard utm_* params and submits them WITH the
+  // lead, so the CRM receives attribution already joined to the shop's name and
+  // email. A separate webhook would arrive with nothing to match on. The values
+  // are kept raw ("7", "Denver") so they merge straight into messages —
+  // "You're #{{utm_term}} in {{utm_content}}".
+  const auditParams = new URLSearchParams({
+    utm_source: "windshieldrepairhq",
+    utm_medium: "referral",
+    utm_campaign: "rank-reveal",
+  });
+  if (rank) auditParams.set("utm_term", String(rank));
+  if (city) auditParams.set("utm_content", city);
+  // Kept for our own /api/lead listener and for readability in analytics.
+  if (rank) auditParams.set("rank", String(rank));
+  if (city) auditParams.set("city", city);
+  const auditHref = `/audit?${auditParams.toString()}`;
 
   const inTop3 = typeof rank === "number" && rank <= 3;
 
