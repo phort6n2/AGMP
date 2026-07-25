@@ -1,15 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { IconSparkle, IconShield } from "./Icons";
+import { IconShield } from "./Icons";
+import { site } from "@/lib/site";
 
 type Props = {
   /** MyWebAudit widget key. Defaults to the GBP marketing audit (925479). */
   widgetKey?: string;
-  /** Header title inside the branded frame. */
-  title?: string;
-  /** Header subtitle. */
-  subtitle?: string;
   /** Small pill in the header (hidden on mobile). */
   badge?: string;
   /** Loading message. */
@@ -28,8 +25,6 @@ type Props = {
  */
 export function MyWebAuditWidget({
   widgetKey = "925479",
-  title = "Free Auto Glass Marketing Audit",
-  subtitle = "Takes about 60 seconds",
   badge = "No cost",
   loadingLabel = "Loading your free audit tool…",
 }: Props) {
@@ -53,17 +48,16 @@ export function MyWebAuditWidget({
       <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-amber-500/15 blur-3xl" />
 
       <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-ink-850 shadow-card">
-        {/* header */}
+        {/* header — brand logo only, so the form's own heading isn't duplicated */}
         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-glass-500/15 text-glass-300 ring-1 ring-glass-300/20">
-              <IconSparkle className="h-4 w-4" />
-            </span>
-            <div className="leading-tight">
-              <div className="text-sm font-semibold text-white">{title}</div>
-              <div className="text-[11px] text-ink-400">{subtitle}</div>
-            </div>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-white.png"
+            alt={site.name}
+            width={500}
+            height={200}
+            className="h-7 w-auto sm:h-8"
+          />
           {badge && (
             <span className="hidden items-center gap-1.5 rounded-full border border-white/10 px-2.5 py-1 text-[11px] font-medium text-ink-300 sm:flex">
               <span className="h-1.5 w-1.5 rounded-full bg-signal" />

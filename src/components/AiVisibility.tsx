@@ -126,8 +126,6 @@ export function AiVisibility() {
         <div className="mx-auto mt-8 max-w-xl">
           <MyWebAuditWidget
             widgetKey="f20501"
-            title="Free AI Visibility Check"
-            subtitle="See if AI recommends your shop"
             badge="60 seconds"
             loadingLabel="Loading your AI visibility check…"
           />
