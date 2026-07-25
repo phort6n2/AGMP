@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
+import { MyWebAuditLoader } from "@/components/MyWebAuditLoader";
 import { site } from "@/lib/site";
 
 const inter = Inter({
@@ -102,6 +103,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <MobileCtaBar />
+        <MyWebAuditLoader />
       </body>
     </html>
   );

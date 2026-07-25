@@ -30,13 +30,10 @@ export function MyWebAuditWidget({
 }: Props) {
   const [ready, setReady] = useState(false);
 
+  // The MWA script is loaded site-wide by <MyWebAuditLoader/> (which re-injects
+  // on navigation and re-runs MWA's widget scan), so here we only drive the
+  // loading spinner while the injected form initializes.
   useEffect(() => {
-    document.getElementById("mwa-script")?.remove();
-    const j = document.createElement("script");
-    j.async = true;
-    j.id = "mwa-script";
-    j.src = "https://www.mywebaudit.com/w/js/lead-widget.js?t=" + Date.now();
-    document.body.appendChild(j);
     const t = setTimeout(() => setReady(true), 1500);
     return () => clearTimeout(t);
   }, [widgetKey]);
