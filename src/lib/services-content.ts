@@ -197,6 +197,10 @@ export const servicesContent: Record<string, ServiceContent> = {
         a: "Ongoing. The page gets reworked as we learn — headlines, offers, form length, which trust signals earn the call. Campaigns and landing page get optimized together every month, because a change to one affects the other.",
       },
       {
+        q: "What happens to the landing page if I cancel?",
+        a: "You can keep it. If you stop ads with us but want the page to stay live, we'll keep hosting it for a small monthly fee — no penalty, no renegotiation, and it keeps sending you calls. We'd rather you keep something that works than watch it get switched off to make a point. And your ad account, your data, and your website were always yours to begin with.",
+      },
+      {
         q: "How much should I budget for ads?",
         a: "It depends on your market and the value of a job in your area. Start with the free audit and we'll recommend an ad budget based on what it actually takes to compete where you are — and we'll never push you to overspend.",
       },
