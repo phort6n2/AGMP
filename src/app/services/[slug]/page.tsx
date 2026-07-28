@@ -10,6 +10,7 @@ import {
   iconMap,
 } from "@/components/Icons";
 import { AiVisibility } from "@/components/AiVisibility";
+import { AdsLandingPage } from "@/components/AdsLandingPage";
 import { DirectoryProof } from "@/components/DirectoryProof";
 import { servicesContent, serviceSlugs } from "@/lib/services-content";
 import { services, site } from "@/lib/site";
@@ -165,6 +166,7 @@ export default async function ServiceDetailPage({
 
       {/* AI/LLM visibility highlight — Local SEO only */}
       {slug === "local-seo" && <AiVisibility />}
+      {slug === "google-ads" && <AdsLandingPage />}
       {slug === "directory" && <DirectoryProof />}
 
       {/* Features */}

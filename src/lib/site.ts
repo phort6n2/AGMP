@@ -104,7 +104,7 @@ export const services: Service[] = [
     icon: "target",
     tagline: "Pay for booked jobs, not busy work.",
     summary:
-      "Tightly targeted paid search campaigns that put your shop at the top the moment someone searches 'windshield replacement near me' — engineered for phone calls, not clicks.",
+      "Tightly targeted paid search campaigns that put your shop at the top the moment someone searches 'windshield replacement near me' — engineered for phone calls, not clicks. Includes a dedicated landing page we build, host, and keep optimizing.",
   },
   {
     slug: "web-design",

@@ -119,7 +119,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       "Google Ads for auto glass shops, engineered for phone calls — not clicks. High-intent targeting that fills your calendar with booked jobs.",
     hero: "Put your shop at the top the moment a driver is ready to book.",
     heroSub:
-      "Paid search is the fastest way to fill your calendar. We build tightly targeted campaigns that show up for high-intent searches and are engineered for one thing: phone calls from drivers who need glass work now.",
+      "Paid search is the fastest way to fill your calendar. We build tightly targeted campaigns engineered for one thing: phone calls from drivers who need glass work now. And we don't just run the ads — we build, host, and continually optimize a dedicated landing page for them to land on, included.",
     problem: {
       title: "Most auto glass shops are lighting ad budget on fire — and can't even see it.",
       body: "Broad keywords, no call tracking, and generic landing pages burn budget on clicks that never book. We do the opposite — surgical targeting, tight negative keyword lists, and conversion-first landing pages so every dollar works toward a job.",
@@ -142,12 +142,12 @@ export const servicesContent: Record<string, ServiceContent> = {
         body: "Show up only in your service area, during your hours, and weighted toward the zip codes where you can actually route a van without deadheading an hour each way — so your mobile techs stay billable, not stuck in traffic.",
       },
       {
-        title: "Landing pages built to book",
-        body: "Fast, mobile-first pages with trust signals and instant quote forms — not your homepage, a page built to convert the ad click.",
+        title: "A dedicated landing page — built, hosted & included",
+        body: "Not your homepage, and not a page you have to build. We create a separate, purpose-built page for your ad traffic, host it, and keep tuning it. Your existing website stays exactly as it is.",
       },
       {
-        title: "Ongoing optimization",
-        body: "We prune wasted spend, test ad copy, and shift budget to the campaigns booking the most jobs.",
+        title: "Ongoing optimization — ads and page",
+        body: "This isn't a one-time build. We prune wasted spend, test ad copy, and keep reworking the landing page — headlines, offers, form length — based on what's actually booking jobs.",
       },
     ],
     steps: [
@@ -156,12 +156,16 @@ export const servicesContent: Record<string, ServiceContent> = {
         body: "We map your service area, margins, and goals, then build the campaign structure and tracking around them.",
       },
       {
+        title: "Build & host your landing page",
+        body: "Before a dollar is spent, we build the page your ad clicks will land on — fast, mobile-first, one-tap calling — and host it. Nothing to install, and no changes to your existing site.",
+      },
+      {
         title: "Launch high-intent campaigns",
         body: "Ads go live targeting ready-to-book searches with tight geo and negative keyword control.",
       },
       {
-        title: "Optimize for calls",
-        body: "We watch which keywords and ads produce real phone calls and double down on the winners.",
+        title: "Optimize for calls — every month",
+        body: "We watch which keywords, ads, and page versions produce real phone calls, then double down on the winners. Ongoing, not a one-time setup.",
       },
       {
         title: "Scale profitably",
@@ -170,14 +174,31 @@ export const servicesContent: Record<string, ServiceContent> = {
     ],
     outcomes: [
       "Top-of-page visibility for ready-to-book searches",
+      "A dedicated landing page — built, hosted, and optimized for you",
       "More qualified phone calls, less wasted spend",
       "Clear cost-per-job you can actually trust",
       "Budget that scales with your capacity",
     ],
     faqs: [
       {
+        q: "Do I need a new website for this?",
+        a: "No. The landing page is separate from your website and doesn't touch it. We build it, we host it, and it lives at its own address purpose-built to convert ad clicks. Your site keeps doing its job; the landing page does this one. If you'd also like your main website rebuilt, that's our Web Design service — but it isn't required to run ads with us.",
+      },
+      {
+        q: "Is the landing page an extra cost?",
+        a: "No — building it, hosting it, and optimizing it over time are all part of Google Ads management. We don't bill it separately, because ads without a page built to convert are how budget gets wasted in the first place.",
+      },
+      {
+        q: "Why not just send ad traffic to my homepage?",
+        a: "A homepage is built to inform everyone; a landing page is built to get one specific person to take one specific action. Sending paid clicks to a homepage gives a driver ten things to look at when they only wanted to call you. It also costs you money directly — Google factors landing page experience into Quality Score, so a faster, more relevant page usually means a lower cost per click for the same position.",
+      },
+      {
+        q: "Is this a one-time build or ongoing?",
+        a: "Ongoing. The page gets reworked as we learn — headlines, offers, form length, which trust signals earn the call. Campaigns and landing page get optimized together every month, because a change to one affects the other.",
+      },
+      {
         q: "How much should I budget for ads?",
-        a: "It depends on your market and the value of a job in your area. On your free growth call we'll recommend an ad budget based on what it actually takes to compete where you are — and we'll never push you to overspend.",
+        a: "It depends on your market and the value of a job in your area. Start with the free audit and we'll recommend an ad budget based on what it actually takes to compete where you are — and we'll never push you to overspend.",
       },
       {
         q: "How fast will the phone ring?",
