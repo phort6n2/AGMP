@@ -59,6 +59,10 @@ export const servicesContent: Record<string, ServiceContent> = {
         body: "A simple, automated way to earn more 5-star reviews — the single biggest lever for local ranking and trust.",
       },
       {
+        title: "Photos that never go stale",
+        body: "The real install shots your techs post to your Google profile get synced to your website automatically, every week — fresh proof for drivers, fresh signals for Google, zero work for you.",
+      },
+      {
         title: "Citations & consistency",
         body: "Accurate name, address, and phone across every directory that matters, so Google trusts your shop is the real deal.",
       },

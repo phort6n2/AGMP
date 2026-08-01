@@ -43,8 +43,8 @@ const differentiators = [
   },
   {
     icon: IconClock,
-    title: "Results in weeks, not years",
-    body: "Our framework is designed to get the phone ringing fast, then compound into predictable, repeatable job flow.",
+    title: "Systems, not monthly chores",
+    body: "Most agencies touch your account once a month. Our software works it continuously — syncing your newest shop photos to your site and harvesting the questions drivers ask Google, automatically. That's how the phone starts ringing in weeks, not quarters.",
   },
   {
     icon: IconBolt,
