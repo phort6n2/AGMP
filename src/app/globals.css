@@ -116,6 +116,18 @@ body {
   animation: fade-up 0.7s ease-out both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-float,
+  .animate-marquee {
+    animation: none;
+  }
+}
+
 /* Marquee for logo strip */
 @keyframes marquee {
   from { transform: translateX(0); }

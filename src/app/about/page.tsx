@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Container, SectionHeading, Button, Eyebrow } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
@@ -110,7 +111,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-6">
                 {[
                   ["100%", "Auto glass focus"],
-                  ["30 days", "To first results"],
+                  ["Calls + forms", "Opportunities tracked"],
                   ["4-stage", "Growth framework"],
                   ["Month-to-month", "No lock-in"],
                 ].map(([v, l]) => (
@@ -140,8 +141,7 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20">
         <Container>
           <div className="glass-card grid gap-8 rounded-3xl p-8 sm:p-10 lg:grid-cols-[300px_1fr] lg:items-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/founder.webp"
               alt={`${site.owner}, founder of ${site.name}`}
               width={860}

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -24,11 +27,10 @@ const sora = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — More Auto Glass Jobs, Not Clicks`,
+    default: "Auto Glass Marketing Agency | More Booked Jobs | AGMP",
     template: `%s — ${site.name}`,
   },
   description: site.description,
-  alternates: { canonical: "/" },
   keywords: [
     "auto glass marketing",
     "windshield repair marketing",
@@ -50,37 +52,55 @@ export const metadata: Metadata = {
     description: site.description,
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": ["ProfessionalService", "Organization"],
-  name: site.name,
-  description: site.description,
-  url: site.url,
-  email: site.email,
-  telephone: "+1-855-712-8500",
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+1-855-712-8500",
-    contactType: "sales",
-    contactOption: "TollFree",
-    areaServed: "US",
-    availableLanguage: "English",
-  },
-  areaServed: "United States",
-  priceRange: "$$",
-  slogan: site.tagline,
-  // Omitted entirely until real profile URLs exist — an empty or placeholder
-  // sameAs misidentifies the entity.
-  ...(socialProfiles.length > 0 && { sameAs: socialProfiles }),
-  knowsAbout: [
-    "Auto glass marketing",
-    "Local SEO",
-    "Google Ads",
-    "AI search visibility",
-    "Web design",
-    "Windshield repair marketing",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${site.url}/#organization`,
+      name: site.name,
+      description: site.description,
+      url: site.url,
+      logo: `${site.url}/logo-black.png`,
+      email: site.email,
+      telephone: "+1-855-712-8500",
+      founder: {
+        "@type": "Person",
+        name: site.owner,
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+1-855-712-8500",
+        contactType: "sales",
+        contactOption: "TollFree",
+        areaServed: "US",
+        availableLanguage: "English",
+      },
+      areaServed: "United States",
+      slogan: site.tagline,
+      ...(socialProfiles.length > 0 && { sameAs: socialProfiles }),
+      knowsAbout: [
+        "Auto glass marketing",
+        "Local SEO",
+        "Google Ads",
+        "AI search visibility",
+        "Web design",
+        "Windshield repair marketing",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      publisher: { "@id": `${site.url}/#organization` },
+      inLanguage: "en-US",
+    },
   ],
 };
 
@@ -90,7 +110,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <body className="min-h-screen antialiased">
-        <script
+        <Script
+          id="agmp-organization-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
@@ -108,6 +129,8 @@ export default function RootLayout({
         <MobileCtaBar />
         <MyWebAuditLoader />
         <AuditConversion />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

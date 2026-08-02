@@ -8,8 +8,6 @@ export const revalidate = 600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = site.url;
-  const now = new Date();
-
   const staticRoutes = [
     "",
     "/audit",
@@ -22,7 +20,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/terms",
   ].map((path) => ({
     url: `${base}${path}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority:
       path === "" ? 1 : path === "/audit" || path === "/framework" ? 0.9 : 0.7,
@@ -30,7 +27,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const serviceRoutes = serviceSlugs.map((slug) => ({
     url: `${base}/services/${slug}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -40,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const d = new Date(post.date);
     return {
       url: `${base}/blog/${post.slug}`,
-      lastModified: Number.isNaN(d.getTime()) ? now : d,
+      ...(Number.isNaN(d.getTime()) ? {} : { lastModified: d }),
       changeFrequency: "weekly" as const,
       priority: 0.6,
     };

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { services, site } from "@/lib/site";
 import { IconMessage } from "./Icons";
@@ -45,8 +46,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex" aria-label={site.name}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/logo-white.png"
                 alt={site.name}
                 width={500}

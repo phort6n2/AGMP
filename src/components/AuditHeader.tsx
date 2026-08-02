@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 
 /**
@@ -15,8 +16,7 @@ export function AuditHeader() {
           aria-label={`${site.name} — back to home`}
           className="inline-flex"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/logo-white.png"
             alt={site.name}
             width={500}
