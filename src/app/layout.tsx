@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -108,6 +109,14 @@ export default function RootLayout({
         <MobileCtaBar />
         <MyWebAuditLoader />
         <AuditConversion />
+        {/* Microsoft Clarity — session recordings & heatmaps */}
+        <Script id="ms-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y3chtuz8t7");`}
+        </Script>
       </body>
     </html>
   );
