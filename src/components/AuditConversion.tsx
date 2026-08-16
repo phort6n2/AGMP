@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Clarity from "@microsoft/clarity";
 
 /**
  * Captures audit conversions and the attribution MyWebAudit can't see.
@@ -89,6 +90,16 @@ export function AuditConversion() {
         submittedAt: new Date().toISOString(),
         ...attribution,
       };
+
+      // Mark the conversion in Clarity so recordings of converting sessions
+      // are filterable (and upgraded in Clarity's own prioritization).
+      try {
+        Clarity.event("audit_submitted");
+        if (payload.widgetKey) Clarity.setTag("widget", payload.widgetKey);
+        Clarity.upgrade("audit_submitted");
+      } catch {
+        // Clarity may not be initialized yet; never block the conversion beacon.
+      }
 
       // keepalive so the request survives the widget's post-submit redirect.
       fetch("/api/lead", {

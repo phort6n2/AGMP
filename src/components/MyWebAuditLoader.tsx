@@ -6,13 +6,12 @@ import { usePathname } from "next/navigation";
 /**
  * Site-wide MyWebAudit loader.
  *
- * Loads mywebaudit.com/w/js/lead-widget.js once per navigation and mounts the
+ * Loads mywebaudit.com/w/js/lead-widget.js on navigation and mounts the
  * AI Visibility modal (key f20501) on every page. MWA's Display Rules control
  * the trigger — currently exit-intent only, so a whole-site mount is
- * low-friction. Re-injecting the script on each pathname change re-runs MWA's
- * widget scan, so both this modal and any inline widget (e.g. the GBP audit on
- * /audit) initialize after client-side navigation. A single loader avoids
- * duplicate-script races.
+ * low-friction. Re-injecting the same cacheable URL on pathname changes re-runs
+ * MWA's widget scan for client-side navigation without forcing visitors to
+ * download a cache-busted copy on every page.
  */
 export function MyWebAuditLoader() {
   const pathname = usePathname();
@@ -22,7 +21,7 @@ export function MyWebAuditLoader() {
     const j = document.createElement("script");
     j.async = true;
     j.id = "mwa-script";
-    j.src = "https://www.mywebaudit.com/w/js/lead-widget.js?t=" + Date.now();
+    j.src = "https://www.mywebaudit.com/w/js/lead-widget.js";
     document.body.appendChild(j);
   }, [pathname]);
 
@@ -30,7 +29,6 @@ export function MyWebAuditLoader() {
   // fixed-position overlay from this, so its location in the DOM is cosmetic.
   return (
     <div
-      role="main"
       id="mwa-key-f20501"
       data-key="f20501"
       className="mwa-widget-container"

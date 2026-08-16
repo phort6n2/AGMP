@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { IconShield } from "./Icons";
 import { site } from "@/lib/site";
 
@@ -51,8 +52,7 @@ export function MyWebAuditWidget({
       <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-ink-850 shadow-card">
         {/* header — brand logo only, so the form's own heading isn't duplicated */}
         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/logo-white.png"
             alt={site.name}
             width={500}
@@ -80,7 +80,6 @@ export function MyWebAuditWidget({
             </div>
           )}
           <div
-            role="main"
             id={`mwa-key-${widgetKey}`}
             data-key={widgetKey}
             className="mwa-widget-container w-full"

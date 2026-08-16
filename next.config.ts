@@ -16,6 +16,7 @@ const redirectMap: Record<string, string> = {
   "/contact": "/audit",
   "/terms-conditions": "/terms",
   "/privacy-policy": "/privacy",
+  "/blog/category/auto-glass-seo": "/blog",
 
   // Old blog posts -> closest matching new article
   "/blog/auto-glass-ppc-strategies": "/blog/google-ads-mistakes-auto-glass-shops",
@@ -44,6 +45,7 @@ const redirectMap: Record<string, string> = {
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: process.cwd(),
   async redirects() {
     return Object.entries(redirectMap).map(([source, destination]) => ({
       source,
