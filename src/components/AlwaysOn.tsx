@@ -50,9 +50,9 @@ const systems = [
   },
   {
     icon: IconSearch,
-    cadence: "Daily",
-    title: "Driver questions, harvested",
-    body: "Our system captures the exact questions drivers in markets like yours are asking Google — every weekday, straight from live search results. Those questions become the pages and answers on your site, so you rank for what people actually type.",
+    cadence: "Ongoing",
+    title: "Driver questions, answered",
+    body: "We track the questions drivers in your market are asking Google and AI assistants, then turn them into articles and answers published to your site on a steady schedule — so you rank for what people actually type.",
   },
 ];
 
