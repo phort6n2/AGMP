@@ -32,7 +32,7 @@ export const servicesContent: Record<string, ServiceContent> = {
     features: [
       {
         title: "Google Business Profile optimization",
-        body: "We turn your profile into a lead machine — categories, services, photos, posts, and the review velocity Google rewards with higher rankings.",
+        body: "We turn your profile into a lead machine — categories, services, photos, and regular posts, tuned to the signals Google rewards with higher rankings.",
       },
       {
         title: "Map Pack domination",
@@ -55,16 +55,24 @@ export const servicesContent: Record<string, ServiceContent> = {
         body: "The steady bread-and-butter isn't just walk-ins — it's fleet contracts, dealer and body-shop wholesale, and municipal accounts that call every week. We build the pages and outreach that put your shop in front of the fleet managers and service writers searching for a glass partner.",
       },
       {
-        title: "Review generation system",
-        body: "A simple, automated way to earn more 5-star reviews — the single biggest lever for local ranking and trust.",
+        title: "Entity & trust signals",
+        body: "Google trusts what it can verify. We build your shop's entity — structured data, consistent listings, and connected profiles — so Google and AI assistants recognize one real, established business, not a name they're unsure about.",
       },
       {
-        title: "A profile that never goes quiet",
-        body: "Fresh posts published to your Google Business Profile on a recurring schedule — the activity signal Google rewards and drivers notice, without you lifting a finger.",
+        title: "Profiles & socials that never go quiet",
+        body: "Fresh posts published to your Google Business Profile and social channels on a recurring schedule — the activity signal Google rewards and drivers notice, without you lifting a finger.",
       },
       {
-        title: "Citations & consistency",
-        body: "Accurate name, address, and phone across every directory that matters, so Google trusts your shop is the real deal.",
+        title: "Citations where they count",
+        body: "We build and maintain your listings across the directories that matter for auto glass — accurate name, address, and phone everywhere, so every mention reinforces the same trusted business.",
+      },
+      {
+        title: "Reddit & Quora presence",
+        body: "Drivers ask Reddit and Quora which shop to trust, and AI assistants read those threads when they answer. We monitor the conversations in your market and make sure helpful answers that mention your shop are part of them.",
+      },
+      {
+        title: "Link building that compounds",
+        body: "Links to your site from relevant placements — including a partner link from Windshield Repair HQ, the auto glass directory we operate — plus ongoing work strengthening the pages and profiles that link to you, so your authority keeps building month after month.",
       },
     ],
     steps: [
@@ -77,8 +85,8 @@ export const servicesContent: Record<string, ServiceContent> = {
         body: "Profile, website, and local pages get tuned to signal relevance and authority to Google.",
       },
       {
-        title: "Build authority & reviews",
-        body: "Ongoing content, citations, and review generation compound your rankings month over month.",
+        title: "Build authority & trust",
+        body: "Citations, entity signals, links, and mentions across the web compound your rankings month over month.",
       },
       {
         title: "Track jobs, not just ranks",
@@ -89,7 +97,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       "Top-3 Map Pack visibility in your service area",
       "Built to be recommended by ChatGPT & AI Overviews",
       "More calls from high-intent local searches",
-      "A steady stream of new 5-star reviews",
+      "A web of citations, links & mentions that keeps compounding",
     ],
     faqs: [
       {

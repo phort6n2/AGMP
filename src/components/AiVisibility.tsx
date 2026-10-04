@@ -30,8 +30,8 @@ export function AiVisibility() {
               <p className="mt-4 text-lg leading-relaxed text-ink-300">
                 Drivers increasingly skip the search results and just ask an AI
                 which shop to call. Our Local SEO service is built for this
-                shift — we structure your shop&apos;s content, entities, reviews,
-                and citations the way large language models actually source
+                shift — we structure your shop&apos;s content, entities, citations,
+                and mentions the way large language models actually source
                 their answers, so you&apos;re the shop the AI names.
               </p>
               <ul className="mt-6 space-y-3">

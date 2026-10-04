@@ -1,37 +1,58 @@
 import { Container, Eyebrow } from "./ui";
-import { IconClock, IconSearch, IconChart, IconGlass, IconSparkle } from "./Icons";
+import {
+  IconClock,
+  IconSearch,
+  IconSparkle,
+  IconShield,
+  IconBolt,
+  IconMessage,
+  IconMap,
+} from "./Icons";
 
 /**
  * "Always-on systems" — surfaces the real fulfillment automation behind the
  * Local SEO service at the what-and-when level, deliberately not the how.
  * Cadences and outcomes are shown; tools, data sources, and pipeline internals
  * stay out. The claims map 1:1 to systems that actually run — keep it that way
- * when editing.
+ * when editing. The "reinforcing" line in the authority card deliberately
+ * describes the outcome of the link work without naming how it's done.
  */
 const systems = [
   {
-    icon: IconSparkle,
-    cadence: "Ongoing",
-    title: "AI answers, monitored",
-    body: "When drivers ask ChatGPT or Gemini who should fix their windshield, we track whether your shop gets named — and watch how those answers shift over time. If the AI starts recommending someone else, we see it and respond.",
+    icon: IconShield,
+    cadence: "Continuous",
+    title: "Your shop, verified everywhere",
+    body: "Google ranks businesses it can confirm are real. We build your shop's entity — consistent citations across the directories that matter, structured data on your site, and connected profiles — so Google and AI assistants see one established, trusted business.",
   },
   {
-    icon: IconGlass,
+    icon: IconBolt,
+    cadence: "Compounding",
+    title: "Authority that keeps building",
+    body: "We build links to your site from relevant placements — including a partner link from Windshield Repair HQ, the auto glass directory we operate. Then we keep reinforcing the pages and profiles that point to you, so their authority keeps flowing into yours.",
+  },
+  {
+    icon: IconMessage,
+    cadence: "Monitored",
+    title: "Reddit & Quora, covered",
+    body: "Drivers ask Reddit and Quora which shop to trust — and Google and AI assistants read those threads. We watch the conversations in your market and make sure helpful answers that mention your shop are part of them.",
+  },
+  {
+    icon: IconMap,
     cadence: "On schedule",
-    title: "Your profile, kept active",
+    title: "Your profiles, kept active",
     body: "Fresh posts go out to your Google Business Profile and social channels on a recurring schedule. A profile that publishes regularly reads as an open, busy shop — to Google and to the drivers comparing you against the shop down the road.",
+  },
+  {
+    icon: IconSparkle,
+    cadence: "Tracked",
+    title: "AI answers, monitored",
+    body: "When drivers ask ChatGPT or Gemini who should fix their windshield, we track whether your shop gets named — and watch how those answers shift over time. If the AI starts recommending someone else, we see it and respond.",
   },
   {
     icon: IconSearch,
     cadence: "Daily",
     title: "Driver questions, harvested",
     body: "Our system captures the exact questions drivers in markets like yours are asking Google — every weekday, straight from live search results. Those questions become the pages and answers on your site, so you rank for what people actually type.",
-  },
-  {
-    icon: IconChart,
-    cadence: "Before launch",
-    title: "Competitors, profiled",
-    body: "Before we write a single page, the system pulls apart every shop ranking above you — what they cover, what they rank for, and where the holes are. Your build plan comes from their gaps, not a template.",
   },
 ];
 
@@ -52,7 +73,7 @@ export function AlwaysOn() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {systems.map((s) => (
             <div key={s.title} className="glass-card rounded-2xl p-6">
               <div className="flex items-center justify-between">

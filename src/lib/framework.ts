@@ -45,7 +45,7 @@ export const frameworkStages: FrameworkStage[] = [
     moves: [
       "Claim and fully build out your Google Business Profile — services, service area, hours, real photos of your bays and techs",
       "Fix NAP consistency across directories so your name, address and phone match everywhere",
-      "Install a systematic review ask so the first 10 reviews actually arrive",
+      "Build your shop's entity — structured data and connected profiles — so Google has a confident record of who you are",
       "Build real service pages — chip repair, replacement, ADAS calibration — instead of one thin “services” page",
     ],
     scoreboard: [
@@ -69,7 +69,7 @@ export const frameworkStages: FrameworkStage[] = [
     bottleneck:
       "Ranking 4th–10th is close to invisible: the top 3 take the overwhelming majority of Map Pack clicks. And the calls you do get leak — slow answers, no text option, and no clear insurance answer send drivers to the next shop.",
     moves: [
-      "Drive review velocity and respond to every review — the strongest lever on local prominence",
+      "Build authority with links, citations, and mentions on the sites Google trusts — prominence is what lifts you into the top 3",
       "Build location and job-type pages so you're relevant for more than one term",
       "Make the site convert on a phone: fast load, tap-to-text, and an obvious “we bill your insurance” answer",
       "Fix speed-to-lead — auto glass is urgent, and the first shop to respond usually wins the job",
@@ -122,7 +122,7 @@ export const frameworkStages: FrameworkStage[] = [
     bottleneck:
       "Defense and expansion. Position is an asset that decays if you stop compounding — and the national chains have budget. The work becomes widening the moat and taking the next market.",
     moves: [
-      "Compound the review moat so no local competitor can catch up",
+      "Compound the authority moat — links, citations, and mentions no local competitor can catch up to",
       "Own the informational content drivers and AI assistants both cite",
       "Defend your brand terms against chains bidding on your name",
       "Expand the radius, add a second location, or enter the next market",
@@ -171,7 +171,7 @@ export const frameworkPillars: Pillar[] = [
     question: "Once they find you, why would they pick you over the chain?",
     body: "Drivers compare three shops in about ninety seconds. Reviews, a site that loads fast, and a straight answer about insurance decide it — long before anyone talks about price.",
     levers: [
-      "Review volume, velocity and responses",
+      "Mentions on Reddit, Quora, and trusted directories",
       "Insurance direct-bill made obvious",
       "ADAS calibration capability stated up front",
       "A site that converts on a phone",
@@ -253,11 +253,11 @@ export const timeline = [
   {
     window: "Days 1–30",
     title: "Foundation and fast wins",
-    body: "Audit, then fix what's leaking now. Profile rebuilt, listings corrected, review system installed, tracking in place so every call is attributed from day one.",
+    body: "Audit, then fix what's leaking now. Profile rebuilt, listings and citations corrected, entity signals in place, tracking live so every call is attributed from day one.",
     outcomes: [
       "Google Business Profile fully built",
       "Listings and NAP corrected",
-      "Review engine running",
+      "Citation & entity build underway",
       "Call and text tracking live",
     ],
   },
@@ -269,13 +269,13 @@ export const timeline = [
       "Service and location pages published",
       "Mobile conversion fixed",
       "High-intent ads live if it fits",
-      "Review velocity climbing",
+      "Links and mentions compounding",
     ],
   },
   {
     window: "Days 61–90",
     title: "Compounding",
-    body: "The system starts feeding itself. Rankings hold, reviews accumulate, and the work shifts from fixing to steering — pushing mix toward higher-ticket jobs.",
+    body: "The system starts feeding itself. Rankings hold, authority accumulates, and the work shifts from fixing to steering — pushing mix toward higher-ticket jobs.",
     outcomes: [
       "Top-3 presence on core terms",
       "Predictable weekly job flow",
@@ -297,7 +297,7 @@ export const frameworkFaqs = [
   },
   {
     q: "How long does it take to move up a stage?",
-    a: "Most shops see meaningful movement inside 90 days, with early wins in the first 30 — usually from profile and review work, which moves fastest. Moving from Invisible to Visible is typically quicker than Growing to Dominant, since later stages compete against shops that are already doing the work.",
+    a: "Most shops see meaningful movement inside 90 days, with early wins in the first 30 — usually from profile and citation work, which moves fastest. Moving from Invisible to Visible is typically quicker than Growing to Dominant, since later stages compete against shops that are already doing the work.",
   },
   {
     q: "Why is this specific to auto glass instead of general local marketing?",
