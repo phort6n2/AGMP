@@ -72,7 +72,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       },
       {
         title: "Link building that compounds",
-        body: "Links to your site from relevant placements — including a partner link from Windshield Repair HQ, the auto glass directory we operate — plus ongoing work strengthening the pages and profiles that link to you, so your authority keeps building month after month.",
+        body: "Links to your site from relevant placements — including a partner listing on Windshield Repair HQ, the auto glass directory we operate, that links back to you — plus ongoing work strengthening the pages and profiles that link to you, so your authority keeps building month after month.",
       },
     ],
     steps: [
@@ -380,7 +380,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       },
       {
         q: "How does this work with your other services?",
-        a: "Featured placement is a great add-on to SEO and ads — more places drivers can find you means more booked jobs. We'll help you choose the right mix after your free audit.",
+        a: "If you're a Local SEO client, a partner listing on Windshield Repair HQ — with a link back to your site — is already included. Featured placement works alongside SEO and ads, because more places drivers can find you means more booked jobs. We'll help you choose the right mix after your free audit.",
       },
     ],
   },

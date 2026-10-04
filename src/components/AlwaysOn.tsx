@@ -28,7 +28,7 @@ const systems = [
     icon: IconBolt,
     cadence: "Compounding",
     title: "Authority that keeps building",
-    body: "We build links to your site from relevant placements — including a partner link from Windshield Repair HQ, the auto glass directory we operate. Then we keep reinforcing the pages and profiles that point to you, so their authority keeps flowing into yours.",
+    body: "We build links to your site from relevant placements — including a partner listing on Windshield Repair HQ, the auto glass directory we operate, that links back to your site. Then we keep reinforcing the pages and profiles that point to you, so their authority keeps flowing into yours.",
   },
   {
     icon: IconMessage,
