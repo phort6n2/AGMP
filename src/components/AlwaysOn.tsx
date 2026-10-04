@@ -1,5 +1,5 @@
 import { Container, Eyebrow } from "./ui";
-import { IconClock, IconSearch, IconChart, IconGlass } from "./Icons";
+import { IconClock, IconSearch, IconChart, IconGlass, IconSparkle } from "./Icons";
 
 /**
  * "Always-on systems" — surfaces the real fulfillment automation behind the
@@ -10,10 +10,16 @@ import { IconClock, IconSearch, IconChart, IconGlass } from "./Icons";
  */
 const systems = [
   {
+    icon: IconSparkle,
+    cadence: "Ongoing",
+    title: "AI answers, monitored",
+    body: "When drivers ask ChatGPT or Gemini who should fix their windshield, we track whether your shop gets named — and watch how those answers shift over time. If the AI starts recommending someone else, we see it and respond.",
+  },
+  {
     icon: IconGlass,
-    cadence: "Every week",
-    title: "Your shop photos, synced",
-    body: "The real install photos your techs post to your Google profile get pulled, prepped, and published to your website — automatically. Your listing and your site always agree, and neither goes stale. When your photo pool runs low, we know before it shows.",
+    cadence: "On schedule",
+    title: "Your profile, kept active",
+    body: "Fresh posts go out to your Google Business Profile and social channels on a recurring schedule. A profile that publishes regularly reads as an open, busy shop — to Google and to the drivers comparing you against the shop down the road.",
   },
   {
     icon: IconSearch,
@@ -46,7 +52,7 @@ export function AlwaysOn() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {systems.map((s) => (
             <div key={s.title} className="glass-card rounded-2xl p-6">
               <div className="flex items-center justify-between">

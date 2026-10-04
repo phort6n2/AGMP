@@ -50,7 +50,7 @@ const differentiators = [
   {
     icon: IconClock,
     title: "Systems, not monthly chores",
-    body: "Most agencies touch your account once a month. Our software works continuously — syncing your newest shop photos to your site and harvesting the questions drivers ask Google, automatically — so improvements keep moving between reports.",
+    body: "Most agencies touch your account once a month. Our software works continuously — posting to your Google profile on schedule, harvesting the questions drivers ask Google, and watching whether the AI assistants name your shop — so improvements keep moving between reports.",
   },
   {
     icon: IconBolt,
