@@ -1,3 +1,4 @@
+import { breadcrumbs, jsonLdScript, orgRef, websiteRef } from "@/lib/schema";
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui";
 import { MyWebAuditWidget } from "@/components/MyWebAuditWidget";
@@ -44,8 +45,31 @@ const steps = [
 ];
 
 export default function AuditPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        url: `${site.url}/audit`,
+        name: "Free auto glass marketing audit",
+        isPartOf: websiteRef,
+        about: orgRef,
+        potentialAction: {
+          "@type": "AssessAction",
+          name: "Free marketing audit for an auto glass shop",
+          target: `${site.url}/audit`,
+          agent: orgRef,
+        },
+      },
+      breadcrumbs([{ name: "Free audit", path: "/audit" }]),
+    ],
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(schema)}
+      />
       {/* Minimal header — logo only, returns to the home page */}
       <AuditHeader />
 

@@ -1,3 +1,4 @@
+import { orgRef, websiteRef } from "@/lib/schema";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -63,8 +64,10 @@ export default async function PostPage({
         dateModified: post.date,
         articleSection: post.category,
         image: post.image,
-        author: { "@type": "Organization", name: site.name, url: site.url },
-        publisher: { "@type": "Organization", name: site.name, url: site.url },
+        author: orgRef,
+        publisher: orgRef,
+        isPartOf: websiteRef,
+        inLanguage: "en-US",
         mainEntityOfPage: `${site.url}/blog/${slug}`,
         url: `${site.url}/blog/${slug}`,
       },

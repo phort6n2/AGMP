@@ -1,3 +1,4 @@
+import { orgRef, websiteRef } from "@/lib/schema";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Container, Button, Badge, Eyebrow } from "@/components/ui";
@@ -35,7 +36,8 @@ export default function PlatformPage() {
         name: p.metaTitle,
         description: p.metaDescription,
         url: `${site.url}/platform`,
-        isPartOf: { "@type": "WebSite", name: site.name, url: site.url },
+        isPartOf: websiteRef,
+        about: orgRef,
       },
       {
         "@type": "FAQPage",

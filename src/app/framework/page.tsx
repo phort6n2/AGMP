@@ -1,3 +1,4 @@
+import { orgRef } from "@/lib/schema";
 import type { Metadata } from "next";
 import { Container, SectionHeading, Button, Eyebrow } from "@/components/ui";
 import { PageHeader } from "@/components/PageHeader";
@@ -48,8 +49,8 @@ export default function FrameworkPage() {
       "@type": "Article",
       headline: `${title}™`,
       description,
-      author: { "@type": "Organization", name: site.name, url: site.url },
-      publisher: { "@type": "Organization", name: site.name, url: site.url },
+      author: orgRef,
+      publisher: orgRef,
       mainEntityOfPage: `${site.url}/framework`,
       about: {
         "@type": "Thing",

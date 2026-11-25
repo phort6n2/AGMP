@@ -1,5 +1,5 @@
+import { ORG_ID, WEBSITE_ID, FOUNDER_ID } from "@/lib/schema";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, Sora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -64,17 +64,18 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": `${site.url}/#organization`,
+      "@id": ORG_ID,
       name: site.name,
       description: site.description,
       url: site.url,
-      logo: `${site.url}/logo-black.png`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/logo-black.png`,
+      },
+      image: `${site.url}/opengraph-image`,
       email: site.email,
       telephone: "+1-855-712-8500",
-      founder: {
-        "@type": "Person",
-        name: site.owner,
-      },
+      founder: { "@id": FOUNDER_ID },
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+1-855-712-8500",
@@ -97,11 +98,20 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": `${site.url}/#website`,
+      "@id": WEBSITE_ID,
       url: site.url,
       name: site.name,
-      publisher: { "@id": `${site.url}/#organization` },
+      publisher: { "@id": ORG_ID },
       inLanguage: "en-US",
+    },
+    {
+      "@type": "Person",
+      "@id": FOUNDER_ID,
+      name: site.owner,
+      jobTitle: "Founder",
+      url: `${site.url}/about`,
+      image: `${site.url}/founder.webp`,
+      worksFor: { "@id": ORG_ID },
     },
   ],
 };
@@ -112,8 +122,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <body className="min-h-screen antialiased">
-        <Script
-          id="agmp-organization-schema"
+        {/* Plain <script>, not next/script: JSON-LD must be in the server
+            HTML that crawlers fetch, not injected after hydration. */}
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />

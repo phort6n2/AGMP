@@ -23,6 +23,7 @@ import {
 } from "@/components/ServiceSections";
 import { servicesContent, serviceSlugs } from "@/lib/services-content";
 import { platformTeaser } from "@/lib/platform-content";
+import { orgRef } from "@/lib/schema";
 import { services, site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -72,7 +73,8 @@ export default async function ServiceDetailPage({
         name: `${s.name} for Auto Glass Shops`,
         description: s.metaDescription,
         areaServed: "United States",
-        provider: { "@type": "Organization", name: site.name, url: site.url },
+        provider: orgRef,
+        audience: { "@type": "BusinessAudience", name: "Auto glass repair and replacement shops" },
         url: `${site.url}/services/${slug}`,
       },
       {

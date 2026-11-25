@@ -1,3 +1,4 @@
+import { breadcrumbs, jsonLdScript, orgRef, websiteRef, FOUNDER_ID } from "@/lib/schema";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -65,8 +66,26 @@ const timeline = [
 ];
 
 export default function AboutPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        url: `${site.url}/about`,
+        name: "About Auto Glass Marketing Pros",
+        isPartOf: websiteRef,
+        about: orgRef,
+        mainEntity: { "@id": FOUNDER_ID },
+      },
+      breadcrumbs([{ name: "About", path: "/about" }]),
+    ],
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(schema)}
+      />
       <PageHeader
         eyebrow="About us"
         title={

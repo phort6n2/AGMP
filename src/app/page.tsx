@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import type { Metadata } from "next";
 import { Container, Button, Badge, SectionHeading, Eyebrow } from "@/components/ui";
 import { CtaBand } from "@/components/CtaBand";
@@ -543,8 +542,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <Script
-        id="homepage-auto-glass-marketing-faq-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />

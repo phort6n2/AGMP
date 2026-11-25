@@ -1,3 +1,4 @@
+import { breadcrumbs, jsonLdScript, orgRef, websiteRef } from "@/lib/schema";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Container, SectionHeading, Button, Eyebrow } from "@/components/ui";
@@ -23,8 +24,34 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        url: `${site.url}/services`,
+        name: "Auto glass marketing services",
+        isPartOf: websiteRef,
+        about: orgRef,
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: services.map((s, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            url: `${site.url}/services/${s.slug}`,
+            name: s.name,
+          })),
+        },
+      },
+      breadcrumbs([{ name: "Services", path: "/services" }]),
+    ],
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(schema)}
+      />
       <PageHeader
         eyebrow="Our services"
         title={
