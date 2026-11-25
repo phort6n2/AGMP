@@ -43,7 +43,7 @@ const included = [
 ];
 
 /**
- * Explains the landing page included with Google Ads management — the piece
+ * Explains the landing page included with Google Ads management: the piece
  * shop owners consistently don't realize is part of the service. The
  * website-vs-landing-page comparison is the distinction that otherwise has to
  * be explained in every sales conversation.
@@ -129,7 +129,7 @@ export function AdsLandingPage() {
           ))}
         </div>
 
-        {/* the quality score angle — a real, checkable mechanic */}
+        {/* the quality score angle: a real, checkable mechanic */}
         <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-signal/20 bg-signal/[0.06] p-6 sm:p-7">
           <div className="flex gap-4">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-signal/15 text-signal">

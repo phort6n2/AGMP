@@ -48,22 +48,22 @@ export const nav: NavItem[] = [
       {
         label: "Local SEO",
         href: "/services/local-seo",
-        desc: "Own the Map Pack & AI search",
+        desc: "Google Maps, Search and AI answers",
       },
       {
         label: "Google Ads",
         href: "/services/google-ads",
-        desc: "Calls from ready-to-book drivers",
+        desc: "Search ads in your own account",
       },
       {
         label: "Web Design",
         href: "/services/web-design",
-        desc: "Sites that turn clicks into jobs",
+        desc: "A site built from your material",
       },
       {
         label: "Shop Directory",
         href: "/services/directory",
-        desc: "Get found in our driver directory",
+        desc: "Partner listing on Windshield Repair HQ",
       },
       {
         label: "Your Shop Portal",
@@ -94,39 +94,35 @@ export const services: Service[] = [
   {
     slug: "local-seo",
     name: "Local SEO",
-    short: "Own the Map Pack & AI search",
+    short: "Google Maps, Search and AI answers",
     icon: "map",
     badge: "Includes AI visibility",
-    tagline: "Show up first when a cracked windshield needs you.",
-    summary:
-      "We get your shop ranking in the Google Map Pack, organic results, and AI answers like ChatGPT — so the next driver with a chip finds you before your competitors.",
+    tagline: "The work behind getting found on Maps, Search and AI answers.",
+    summary: "We build your shop's business record across the directories that matter, publish articles to your site, earn links and post to your Google Business Profile on a schedule. You see where you rank on Google Maps from a grid around your shop each week, and your monthly report shows how often AI assistants name your shop.",
   },
   {
     slug: "google-ads",
     name: "Google Ads",
-    short: "Calls from ready-to-book drivers",
+    short: "Search ads in your own account",
     icon: "target",
-    tagline: "Pay for booked jobs, not busy work.",
-    summary:
-      "Tightly targeted paid search campaigns that put your shop at the top the moment someone searches 'windshield replacement near me' — engineered for phone calls, not clicks. Includes a dedicated landing page we build, host, and keep optimizing.",
+    tagline: "Built in your own Google Ads account, checked daily.",
+    summary: "We build your campaigns in your own Google Ads account to one standard: calls count only after 60 seconds, settings that waste money are switched off at launch, and the account is checked every day. Calls to your tracking number are recorded and coached, and we send your booked jobs back to Google so it learns which clicks became paying work.",
   },
   {
     slug: "web-design",
     name: "Web Design",
-    short: "Sites that turn clicks into jobs",
+    short: "A site built from your material",
     icon: "layout",
-    tagline: "A website that actually books the appointment.",
-    summary:
-      "Fast, mobile-first websites built to convert. Click-to-call, instant quote forms, and trust signals that turn a curious visitor into a scheduled job.",
+    tagline: "Your photos, warranty and reviews, on your own domain.",
+    summary: "We build and host a site with a page for each service you sell and each town you serve, made from your own photos, your warranty and your real Google reviews. Every page has click-to-call and a quote form that takes a damage photo, and every lead lands in your shop portal.",
   },
   {
     slug: "directory",
     name: "Directory Placement",
-    short: "Featured on Windshield Repair HQ",
+    short: "Partner listing on Windshield Repair HQ",
     icon: "list",
-    tagline: "Get featured on the directory we operate.",
-    summary:
-      "We place and promote your shop on Windshield Repair HQ — the consumer auto glass directory we operate, used by drivers across all 50 states. Real, inspectable proof, and another channel sending drivers straight to your booking line.",
+    tagline: "Top of your city's page on Windshield Repair HQ.",
+    summary: "Local SEO clients get a Partner listing at the top of their city page on Windshield Repair HQ, the auto glass directory we operate, covering all 50 states, with their logo, Google rating, quote form and a link to their site. Quote requests go straight to the shop and are never resold, and we keep the listing up to date from the shop record.",
   },
 ];
 

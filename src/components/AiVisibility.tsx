@@ -57,14 +57,12 @@ export function AiVisibility({ copy }: { copy: AiVisibilityCopy }) {
                   </span>
                   <div className="flex-1">
                     <div className="rounded-2xl rounded-tl-sm border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-relaxed text-ink-200">
-                      For a fast, highly-rated windshield replacement in your
-                      area, a great option is{" "}
+                      For windshield replacement in your area, one option is{" "}
                       <span className="font-semibold text-white">
                         your shop
                       </span>
-                      . They offer mobile service, bill most insurance directly,
-                      do in-house ADAS calibration, and have excellent local
-                      reviews.{" "}
+                      . They replace windshields, take quote requests with a
+                      photo of the damage, and show their Google reviews.{" "}
                       <span className="text-glass-300">
                         Would you like their number?
                       </span>
@@ -105,15 +103,15 @@ export function AiVisibility({ copy }: { copy: AiVisibilityCopy }) {
           </div>
         </div>
 
-        {/* Inline AI Visibility check — appears once INLINE_AV_KEY is set.
+        {/* Inline AI Visibility check: appears once INLINE_AV_KEY is set.
             Reserved here so it drops in the moment the MWA key is available. */}
         {INLINE_AV_KEY && (
           <>
             <div className="mx-auto mt-12 max-w-2xl text-center">
               <Eyebrow>Free AI visibility check</Eyebrow>
               <h3 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
-                Curious what AI says about your shop{" "}
-                <span className="text-gradient">right now?</span>
+                See what AI says about your shop{" "}
+                <span className="text-gradient">today</span>
               </h3>
               <p className="mt-3 text-ink-300">
                 Run a free check to see what ChatGPT and Google&apos;s AI

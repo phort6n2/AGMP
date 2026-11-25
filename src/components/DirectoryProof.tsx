@@ -2,6 +2,7 @@ import { Container, Eyebrow } from "./ui";
 import { IconArrow, IconCheck } from "./Icons";
 import { Mockup } from "./Mockups";
 import { site } from "@/lib/site";
+import { servicesContent } from "@/lib/services-content";
 
 export type DirectoryProofCopy = {
   eyebrow: string;
@@ -15,7 +16,11 @@ export type DirectoryProofCopy = {
  * skeptical owner can check for themselves. No shop counts or traffic
  * figures: only what the directory visibly shows.
  */
-export function DirectoryProof({ copy }: { copy: DirectoryProofCopy }) {
+export function DirectoryProof({
+  copy = servicesContent.directory.proof!,
+}: {
+  copy?: DirectoryProofCopy;
+}) {
   return (
     <section className="py-16 sm:py-20">
       <Container>

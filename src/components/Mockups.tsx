@@ -174,7 +174,7 @@ export function CoachingMockup() {
         </div>
       </div>
       <div className="mt-4 flex items-end gap-1.5" aria-hidden>
-        {[5, 6, 5, 7, 6, 8, 7, 8].map((h, i) => (
+        {[6, 7, 5, 7, 6, 7, 5, 6].map((h, i) => (
           <span key={i} className="w-full rounded-sm bg-glass-400/40" style={{ height: `${h * 4}px` }} />
         ))}
       </div>
@@ -295,7 +295,7 @@ export function PartnerListingMockup() {
                 Partner
               </span>
             </div>
-            <div className="mt-1 flex items-center gap-0.5 text-amber-400" aria-label="Google rating">
+            <div className="mt-1 flex items-center gap-0.5 text-ink-500" aria-label="Google rating">
               {[0, 1, 2, 3, 4].map((i) => (
                 <IconStar key={i} className="h-3 w-3" />
               ))}
