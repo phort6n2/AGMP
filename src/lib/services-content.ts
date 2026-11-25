@@ -65,7 +65,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       },
       {
         "title": "AI answers, tracked monthly",
-        "what": "Each month we measure how often AI assistants name your shop, side by side with competitor shops, and put the numbers in your monthly report.",
+        "what": "Each month we measure how often ChatGPT and Google AI Overviews name your shop, side by side with competitor shops, and put the numbers in your monthly report.",
         "why": "You know whether drivers who ask AI hear your name or a competitor's, as a number instead of a guess."
       },
       {
@@ -157,7 +157,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       },
       {
         "q": "Can you get my shop recommended by ChatGPT?",
-        "a": "No one controls what ChatGPT or Google AI Overviews say, so we won't promise a mention. What we do is give those answers something accurate to find: one consistent business record, your business details coded into your site, listings in the directories that matter, articles, and helpful mentions on Reddit and Quora. Then we track how often AI assistants name your shop against competitor shops, and it's in your monthly report."
+        "a": "No one controls what ChatGPT or Google AI Overviews say, so we won't promise a mention. What we do is give those answers something accurate to find: one consistent business record, your business details coded into your site, listings in the directories that matter, articles, and helpful mentions on Reddit and Quora. Then we track how often ChatGPT and Google AI Overviews name your shop against competitor shops, and it's in your monthly report."
       },
       {
         "q": "How long until I see results?",
@@ -181,15 +181,15 @@ export const servicesContent: Record<string, ServiceContent> = {
       },
       {
         "q": "How will I know it's working?",
-        "a": "Hold the weekly rank map up against your starting snapshot, and watch clicks, top searches and visitors from AI assistants in your traffic report. The monthly report adds articles published, links earned and how often AI assistants name your shop. Its What's next section says what we're working on from there."
+        "a": "Hold the weekly rank map up against your starting snapshot, and watch clicks, top searches and visitors from AI assistants in your traffic report. The monthly report adds articles published, links earned and how often ChatGPT and Google AI Overviews name your shop. Its What's next section says what we're working on from there."
       },
       {
         "q": "Do I need you to host my website?",
         "a": "No. We publish articles to the site you have and add your business details to its code there. If we host your site, you also get a page for every service you sell and every town you serve."
       },
       {
-        "q": "Is there a contract?",
-        "a": "No long-term contract. It's month-to-month, so the work has to earn the next month."
+        "q": "Is there a contract, and what do I keep if I leave?",
+        "a": "No long-term contract. It's month-to-month, so the work has to earn the next month. If you leave, you keep it all: the articles on your site, your listings and profiles, and the links built to your shop."
       }
     ],
     "alwaysOn": {
@@ -220,7 +220,7 @@ export const servicesContent: Record<string, ServiceContent> = {
         {
           "cadence": "Monthly",
           "title": "AI answers, measured",
-          "body": "We measure how often AI assistants name your shop, against competitor shops. The numbers are in your monthly report."
+          "body": "We measure how often ChatGPT and Google AI Overviews name your shop, against competitor shops. The numbers are in your monthly report."
         },
         {
           "cadence": "As published",
@@ -234,7 +234,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       "title": "When drivers ask AI which shop to call",
       "body": "Drivers now ask ChatGPT and read Google's AI Overviews before they call a shop. No one controls what those answers say, so we do the work they draw on and track how often your shop gets named.",
       "points": [
-        "How often AI assistants name your shop, every month",
+        "How often ChatGPT and Google AI Overviews name you, monthly",
         "Measured side by side with competitor shops",
         "Visitors from AI assistants shown in your traffic report"
       ],
@@ -382,7 +382,7 @@ export const servicesContent: Record<string, ServiceContent> = {
       },
       {
         "q": "What happens to the landing page if I cancel?",
-        "a": "You can keep it live. We keep hosting it for a small monthly fee, so the page stays up after the ads stop. Your campaigns stay in your own Google Ads account."
+        "a": "The landing page stays on our platform and doesn't go with you. If you want it to stay live after the ads stop, we keep hosting it for a small monthly fee. Your campaigns stay in your own Google Ads account."
       },
       {
         "q": "How much should I budget for ads?",
@@ -570,10 +570,10 @@ export const servicesContent: Record<string, ServiceContent> = {
     "slug": "directory",
     "name": "Directory Placement",
     "icon": "list",
-    "eyebrow": "Featured Directory Placement",
-    "metaDescription": "Get your auto glass shop featured on Windshield Repair HQ, the directory we operate. Top of your city page, no ads, quote requests never resold.",
-    "hero": "Get your auto glass shop featured on Windshield Repair HQ",
-    "heroSub": "We operate Windshield Repair HQ, a consumer auto glass directory with city pages in all 50 states. Your shop goes at the top of your city page as a Partner, and we keep the listing up to date.",
+    "eyebrow": "Included with Local SEO",
+    "metaDescription": "Windshield Repair HQ Partner listing for auto glass shops, included with Local SEO: top of your city page, no ads, quote requests never resold.",
+    "hero": "Your Windshield Repair HQ Partner listing, included with Local SEO",
+    "heroSub": "We operate Windshield Repair HQ, a consumer auto glass directory with city pages in all 50 states. Every Local SEO client gets a Partner listing at the top of their city page, and we keep it up to date.",
     "outcomes": [
       "Top of your city page, with a Partner badge",
       "No ads on your shop's page",
@@ -678,6 +678,10 @@ export const servicesContent: Record<string, ServiceContent> = {
       {
         "q": "Do directory quote requests show up in my shop portal?",
         "a": "No. Windshield Repair HQ sends quote requests from your listing straight to your shop, not through the portal. Watch for them alongside your portal leads. They go to you only and are never resold."
+      },
+      {
+        "q": "Can I get a Partner listing without Local SEO?",
+        "a": "No. The Partner listing comes with Local SEO. Start with the free audit and we'll show you where your shop stands today."
       },
       {
         "q": "How does this work with your other services?",

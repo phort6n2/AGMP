@@ -121,7 +121,7 @@ export const services: Service[] = [
     name: "Directory Placement",
     short: "Partner listing on Windshield Repair HQ",
     icon: "list",
-    tagline: "Top of your city's page on Windshield Repair HQ.",
+    tagline: "Included with Local SEO: top of your city page.",
     summary: "Local SEO clients get a Partner listing at the top of their city page on Windshield Repair HQ, the auto glass directory we operate, covering all 50 states, with their logo, Google rating, quote form and a link to their site. Quote requests go straight to the shop and are never resold, and we keep the listing up to date from the shop record.",
   },
 ];

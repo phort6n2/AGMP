@@ -174,7 +174,7 @@ export const servicesIndex: {
   subtitle: string;
   everyClient: { title: string; body: string; items: string[] };
 } = {
-  "subtitle": "Four services for auto glass shops. Every client gets the shop portal, so you see your leads and what we did each month.",
+  "subtitle": "Local SEO, Google Ads and web design for auto glass shops, plus a Windshield Repair HQ Partner listing for Local SEO clients. Every client gets the shop portal, so you see your leads and what we did each month.",
   "everyClient": {
     "title": "What every client gets",
     "body": "These come with every service.",
