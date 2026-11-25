@@ -41,12 +41,12 @@ export const frameworkStages: FrameworkStage[] = [
       "Quiet Mondays with no idea why",
     ],
     bottleneck:
-      "Google has no confident record of your shop as a local auto glass business. Without a verified profile, consistent listings, and review signal, you can't rank — no matter how good your techs are.",
+      "Google has no confident record of your shop as a local auto glass business. Without a verified profile, consistent listings, and review signal, you can't rank, no matter how good your techs are.",
     moves: [
-      "Claim and fully build out your Google Business Profile — services, service area, hours, real photos of your bays and techs",
+      "Claim and fully build out your Google Business Profile: services, service area, hours, real photos of your bays and techs",
       "Fix NAP consistency across directories so your name, address and phone match everywhere",
-      "Build your shop's entity — structured data and connected profiles — so Google has a confident record of who you are",
-      "Build real service pages — chip repair, replacement, ADAS calibration — instead of one thin “services” page",
+      "Build your shop's entity (structured data and connected profiles) so Google has a confident record of who you are",
+      "Build real service pages (chip repair, replacement, ADAS calibration) instead of one thin “services” page",
     ],
     scoreboard: [
       "Map Pack impressions",
@@ -58,21 +58,21 @@ export const frameworkStages: FrameworkStage[] = [
   {
     n: "02",
     name: "Visible",
-    headline: "You show up — but not where the clicks are",
+    headline: "You show up, but not where the clicks are",
     desc: "You show up on Google Maps, but the pipeline is inconsistent and unpredictable.",
     symptoms: [
       "You rank sometimes, but rarely in the top 3 of the Map Pack",
       "Call volume swings hard week to week",
-      "Mostly price shoppers and cash chip jobs — few replacements",
+      "Mostly price shoppers and cash chip jobs, few replacements",
       "You're getting found, but losing the comparison",
     ],
     bottleneck:
-      "Ranking 4th–10th is close to invisible: the top 3 take the overwhelming majority of Map Pack clicks. And the calls you do get leak — slow answers, no text option, and no clear insurance answer send drivers to the next shop.",
+      "Ranking 4th to 10th is close to invisible: the top 3 take the overwhelming majority of Map Pack clicks. And the calls you do get leak: slow answers, no text option, and no clear insurance answer send drivers to the next shop.",
     moves: [
-      "Build authority with links, citations, and mentions on the sites Google trusts — prominence is what lifts you into the top 3",
+      "Build authority with links, citations, and mentions on the sites Google trusts, since prominence is a major factor in who ranks in the top 3",
       "Build location and job-type pages so you're relevant for more than one term",
       "Make the site convert on a phone: fast load, tap-to-text, and an obvious “we bill your insurance” answer",
-      "Fix speed-to-lead — auto glass is urgent, and the first shop to respond usually wins the job",
+      "Fix speed-to-lead. Auto glass is urgent, and the first shop to respond usually wins the job",
     ],
     scoreboard: [
       "Top-3 Map Pack rate for money terms",
@@ -84,7 +84,7 @@ export const frameworkStages: FrameworkStage[] = [
   {
     n: "03",
     name: "Growing",
-    headline: "The calls are steady — now fix the job mix",
+    headline: "The calls are steady. Now fix the job mix",
     desc: "Strong call volume, optimized conversions, and a calendar that fills itself.",
     symptoms: [
       "The calendar is mostly full, but margin feels thin",
@@ -93,17 +93,17 @@ export const frameworkStages: FrameworkStage[] = [
       "You want better jobs, not just more jobs",
     ],
     bottleneck:
-      "Mix, not volume. A calendar full of low-ticket repairs caps revenue. The money is in replacement plus ADAS calibration — and those jobs are won on high-intent search, where you have to show up and be chosen deliberately.",
+      "Mix, not volume. A calendar full of low-ticket repairs caps revenue. The money is in replacement plus ADAS calibration, and those jobs are won on high-intent search, where you have to show up and be chosen deliberately.",
     moves: [
       "Run Google Ads on high-intent replacement and calibration terms, not broad “auto glass” traffic",
       "Aggressive negative keywords to stop paying for DIY and tire-kicker clicks",
-      "Message insurance direct-bill and calibration capability clearly — most drivers assume you can't",
+      "Message insurance direct-bill and calibration capability clearly, because most drivers assume you can't",
       "Open fleet and commercial channels for predictable, repeatable volume",
       "Get cited by AI assistants, where a growing share of “which shop should I call” questions now land",
     ],
     scoreboard: [
       "Cost per booked job",
-      "Job mix — repair vs. replacement vs. calibration",
+      "Job mix: repair vs. replacement vs. calibration",
       "Average ticket",
     ],
     accent: "glass",
@@ -120,9 +120,9 @@ export const frameworkStages: FrameworkStage[] = [
       "The question shifts from “more jobs” to “protect this and expand”",
     ],
     bottleneck:
-      "Defense and expansion. Position is an asset that decays if you stop compounding — and the national chains have budget. The work becomes widening the moat and taking the next market.",
+      "Defense and expansion. Position is an asset that decays if you stop compounding, and the national chains have budget. The work becomes widening the moat and taking the next market.",
     moves: [
-      "Compound the authority moat — links, citations, and mentions no local competitor can catch up to",
+      "Compound the authority moat: links, citations, and mentions that local competitors find hard to match",
       "Own the informational content drivers and AI assistants both cite",
       "Defend your brand terms against chains bidding on your name",
       "Expand the radius, add a second location, or enter the next market",
@@ -156,7 +156,7 @@ export const frameworkPillars: Pillar[] = [
     n: "01",
     title: "Get Found",
     question: "Can a driver with a cracked windshield find you at all?",
-    body: "The moment a rock hits, the search happens on a phone, at the roadside or in a driveway. If you're not in the Map Pack — and increasingly, in the AI answer — that job was never yours to lose.",
+    body: "The moment a rock hits, the search happens on a phone, at the roadside or in a driveway. If you're not in the Map Pack (and increasingly, in the AI answer), that job was never yours to lose.",
     levers: [
       "Google Business Profile built for glass",
       "Map Pack ranking for money terms",
@@ -169,7 +169,7 @@ export const frameworkPillars: Pillar[] = [
     n: "02",
     title: "Get Chosen",
     question: "Once they find you, why would they pick you over the chain?",
-    body: "Drivers compare three shops in about ninety seconds. Reviews, a site that loads fast, and a straight answer about insurance decide it — long before anyone talks about price.",
+    body: "Drivers compare three shops in about ninety seconds. Reviews, a site that loads fast, and a straight answer about insurance decide it, long before anyone talks about price.",
     levers: [
       "Mentions on Reddit, Quora, and trusted directories",
       "Insurance direct-bill made obvious",
@@ -187,7 +187,7 @@ export const frameworkPillars: Pillar[] = [
       "Speed-to-lead on calls and texts",
       "Tap-to-text for drivers who won't call",
       "Missed-call capture",
-      "Booking flow with no friction",
+      "A quote request with no friction",
     ],
     icon: "phone",
   },
@@ -195,7 +195,7 @@ export const frameworkPillars: Pillar[] = [
     n: "04",
     title: "Get Paid Well",
     question: "Are these jobs worth doing?",
-    body: "A full calendar of chip repairs isn't growth. The framework deliberately steers mix toward replacement, calibration, and fleet work — so the same marketing spend returns a bigger ticket.",
+    body: "A full calendar of chip repairs isn't growth. The framework deliberately steers mix toward replacement, calibration, and fleet work, the jobs that carry a bigger ticket.",
     levers: [
       "Replacement and calibration targeting",
       "Fleet and commercial channels",
@@ -221,7 +221,7 @@ export const leaks = [
   {
     stat: "90 sec",
     title: "Thin or stale reviews",
-    body: "Drivers compare a few shops in about a minute and a half. A shop with 12 old reviews loses to one with 180 recent ones — before price is ever discussed.",
+    body: "Drivers compare a few shops in about a minute and a half. A shop with 12 old reviews loses to one with 180 recent ones, before price is ever discussed.",
   },
   {
     stat: "5 min",
@@ -231,7 +231,7 @@ export const leaks = [
   {
     stat: "TPA",
     title: "Steered away by the insurer",
-    body: "Third-party administrators route claims to network chains. Drivers rarely know they have the right to choose your shop — unless you tell them.",
+    body: "Third-party administrators route claims to network chains. Drivers rarely know they have the right to choose your shop, unless you tell them.",
   },
   {
     stat: "ADAS",
@@ -251,8 +251,8 @@ export const leaks = [
 
 export const timeline = [
   {
-    window: "Days 1–30",
-    title: "Foundation and fast wins",
+    window: "Phase 1",
+    title: "Foundation and first fixes",
     body: "Audit, then fix what's leaking now. Profile rebuilt, listings and citations corrected, entity signals in place, tracking live so every call is attributed from day one.",
     outcomes: [
       "Google Business Profile fully built",
@@ -262,9 +262,9 @@ export const timeline = [
     ],
   },
   {
-    window: "Days 31–60",
+    window: "Phase 2",
     title: "Momentum",
-    body: "Rankings start to move and conversion work compounds. Service and location pages go live, site speed and mobile booking get fixed, and paid picks up high-intent demand.",
+    body: "Conversion work builds on the foundation. Service and location pages go live, site speed and mobile conversion get fixed, and paid targets high-intent demand.",
     outcomes: [
       "Service and location pages published",
       "Mobile conversion fixed",
@@ -273,13 +273,13 @@ export const timeline = [
     ],
   },
   {
-    window: "Days 61–90",
+    window: "Phase 3",
     title: "Compounding",
-    body: "The system starts feeding itself. Rankings hold, authority accumulates, and the work shifts from fixing to steering — pushing mix toward higher-ticket jobs.",
+    body: "Authority keeps accumulating, and the work shifts from fixing to steering: pushing mix toward higher-ticket jobs.",
     outcomes: [
-      "Top-3 presence on core terms",
-      "Predictable weekly job flow",
-      "Mix shifting to replacement and calibration",
+      "Ongoing authority work on core terms",
+      "Weekly job flow tracked",
+      "Targeting steered to replacement and calibration",
       "Reporting in booked jobs",
     ],
   },
@@ -289,7 +289,7 @@ export const timeline = [
 export const frameworkFaqs = [
   {
     q: "What is the Auto Glass Marketing Framework?",
-    a: "It's a four-stage system for growing an auto glass shop: Invisible, Visible, Growing, and Dominant. Every shop sits at one of those stages, and each stage has a different bottleneck. The framework identifies which stage you're in and applies the specific work that moves you to the next one — measured in booked jobs, not clicks or impressions.",
+    a: "It's a four-stage system for growing an auto glass shop: Invisible, Visible, Growing, and Dominant. Every shop sits at one of those stages, and each stage has a different bottleneck. The framework identifies which stage you're in and applies the specific work aimed at the next one, measured in booked jobs, not clicks or impressions.",
   },
   {
     q: "How do I know which stage my shop is in?",
@@ -297,7 +297,7 @@ export const frameworkFaqs = [
   },
   {
     q: "How long does it take to move up a stage?",
-    a: "Most shops see meaningful movement inside 90 days, with early wins in the first 30 — usually from profile and citation work, which moves fastest. Moving from Invisible to Visible is typically quicker than Growing to Dominant, since later stages compete against shops that are already doing the work.",
+    a: "It depends on your market, your competition, and where you start, so we don't promise a timeline. Profile and citation work usually shows movement first. Moving from Invisible to Visible is typically quicker than Growing to Dominant, since later stages compete against shops that are already doing the work.",
   },
   {
     q: "Why is this specific to auto glass instead of general local marketing?",
@@ -305,6 +305,6 @@ export const frameworkFaqs = [
   },
   {
     q: "Do I have to buy every service to use the framework?",
-    a: "No. The framework determines what your shop actually needs right now. A shop at the Invisible stage usually shouldn't be running ads yet — the foundation has to exist first. Doing the right work in the right order is the point, and it's why we'd rather tell you to wait on a service than sell it early.",
+    a: "No. The framework determines what your shop actually needs right now. A shop at the Invisible stage usually shouldn't be running ads yet. The foundation has to exist first. Doing the right work in the right order is the point, and it's why we'd rather tell you to wait on a service than sell it early.",
   },
 ];

@@ -9,12 +9,12 @@ import { formatDate } from "@/lib/posts";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Resources — Auto Glass Marketing Guides",
+  title: "Resources: Auto Glass Marketing Guides",
   description:
     "Practical marketing guides for auto glass shops: local SEO, Google Ads, web design, and growth strategy from Auto Glass Marketing Pros.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Resources — Auto Glass Marketing Guides",
+    title: "Resources: Auto Glass Marketing Guides",
     description:
       "Practical, no-fluff marketing guides written specifically for auto glass shops.",
     url: `${site.url}/blog`,
@@ -39,7 +39,7 @@ export default async function BlogPage() {
             <span className="text-gradient">real-world guides</span>
           </>
         }
-        subtitle="No fluff, no theory — practical marketing advice written specifically for auto glass shops. Steal our playbook."
+        subtitle="No fluff, no theory. Practical marketing advice written specifically for auto glass shops. Steal our playbook."
       />
 
       <section className="pb-8">

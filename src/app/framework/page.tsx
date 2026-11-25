@@ -15,14 +15,14 @@ import { site } from "@/lib/site";
 
 const title = "The Auto Glass Marketing Framework";
 const description =
-  "The four-stage system we use to move auto glass shops from Invisible to Dominant — what each stage looks like, what's actually blocking you, and the work that moves you up.";
+  "The four-stage system behind our auto glass marketing, from Invisible to Dominant: what each stage looks like, what's actually blocking you, and the work that comes next.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/framework" },
   openGraph: {
-    title: `${title} — ${site.name}`,
+    title: `${title} | ${site.name}`,
     description,
     url: `${site.url}/framework`,
     type: "article",
@@ -100,7 +100,7 @@ export default function FrameworkPage() {
             <span className="text-gradient">Marketing Framework</span>™
           </>
         }
-        subtitle="Every auto glass shop sits at one of four stages. Each stage has a different bottleneck — and doing the right work in the wrong order is why most shop marketing fails. Here's the whole system, in the open."
+        subtitle="Every auto glass shop sits at one of four stages. Each stage has a different bottleneck, and doing the right work in the wrong order is why most shop marketing fails. Here's the whole system, in the open."
       >
         <Button href="/audit" size="lg" withArrow>
           Find out which stage you&apos;re in
@@ -127,14 +127,14 @@ export default function FrameworkPage() {
               <div className="mt-5 space-y-4 text-lg leading-relaxed text-ink-300">
                 <p>
                   A shop that isn&apos;t in the Map Pack yet doesn&apos;t need
-                  Google Ads — it needs to exist as a business Google
+                  Google Ads. It needs to exist as a business Google
                   understands. Selling that shop ads produces expensive clicks
                   that land on a profile nobody trusts.
                 </p>
                 <p>
                   That&apos;s the whole reason this framework exists. It tells us
                   what to do <span className="text-white">next</span> for your
-                  shop specifically, and — just as often — what to{" "}
+                  shop specifically, and, just as often, what to{" "}
                   <span className="text-white">wait</span> on.
                 </p>
               </div>
@@ -208,11 +208,11 @@ export default function FrameworkPage() {
             eyebrow="The engine"
             title={
               <>
-                Four pillars that move you{" "}
-                <span className="text-gradient">up a stage</span>
+                Four pillars behind{" "}
+                <span className="text-gradient">every stage</span>
               </>
             }
-            subtitle="Get Found, Get Chosen, Get Booked, Get Paid Well — in the order a driver actually experiences your shop. Every stage pulls the same four levers, just at different intensities."
+            subtitle="Get Found, Get Chosen, Get Booked, Get Paid Well, in the order a driver actually experiences your shop. Every stage pulls the same four levers, just at different intensities."
           />
           <div className="mt-14">
             <PillarEngine />
@@ -227,7 +227,7 @@ export default function FrameworkPage() {
             center
             eyebrow="Stage by stage"
             title="Find your shop below"
-            subtitle="Read the symptoms. Whichever set sounds like your Monday morning is where you are — and the work listed is what actually moves you up."
+            subtitle="Read the symptoms. Whichever set sounds like your Monday morning is where you are, and the work listed is what we do about it."
           />
 
           <div className="mt-14 space-y-6">
@@ -328,8 +328,8 @@ export default function FrameworkPage() {
           <SectionHeading
             center
             eyebrow="Implementation"
-            title="What the first 90 days look like"
-            subtitle="No mystery, no black box. This is the sequence regardless of which stage you start from — the work inside each window is what changes."
+            title="What implementation looks like"
+            subtitle="No mystery, no black box. This is the sequence regardless of which stage you start from. The work inside each phase is what changes."
           />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {timeline.map((t, i) => (
@@ -403,7 +403,7 @@ export default function FrameworkPage() {
 
       <CtaBand
         title="Not sure which stage you're in?"
-        subtitle="The free audit checks your Map Pack position, reviews, website, and AI visibility — then tells you exactly where you sit on the framework and what moves you up."
+        subtitle="The free audit checks your Map Pack position, reviews, website, and AI visibility, then tells you exactly where you sit on the framework and what the next step is."
       />
     </>
   );
