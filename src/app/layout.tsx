@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { MyWebAuditLoader } from "@/components/MyWebAuditLoader";
 import { AuditConversion } from "@/components/AuditConversion";
+import { Motion } from "@/components/Motion";
 import { ClarityAnalytics } from "@/components/ClarityAnalytics";
 import { site, socialProfiles } from "@/lib/site";
 
@@ -132,6 +133,7 @@ export default function RootLayout({
         <AuditConversion />
         {/* Microsoft Clarity — after AuditConversion so attribution tags exist */}
         <ClarityAnalytics />
+        <Motion />
         <Analytics />
         <SpeedInsights />
       </body>

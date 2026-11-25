@@ -85,11 +85,14 @@ body {
 
 /* Glassy card surface */
 .glass-card {
-  background: linear-gradient(
-    160deg,
-    rgba(30, 39, 64, 0.7) 0%,
-    rgba(15, 20, 36, 0.75) 100%
-  );
+  /* First layer is the cursor spotlight (Motion.tsx sets --mx / --my). */
+  background-image:
+    radial-gradient(
+      360px circle at var(--mx, 50%) var(--my, -420px),
+      rgba(56, 189, 248, 0.16),
+      transparent 50%
+    ),
+    linear-gradient(160deg, rgba(30, 39, 64, 0.7) 0%, rgba(15, 20, 36, 0.75) 100%);
   border: 1px solid rgba(148, 163, 184, 0.12);
   backdrop-filter: blur(8px);
 }
@@ -124,6 +127,146 @@ body {
   .animate-fade-up,
   .animate-float,
   .animate-marquee {
+    animation: none;
+  }
+}
+
+/* ---------- Motion (driven by src/components/Motion.tsx) ---------- */
+
+/* Scroll reveal: only below-the-fold elements get .reveal-pending. */
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(22px) scale(0.985);
+}
+.reveal-in {
+  transition:
+    opacity 0.75s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+/* A mockup waiting to reveal holds its entrance animation until it does. */
+[data-mockup].reveal-pending * {
+  animation: none !important;
+}
+
+/* Mockup entrance animations. They play on page load by default, so a
+   mockup that is already on screen (or a page without JavaScript) still
+   ends fully drawn. --d is the per-item stagger. */
+@keyframes mk-pop {
+  from { opacity: 0; transform: translateY(10px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+.mk-pop {
+  animation: mk-pop 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes mk-cell {
+  from { opacity: 0; transform: scale(0.4); }
+  to { opacity: 1; transform: none; }
+}
+.mk-cell {
+  animation: mk-cell 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes mk-grow {
+  from { transform: scaleX(0); }
+  to { transform: none; }
+}
+.mk-grow {
+  transform-origin: left center;
+  animation: mk-grow 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes mk-rise {
+  from { transform: scaleY(0); }
+  to { transform: none; }
+}
+.mk-rise {
+  transform-origin: bottom center;
+  animation: mk-rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes mk-ring {
+  from { stroke-dashoffset: 100; }
+}
+.mk-ring {
+  animation: mk-ring 1.2s cubic-bezier(0.3, 0.7, 0.2, 1) 0.2s both;
+}
+
+@keyframes mk-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 26, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(255, 107, 26, 0.18); }
+}
+.mk-pulse {
+  animation: mk-pulse 2.4s ease-in-out 1.2s infinite;
+}
+
+@keyframes mk-pulse-border {
+  0%, 100% { border-color: rgba(56, 189, 248, 0.4); }
+  50% { border-color: rgba(125, 211, 252, 0.9); }
+}
+.mk-pulse-border {
+  animation:
+    mk-pop 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0ms) both,
+    mk-pulse-border 2.4s ease-in-out 1.4s infinite;
+}
+
+@keyframes mk-sheen {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(120%); }
+}
+.mk-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.08) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: mk-sheen 1.6s ease-in-out 0.9s both;
+}
+
+/* Hero glow drifts slowly behind every page header. */
+@keyframes glow-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(3%, 2%, 0) scale(1.08); }
+}
+.bg-radial-glow {
+  animation: glow-drift 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Light sweep across the amber call-to-action on hover. */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.btn-shine:hover::after {
+  transform: translateX(120%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+  .bg-radial-glow,
+  .mk-pulse,
+  .mk-pulse-border {
     animation: none;
   }
 }

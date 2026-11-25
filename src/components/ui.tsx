@@ -39,7 +39,7 @@ export function Button({
   };
   const variants = {
     amber:
-      "bg-amber-500 text-ink-950 font-semibold shadow-amber hover:bg-amber-400 hover:-translate-y-0.5",
+      "btn-shine bg-amber-500 text-ink-950 font-semibold shadow-amber hover:bg-amber-400 hover:-translate-y-0.5",
     glass:
       "bg-glass-500 text-white font-semibold hover:bg-glass-400 hover:-translate-y-0.5",
     outline:

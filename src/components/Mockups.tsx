@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { IconPhone, IconMessage, IconCheck, IconStar, IconMap } from "./Icons";
 
 /**
@@ -36,8 +36,26 @@ export const screenshotSlots: Record<MockupKind, string> = {
     "Windshield Repair HQ city page with a Partner listing at the top and the Partner badge. Use a demo or consenting shop.",
 };
 
-function Bar({ w = "w-10", tone = "bg-white/15" }: { w?: string; tone?: string }) {
-  return <span className={`inline-block h-2.5 rounded-full ${w} ${tone}`} />;
+function Bar({
+  w = "w-10",
+  tone = "bg-white/15",
+  delay,
+}: {
+  w?: string;
+  tone?: string;
+  delay?: number;
+}) {
+  return (
+    <span
+      className={`inline-block h-2.5 rounded-full ${w} ${tone} ${delay !== undefined ? "mk-grow" : ""}`}
+      style={delay !== undefined ? d(delay) : undefined}
+    />
+  );
+}
+
+/** Stagger delay for the mockup entrance animations (see globals.css). */
+function d(ms: number): CSSProperties {
+  return { "--d": `${Math.round(ms)}ms` } as CSSProperties;
 }
 
 export function MockupFrame({
@@ -54,6 +72,7 @@ export function MockupFrame({
   return (
     <figure
       data-screenshot-slot={screenshotSlots[kind]}
+      data-mockup={kind}
       className={`relative ${className}`}
     >
       <div className="relative rounded-2xl border border-white/10 bg-ink-950/70 p-4 shadow-card sm:p-5">
@@ -85,10 +104,11 @@ export function PortalMockup() {
           <span>Today</span>
         </div>
         <div className="mt-3 space-y-2">
-          {leads.map((l) => (
+          {leads.map((l, i) => (
             <div
               key={l.src}
-              className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5"
+              className="mk-pop flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5"
+              style={d(200 + i * 180)}
             >
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-glass-500/15 text-glass-300">
                 <l.icon className="h-3.5 w-3.5" />
@@ -100,7 +120,7 @@ export function PortalMockup() {
               <span
                 className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${
                   l.tag === "New"
-                    ? "bg-amber-500/15 text-amber-400"
+                    ? "mk-pulse bg-amber-500/15 text-amber-400"
                     : "bg-glass-500/15 text-glass-200"
                 }`}
               >
@@ -109,7 +129,7 @@ export function PortalMockup() {
             </div>
           ))}
         </div>
-        <div className="mt-3 rounded-xl border border-amber-500/30 bg-amber-500/10 px-3 py-2.5">
+        <div className="mk-pop mt-3 rounded-xl border border-amber-500/30 bg-amber-500/10 px-3 py-2.5" style={d(800)}>
           <div className="text-[11px] font-semibold text-amber-400">Ring these back</div>
           <div className="mt-1.5 flex items-center justify-between">
             <span className="text-[11px] text-ink-300">Missed call, not returned</span>
@@ -133,20 +153,20 @@ export function AlertMockup() {
     <div className="space-y-3 pt-6">
       <div className="text-xs font-semibold text-white">New lead: windshield replacement</div>
       <div className="grid grid-cols-[72px_1fr] gap-3">
-        <div className="flex h-[72px] items-center justify-center rounded-lg border border-white/10 bg-gradient-to-br from-ink-700 to-ink-800 text-[10px] text-ink-400">
+        <div className="mk-pop flex h-[72px] items-center justify-center rounded-lg border border-white/10 bg-gradient-to-br from-ink-700 to-ink-800 text-[10px] text-ink-400" style={d(150)}>
           Damage photo
         </div>
         <div className="space-y-2 text-[11px] text-ink-300">
           <div>Vehicle: 2020 SUV</div>
-          <div>ZIP / postal: <Bar w="w-12" /></div>
-          <div>Phone: <Bar w="w-16" /></div>
+          <div>ZIP / postal: <Bar w="w-12" delay={300} /></div>
+          <div>Phone: <Bar w="w-16" delay={400} /></div>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-2 text-center text-[11px] font-semibold">
-        <span className="rounded-full bg-amber-500 py-1.5 text-ink-950">Call</span>
-        <span className="rounded-full border border-white/15 py-1.5 text-ink-100">Text back</span>
-        <span className="rounded-full border border-signal/40 py-1.5 text-signal">We booked it</span>
-        <span className="rounded-full border border-white/15 py-1.5 text-ink-300">Didn&apos;t book</span>
+        <span className="mk-pop rounded-full bg-amber-500 py-1.5 text-ink-950" style={d(500)}>Call</span>
+        <span className="mk-pop rounded-full border border-white/15 py-1.5 text-ink-100" style={d(580)}>Text back</span>
+        <span className="mk-pop rounded-full border border-signal/40 py-1.5 text-signal" style={d(660)}>We booked it</span>
+        <span className="mk-pop rounded-full border border-white/15 py-1.5 text-ink-300" style={d(740)}>Didn&apos;t book</span>
       </div>
     </div>
   );
@@ -156,7 +176,22 @@ export function CoachingMockup() {
   return (
     <div className="pt-6">
       <div className="flex items-center gap-4">
-        <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-signal/60">
+        <div className="relative flex h-16 w-16 shrink-0 items-center justify-center">
+          <svg viewBox="0 0 64 64" className="absolute inset-0 -rotate-90" aria-hidden>
+            <circle cx="32" cy="32" r="28" fill="none" strokeWidth="4" className="stroke-white/10" />
+            <circle
+              cx="32"
+              cy="32"
+              r="28"
+              fill="none"
+              strokeWidth="4"
+              strokeLinecap="round"
+              pathLength={100}
+              strokeDasharray="100"
+              className="mk-ring stroke-signal/70"
+              style={{ strokeDashoffset: 18 }}
+            />
+          </svg>
           <span className="text-[10px] font-semibold uppercase text-signal">Score</span>
         </div>
         <div>
@@ -165,17 +200,21 @@ export function CoachingMockup() {
         </div>
       </div>
       <div className="mt-4 space-y-2.5 text-[12px] leading-relaxed">
-        <div className="rounded-xl border border-signal/25 bg-signal/10 px-3 py-2 text-ink-100">
+        <div className="mk-pop rounded-xl border border-signal/25 bg-signal/10 px-3 py-2 text-ink-100" style={d(450)}>
           Good: you confirmed the vehicle and gave a clear next step.
         </div>
-        <div className="rounded-xl border border-glass-300/25 bg-glass-500/10 px-3 py-2 text-ink-100">
+        <div className="mk-pop rounded-xl border border-glass-300/25 bg-glass-500/10 px-3 py-2 text-ink-100" style={d(600)}>
           <span className="font-semibold text-glass-200">Try next time:</span> ask
           if the car has a camera behind the mirror.
         </div>
       </div>
       <div className="mt-4 flex items-end gap-1.5" aria-hidden>
         {[6, 7, 5, 7, 6, 7, 5, 6].map((h, i) => (
-          <span key={i} className="w-full rounded-sm bg-glass-400/40" style={{ height: `${h * 4}px` }} />
+          <span
+            key={i}
+            className="mk-rise w-full rounded-sm bg-glass-400/40"
+            style={{ height: `${h * 4}px`, ...d(700 + i * 60) }}
+          />
         ))}
       </div>
       <div className="mt-1 text-[10px] text-ink-500">Call quality, last 12 weeks</div>
@@ -193,21 +232,21 @@ export function ReportMockup() {
     <div className="pt-6">
       <div className="text-xs font-semibold uppercase tracking-wide text-ink-400">Monthly report</div>
       <div className="mt-3 space-y-2">
-        {rows.map(([label, w]) => (
-          <div key={label} className="flex items-center justify-between rounded-xl bg-white/[0.03] px-3 py-2.5">
+        {rows.map(([label, w], i) => (
+          <div key={label} className="mk-pop flex items-center justify-between rounded-xl bg-white/[0.03] px-3 py-2.5" style={d(100 + i * 130)}>
             <span className="text-[12px] text-ink-200">{label}</span>
-            <Bar w={w} />
+            <Bar w={w} delay={350 + i * 130} />
           </div>
         ))}
       </div>
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
         <div className="rounded-xl border border-white/10 px-3 py-2.5">
           <div className="text-[11px] font-semibold text-white">What we did</div>
-          <div className="mt-2 space-y-1.5"><Bar w="w-full" /><Bar w="w-3/4" /></div>
+          <div className="mt-2 space-y-1.5"><Bar w="w-full" delay={700} /><Bar w="w-3/4" delay={780} /></div>
         </div>
         <div className="rounded-xl border border-glass-300/25 bg-glass-500/5 px-3 py-2.5">
           <div className="text-[11px] font-semibold text-glass-200">What&apos;s next</div>
-          <div className="mt-2 space-y-1.5"><Bar w="w-full" /><Bar w="w-2/3" /></div>
+          <div className="mt-2 space-y-1.5"><Bar w="w-full" delay={860} /><Bar w="w-2/3" delay={940} /></div>
         </div>
       </div>
     </div>
@@ -239,7 +278,8 @@ export function RankGridMockup() {
         {cells.map((t, i) => (
           <span
             key={i}
-            className={`aspect-square rounded-[3px] ${tones[t]} ${i === 44 ? "ring-2 ring-white" : ""}`}
+            className={`mk-cell aspect-square rounded-[3px] ${tones[t]} ${i === 44 ? "ring-2 ring-white" : ""}`}
+            style={d(Math.hypot((i % 10) - 4, Math.floor(i / 10) - 4) * 70)}
           />
         ))}
       </div>
@@ -259,15 +299,15 @@ export function QuoteFormMockup() {
       <div className="rounded-[1.5rem] bg-white/[0.04] p-4 pt-8">
         <div className="text-sm font-bold text-white">Get a free quote</div>
         <div className="mt-3 space-y-2">
-          {["Name", "Phone", "Year, make, model", "ZIP or postal code"].map((f) => (
-            <div key={f} className="rounded-lg border border-white/10 bg-ink-950/60 px-3 py-2 text-[11px] text-ink-500">
+          {["Name", "Phone", "Year, make, model", "ZIP or postal code"].map((f, i) => (
+            <div key={f} className="mk-pop rounded-lg border border-white/10 bg-ink-950/60 px-3 py-2 text-[11px] text-ink-500" style={d(150 + i * 110)}>
               {f}
             </div>
           ))}
-          <div className="rounded-lg border border-dashed border-glass-300/40 px-3 py-2.5 text-center text-[11px] text-glass-200">
+          <div className="mk-pop mk-pulse-border rounded-lg border border-dashed border-glass-300/40 px-3 py-2.5 text-center text-[11px] text-glass-200" style={d(620)}>
             + Add a photo of the damage
           </div>
-          <div className="rounded-full bg-amber-500 py-2 text-center text-xs font-semibold text-ink-950">
+          <div className="mk-pop rounded-full bg-amber-500 py-2 text-center text-xs font-semibold text-ink-950" style={d(740)}>
             Send my quote request
           </div>
         </div>
@@ -283,7 +323,7 @@ export function PartnerListingMockup() {
   return (
     <div className="pt-6">
       <div className="text-[11px] uppercase tracking-wide text-ink-500">Auto glass shops in your city</div>
-      <div className="mt-3 rounded-xl border border-glass-300/40 bg-glass-500/10 p-4">
+      <div className="mk-pop mk-sheen relative mt-3 overflow-hidden rounded-xl border border-glass-300/40 bg-glass-500/10 p-4" style={d(150)}>
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[10px] text-ink-300">
             Logo
@@ -301,7 +341,7 @@ export function PartnerListingMockup() {
               ))}
               <span className="ml-1 text-[10px] text-ink-400">Google rating</span>
             </div>
-            <div className="mt-2 space-y-1.5"><Bar w="w-full" /><Bar w="w-4/5" /></div>
+            <div className="mt-2 space-y-1.5"><Bar w="w-full" delay={450} /><Bar w="w-4/5" delay={530} /></div>
           </div>
         </div>
         <div className="mt-3 grid grid-cols-2 gap-2 text-center text-[11px] font-semibold">
@@ -311,7 +351,7 @@ export function PartnerListingMockup() {
       </div>
       <div className="mt-2 space-y-2 opacity-60">
         {[0, 1].map((i) => (
-          <div key={i} className="flex items-center gap-3 rounded-xl bg-white/[0.03] px-3 py-2.5">
+          <div key={i} className="mk-pop flex items-center gap-3 rounded-xl bg-white/[0.03] px-3 py-2.5" style={d(350 + i * 120)}>
             <span className="h-6 w-6 rounded-md bg-white/10" />
             <Bar w="w-28" />
           </div>
