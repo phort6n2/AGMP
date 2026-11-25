@@ -17,7 +17,6 @@ export const site = {
   directory: {
     name: "Windshield Repair HQ",
     url: "https://windshieldrepairhq.com",
-    shops: "300+",
     reach: "all 50 states",
   },
   // Real profile URLs only — these feed schema.org `sameAs`, which search
@@ -65,6 +64,11 @@ export const nav: NavItem[] = [
         label: "Shop Directory",
         href: "/services/directory",
         desc: "Get found in our driver directory",
+      },
+      {
+        label: "Your Shop Portal",
+        href: "/platform",
+        desc: "Every lead and report on your phone",
       },
     ],
   },

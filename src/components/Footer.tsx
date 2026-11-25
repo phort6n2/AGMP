@@ -28,6 +28,7 @@ const cols = [
     links: [
       { label: "Free Marketing Audit", href: "/audit" },
       { label: "Our Services", href: "/services" },
+      { label: "Your Shop Portal", href: "/platform" },
       { label: "Shop Directory", href: "/services/directory" },
     ],
   },

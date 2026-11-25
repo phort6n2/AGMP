@@ -13,7 +13,16 @@ import { AiVisibility } from "@/components/AiVisibility";
 import { AdsLandingPage } from "@/components/AdsLandingPage";
 import { AlwaysOn } from "@/components/AlwaysOn";
 import { DirectoryProof } from "@/components/DirectoryProof";
+import {
+  TopFeatures,
+  RhythmSection,
+  IncludedGrid,
+  StepsSection,
+  FaqSection,
+  PlatformBand,
+} from "@/components/ServiceSections";
 import { servicesContent, serviceSlugs } from "@/lib/services-content";
+import { platformTeaser } from "@/lib/platform-content";
 import { services, site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -150,6 +159,12 @@ export default async function ServiceDetailPage({
         </Container>
       </section>
 
+      <TopFeatures
+        eyebrow="What matters most"
+        title={`The four things ${s.name} gets your shop`}
+        features={s.topFeatures}
+      />
+
       {/* Problem */}
       <section className="py-16">
         <Container>
@@ -165,95 +180,27 @@ export default async function ServiceDetailPage({
         </Container>
       </section>
 
-      {/* AI/LLM visibility highlight — Local SEO only */}
-      {slug === "local-seo" && <AiVisibility />}
-      {slug === "local-seo" && <AlwaysOn />}
+      {s.aiVisibility && <AiVisibility copy={s.aiVisibility} />}
+      {s.alwaysOn && <AlwaysOn copy={s.alwaysOn} />}
       {slug === "google-ads" && <AdsLandingPage />}
-      {slug === "directory" && <DirectoryProof />}
+      {s.proof && <DirectoryProof copy={s.proof} />}
 
-      {/* Features */}
-      <section className="py-12">
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>What&apos;s included</Eyebrow>
-            <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-              Everything in your {s.name} engagement
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {s.features.map((f) => (
-              <div key={f.title} className="glass-card rounded-2xl p-6">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-glass-500/15 text-glass-300">
-                  <IconCheck className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-bold text-white">
-                  {f.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-300">
-                  {f.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <RhythmSection rhythm={s.rhythm} mockups={s.mockups} />
 
-      {/* Steps */}
-      <section className="py-16">
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>How it works</Eyebrow>
-            <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-              Our process
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {s.steps.map((step, i) => (
-              <div key={step.title} className="glass-card rounded-2xl p-6">
-                <span className="font-display text-3xl font-extrabold text-white/10">
-                  0{i + 1}
-                </span>
-                <h3 className="mt-2 font-display text-lg font-bold text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-300">
-                  {step.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <IncludedGrid
+        title={`Everything in your ${s.name} service`}
+        items={s.included}
+      />
 
-      {/* FAQ */}
-      <section className="py-16">
-        <Container>
-          <div className="mx-auto max-w-3xl">
-            <div className="text-center">
-              <Eyebrow>Questions</Eyebrow>
-              <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-                {s.name} FAQ
-              </h2>
-            </div>
-            <div className="mt-10 space-y-4">
-              {s.faqs.map((f) => (
-                <details
-                  key={f.q}
-                  className="glass-card group rounded-2xl p-6 [&_summary]:cursor-pointer"
-                >
-                  <summary className="flex items-center justify-between gap-4 font-display text-lg font-semibold text-white marker:content-none">
-                    {f.q}
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/15 text-glass-300 transition-transform group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-3 leading-relaxed text-ink-300">{f.a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <StepsSection steps={s.steps} />
+
+      <FaqSection title={`${s.name} FAQ`} faqs={s.faqs} />
+
+      <PlatformBand
+        title={platformTeaser.title}
+        body={platformTeaser.body}
+        cta={platformTeaser.cta}
+      />
 
       {/* Other services */}
       <section className="py-12">

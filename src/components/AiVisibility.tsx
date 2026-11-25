@@ -6,14 +6,14 @@ import { MyWebAuditWidget } from "./MyWebAuditWidget";
 // (non-modal) widget is created and the block below goes live automatically.
 const INLINE_AV_KEY = "9ac9e4";
 
-const surfaces = [
-  { name: "ChatGPT", desc: "The assistant millions now ask first" },
-  { name: "Google AI Overviews", desc: "The AI answer above search results" },
-  { name: "Perplexity", desc: "The fast-growing answer engine" },
-  { name: "Gemini", desc: "Google's assistant across Android & search" },
-];
+export type AiVisibilityCopy = {
+  title: string;
+  body: string;
+  points: string[];
+  surfaces: { name: string; desc: string }[];
+};
 
-export function AiVisibility() {
+export function AiVisibility({ copy }: { copy: AiVisibilityCopy }) {
   return (
     <section className="relative overflow-hidden py-16 sm:py-20">
       <div className="bg-radial-glow pointer-events-none absolute inset-0 opacity-70" />
@@ -24,22 +24,13 @@ export function AiVisibility() {
             <div>
               <Eyebrow>Included in Local SEO</Eyebrow>
               <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
-                Get recommended by{" "}
-                <span className="text-gradient">AI, not just Google</span>
+                {copy.title}
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-ink-300">
-                Drivers increasingly skip the search results and just ask an AI
-                which shop to call. Our Local SEO service is built for this
-                shift — we structure your shop&apos;s content, entities, citations,
-                and mentions the way large language models actually source
-                their answers, so you&apos;re the shop the AI names.
+                {copy.body}
               </p>
               <ul className="mt-6 space-y-3">
-                {[
-                  "Optimized to be cited across the major AI assistants",
-                  "The same discipline as classic SEO, extended to AI",
-                  "No extra add-on — it's part of every Local SEO plan",
-                ].map((point) => (
+                {copy.points.map((point) => (
                   <li key={point} className="flex items-start gap-3">
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-signal/15 text-signal">
                       <IconCheck className="h-3.5 w-3.5" />
@@ -86,7 +77,7 @@ export function AiVisibility() {
                 </div>
               </div>
               <p className="mt-3 text-center text-xs text-ink-400">
-                Illustrative example of an AI assistant recommending your shop.
+                Illustrative. No one controls what an AI assistant says; we track how often it names you.
               </p>
             </div>
           </div>
@@ -94,10 +85,10 @@ export function AiVisibility() {
           {/* Surfaces row */}
           <div className="mt-10 border-t border-white/10 pt-8">
             <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">
-              We optimize your shop to show up across
+              Where drivers ask
             </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {surfaces.map((s) => (
+            <div className="mx-auto mt-6 grid max-w-2xl gap-3 sm:grid-cols-2">
+              {copy.surfaces.map((s) => (
                 <div
                   key={s.name}
                   className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center"
@@ -125,15 +116,14 @@ export function AiVisibility() {
                 <span className="text-gradient">right now?</span>
               </h3>
               <p className="mt-3 text-ink-300">
-                Run a free 60-second check to see whether ChatGPT, Google&apos;s
-                AI, and the other assistants can find and recommend your shop —
-                or if they&apos;re sending your customers to a competitor.
+                Run a free check to see what ChatGPT and Google&apos;s AI
+                answers say about your shop today.
               </p>
             </div>
             <div className="mx-auto mt-8 max-w-xl">
               <MyWebAuditWidget
                 widgetKey={INLINE_AV_KEY}
-                badge="60 seconds"
+                badge="Free check"
                 loadingLabel="Loading your AI visibility check…"
                 minHeight={300}
               />

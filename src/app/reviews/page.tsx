@@ -24,7 +24,7 @@ const proofPoints = [
   {
     icon: IconMap,
     title: "A live national directory",
-    body: "Windshield Repair HQ lists 300+ shops across all 50 states. It is a public, inspectable example of the auto glass search work we build and operate.",
+    body: "Windshield Repair HQ covers auto glass shops in all 50 states. It is a public, inspectable example of the auto glass search work we build and operate.",
   },
   {
     icon: IconChart,

@@ -5,27 +5,22 @@ import { PageHeader } from "@/components/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
 import { services, site } from "@/lib/site";
 import { IconArrow, IconCheck, IconSparkle, iconMap } from "@/components/Icons";
+import { PlatformBand } from "@/components/ServiceSections";
+import { servicesIndex, platformTeaser } from "@/lib/platform-content";
 
 export const metadata: Metadata = {
-  title: "Services — SEO, Google Ads, Web Design & Directory",
+  title: "Services: SEO, Google Ads, Web Design & Directory",
   description:
-    "The complete auto glass growth system: Local SEO, Google Ads, conversion-focused web design, and our driver directory. Everything your shop needs to stay booked.",
+    "Auto glass marketing services: Local SEO, Google Ads, web design and a Windshield Repair HQ listing, with a shop portal for every lead.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Services — Auto Glass Marketing Pros",
+    title: "Services | Auto Glass Marketing Pros",
     description:
-      "Local SEO (with AI visibility), Google Ads, web design, and a driver directory — one system to get your shop found and booked.",
+      "Local SEO, Google Ads, web design and a Windshield Repair HQ listing, with a shop portal for every lead.",
     url: `${site.url}/services`,
     type: "website",
   },
 };
-
-const included = [
-  "A dedicated auto glass marketing expert",
-  "Transparent reporting tied to booked jobs",
-  "Month-to-month — cancel anytime",
-  "A custom plan built around your goals",
-];
 
 export default function ServicesPage() {
   return (
@@ -38,7 +33,7 @@ export default function ServicesPage() {
             <span className="text-gradient">found &amp; booked</span>
           </>
         }
-        subtitle="Four channels that work together to turn local drivers into scheduled installs. Use one, or stack them into a complete growth engine."
+        subtitle={servicesIndex.subtitle}
       >
         <Button href="/audit" size="lg" withArrow>
           {site.ctaText}
@@ -99,18 +94,16 @@ export default function ServicesPage() {
         <Container>
           <div className="glass-card grid gap-8 rounded-3xl p-8 sm:p-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <Eyebrow>Every engagement includes</Eyebrow>
+              <Eyebrow>Every client gets</Eyebrow>
               <h2 className="mt-3 font-display text-3xl font-bold text-white">
-                The AGMP standard
+                {servicesIndex.everyClient.title}
               </h2>
               <p className="mt-4 text-ink-300">
-                No matter which services you choose, you get the same
-                foundation: real expertise, honest reporting, and the freedom of
-                a month-to-month relationship.
+                {servicesIndex.everyClient.body}
               </p>
             </div>
             <ul className="grid gap-3">
-              {included.map((f) => (
+              {servicesIndex.everyClient.items.map((f) => (
                 <li
                   key={f}
                   className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3.5"
@@ -126,6 +119,12 @@ export default function ServicesPage() {
         </Container>
       </section>
 
+      <PlatformBand
+        title={platformTeaser.title}
+        body={platformTeaser.body}
+        cta={platformTeaser.cta}
+      />
+
       {/* Not sure banner */}
       <section className="pb-8">
         <Container>
@@ -135,8 +134,8 @@ export default function ServicesPage() {
                 Not sure where to start?
               </h3>
               <p className="text-sm text-ink-300">
-                Run your free audit and we&apos;ll recommend the right mix — no
-                upsell, just what will move the needle.
+                Run your free audit and we&apos;ll recommend the mix that fits
+                your shop and your market.
               </p>
             </div>
             <Link

@@ -10,75 +10,42 @@ import {
 } from "./Icons";
 
 /**
- * "Always-on systems" — surfaces the real fulfillment automation behind the
- * Local SEO service at the what-and-when level, deliberately not the how.
- * Cadences and outcomes are shown; tools, data sources, and pipeline internals
- * stay out. The claims map 1:1 to systems that actually run — keep it that way
- * when editing. The "reinforcing" line in the authority card deliberately
- * describes the outcome of the link work without naming how it's done.
+ * "Always-on work" for Local SEO. Copy comes from services-content.ts and is
+ * kept to what actually runs; the link reinforcement is described by outcome
+ * only, never by method or tool.
  */
-const systems = [
-  {
-    icon: IconShield,
-    cadence: "Continuous",
-    title: "Your shop, verified everywhere",
-    body: "Google ranks businesses it can confirm are real. We build your shop's entity — consistent citations across the directories that matter, structured data on your site, and connected profiles — so Google and AI assistants see one established, trusted business.",
-  },
-  {
-    icon: IconBolt,
-    cadence: "Compounding",
-    title: "Authority that keeps building",
-    body: "We build links to your site from relevant placements — including a partner listing on Windshield Repair HQ, the auto glass directory we operate, that links back to your site. Then we keep reinforcing the pages and profiles that point to you, so their authority keeps flowing into yours.",
-  },
-  {
-    icon: IconMessage,
-    cadence: "Monitored",
-    title: "Reddit & Quora, covered",
-    body: "Drivers ask Reddit and Quora which shop to trust — and Google and AI assistants read those threads. We watch the conversations in your market and make sure helpful answers that mention your shop are part of them.",
-  },
-  {
-    icon: IconMap,
-    cadence: "On schedule",
-    title: "Your profiles, kept active",
-    body: "Fresh posts go out to your Google Business Profile and social channels on a recurring schedule. A profile that publishes regularly reads as an open, busy shop — to Google and to the drivers comparing you against the shop down the road.",
-  },
-  {
-    icon: IconSparkle,
-    cadence: "Tracked",
-    title: "AI answers, monitored",
-    body: "When drivers ask ChatGPT or Gemini who should fix their windshield, we track whether your shop gets named — and watch how those answers shift over time. If the AI starts recommending someone else, we see it and respond.",
-  },
-  {
-    icon: IconSearch,
-    cadence: "Ongoing",
-    title: "Driver questions, answered",
-    body: "We track the questions drivers in your market are asking Google and AI assistants, then turn them into articles and answers published to your site on a steady schedule — so you rank for what people actually type.",
-  },
-];
+const icons = [IconShield, IconBolt, IconMessage, IconMap, IconSparkle, IconSearch];
 
-export function AlwaysOn() {
+export type AlwaysOnCopy = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  cards: { cadence: string; title: string; body: string }[];
+  footnote: string;
+};
+
+export function AlwaysOn({ copy }: { copy: AlwaysOnCopy }) {
   return (
     <section className="py-16 sm:py-20">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <Eyebrow>Always-on systems</Eyebrow>
+          <Eyebrow>{copy.eyebrow}</Eyebrow>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
-            Your SEO runs on {" "}
-            <span className="text-gradient">schedule — not on memory</span>
+            {copy.title}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-300">
-            Most agencies work your account off a monthly checklist. We built
-            software that works it continuously — the same systems, running for
-            every shop we manage, whether anyone&apos;s watching or not.
+            {copy.body}
           </p>
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {systems.map((s) => (
+          {copy.cards.map((s, i) => {
+            const Icon = icons[i % icons.length];
+            return (
             <div key={s.title} className="glass-card rounded-2xl p-6">
               <div className="flex items-center justify-between">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-glass-500/15 text-glass-300">
-                  <s.icon className="h-5 w-5" />
+                  <Icon className="h-5 w-5" />
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-glass-300/25 bg-glass-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-glass-300">
                   <IconClock className="h-3 w-3" />
@@ -92,12 +59,12 @@ export function AlwaysOn() {
                 {s.body}
               </p>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink-400">
-          How the machinery works under the hood is the part we keep in-house —
-          what you see is the phone ringing.
+          {copy.footnote}
         </p>
       </Container>
     </section>

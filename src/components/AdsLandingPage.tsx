@@ -6,7 +6,7 @@ const comparison = [
     label: "Your website",
     tone: "muted" as const,
     points: [
-      "Speaks to everyone — drivers, fleets, job seekers",
+      "Speaks to everyone: drivers, fleets, job seekers",
       "Many paths: services, about, reviews, contact",
       "Built to inform and to rank in search",
       "Stays exactly as it is",
@@ -19,7 +19,7 @@ const comparison = [
       "Speaks to one driver who needs glass work today",
       "One path: call now or request a quote",
       "Built to convert a paid click, nothing else",
-      "We build it, host it, and keep tuning it",
+      "We build it, host it, and keep improving it",
     ],
   },
 ];
@@ -28,7 +28,7 @@ const included = [
   {
     icon: IconLayout,
     title: "We build it",
-    body: "A separate, purpose-built page for your ad traffic — written for auto glass, not a generic template.",
+    body: "A separate page for your ad traffic, written for auto glass, with your tracking number, your photos and your real Google reviews.",
   },
   {
     icon: IconBolt,
@@ -37,8 +37,8 @@ const included = [
   },
   {
     icon: IconPhone,
-    title: "We keep optimizing it",
-    body: "Headlines, offers, form length, trust signals — reworked as we learn what actually earns the call. Not a one-time build.",
+    title: "We keep improving it",
+    body: "We keep reworking it as we learn what earns the call, and we check that your ads point at it.",
   },
 ];
 
@@ -60,10 +60,10 @@ export function AdsLandingPage() {
             <span className="text-gradient">built to convert</span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-300">
-            Most agencies point your ads at your homepage and call it done. We
-            build you a separate page designed to turn a paid click into a phone
-            call — then host it and keep improving it. It&apos;s part of the
-            service, not an upsell.
+            Ads sent to a homepage give a driver ten things to look at. We build
+            you a separate page with two: call you, or send a quote request with
+            a photo of the damage. We host it and keep improving it, and it comes
+            with Google Ads management.
           </p>
         </div>
 
@@ -108,8 +108,8 @@ export function AdsLandingPage() {
         </div>
 
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-400">
-          Both, working together — your website keeps doing its job, and the
-          landing page does this one.
+          Both work together. Your website keeps doing its job, and the landing
+          page does this one.
         </p>
 
         {/* what's included */}
@@ -137,14 +137,13 @@ export function AdsLandingPage() {
             </span>
             <div>
               <h3 className="font-display text-base font-bold text-white">
-                It also makes your clicks cheaper
+                Google grades the page too
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-200">
-                Google factors landing page experience into Quality Score, and
-                Quality Score affects what you pay per click. A fast, relevant
-                page doesn&apos;t just convert better — it usually lowers your
-                cost for the same ad position. Sending paid traffic to a slow
-                homepage costs you twice.
+                Google counts landing page experience in Quality Score, and
+                Quality Score affects what you pay per click and where your ad
+                shows. A page built for the search the driver typed is one Google
+                can match to the ad.
               </p>
             </div>
           </div>
