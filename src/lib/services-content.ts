@@ -561,8 +561,8 @@ export const servicesContent: Record<string, ServiceContent> = {
         "a": "The insurance wording on your site follows your state, and Canada's public-insurer provinces get their own versions. An insurance claims page is available for your site too. We never add a claim that an insurer has approved your shop."
       },
       {
-        "q": "Does the site run on my own domain?",
-        "a": "Yes. We build and host it on your shop's domain. Until your domain is pointed at it, it runs on a subdomain."
+        "q": "Does the site run on my own domain, and what if I leave?",
+        "a": "Yes. We build and host it on your shop's domain. Until your domain is pointed at it, it runs on a subdomain. If you leave, it's your choice: we keep hosting it for a small monthly fee, or we transfer it to you."
       }
     ]
   },
