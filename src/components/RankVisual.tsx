@@ -90,7 +90,7 @@ export function RankVisual({
                   ?
                 </span>
                 <span className="text-sm text-ink-300">
-                  Everyone else — including, maybe, you
+                  Everyone else, maybe including you
                 </span>
               </div>
             </>
@@ -104,7 +104,7 @@ export function RankVisual({
             Drivers with a cracked windshield almost never scroll past the top
             three. At{" "}
             <span className="font-semibold text-white">#{rank}</span>, you
-            aren&apos;t losing on price or quality — you&apos;re losing because
+            aren&apos;t losing on price or quality. You&apos;re losing because
             they never see you.
           </>
         ) : (

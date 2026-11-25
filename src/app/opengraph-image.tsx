@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { site } from "@/lib/site";
 
-export const alt = `${site.name} — More Auto Glass Jobs, Not Clicks`;
+export const alt = `${site.name} | More Auto Glass Jobs, Not Clicks`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

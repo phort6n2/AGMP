@@ -13,9 +13,9 @@ import {
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Your Shop's Ranking — What It's Costing You",
+  title: "Your Shop's Ranking: What It's Costing You",
   description:
-    "You've seen where your shop ranks. Here's what that position actually costs in booked jobs — and the fastest way to move up.",
+    "You've seen where your shop ranks. Here's what that position actually costs in booked jobs, and what it takes to move up.",
   alternates: { canonical: "/rank" },
   // Landing page for directory traffic — no independent search value.
   robots: { index: false, follow: true },
@@ -105,17 +105,17 @@ export default async function RankPage({
 
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-300">
                 {shop ? `${shop} is listed on ` : "You found your shop on "}
-                {site.directory.name} — a directory drivers use to find glass
+                {site.directory.name}, a directory drivers use to find glass
                 work.{" "}
                 {inTop3
                   ? "Top-3 position is the most valuable spot in local search, and it's also the easiest to lose. Holding it is a maintenance job."
-                  : "But the directory is only one place drivers look. The bigger question is where you land on Google — because that's where most of the searching happens."}
+                  : "But the directory is only one place drivers look. The bigger question is where you land on Google, because that's where most of the searching happens."}
               </p>
 
               <ul className="mt-7 space-y-3">
                 {[
                   "A free audit of your Google ranking, reviews, and website",
-                  "Built only for auto glass — we know insurance, steering & calibration",
+                  "Built only for auto glass: we know insurance, steering & calibration",
                   "No cost, no contract, no pressure",
                 ].map((p) => (
                   <li key={p} className="flex items-start gap-3">
@@ -136,7 +136,7 @@ export default async function RankPage({
                   className="inline-flex items-center gap-2 text-sm font-medium text-ink-200 hover:text-white"
                 >
                   <IconMessage className="h-4 w-4 text-glass-300" />
-                  Or text us — {site.phone}
+                  Or text us at {site.phone}
                 </a>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default async function RankPage({
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-300">
               A directory listing helps. But most drivers with a cracked
-              windshield open Google or ask an AI assistant — and whoever shows
+              windshield open Google or ask an AI assistant, and whoever shows
               up there gets the call, usually before anyone else is considered.
             </p>
           </div>
@@ -178,7 +178,7 @@ export default async function RankPage({
               {
                 icon: IconCheck,
                 title: "It's fixable",
-                body: "Ranking isn't luck. It's profile completeness, review signal, and relevance — all of it work you can actually control.",
+                body: "Ranking isn't luck. It's profile completeness, review signal, and relevance: all of it work you can actually control.",
               },
             ].map((c) => (
               <div key={c.title} className="glass-card rounded-2xl p-6">
@@ -231,7 +231,7 @@ export default async function RankPage({
                 </Button>
               </div>
               <p className="mt-5 text-sm text-ink-300">
-                {site.owner} reads these personally. No contracts, no pressure.
+                {site.owner} reads these personally. No obligation, no pressure.
               </p>
             </div>
           </div>

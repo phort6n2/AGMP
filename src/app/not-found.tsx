@@ -12,7 +12,7 @@ export default function NotFound() {
           This page took a detour.
         </h1>
         <p className="mx-auto mt-3 max-w-md text-ink-300">
-          The page you&apos;re looking for isn&apos;t here — but your next batch
+          The page you&apos;re looking for isn&apos;t here, but your next batch
           of auto glass jobs could be. Let&apos;s get you back on track.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

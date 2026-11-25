@@ -3,9 +3,9 @@ export const site = {
   shortName: "AGMP",
   domain: "autoglassmarketingpros.com",
   url: "https://autoglassmarketingpros.com",
-  tagline: "Get more auto glass jobs. Not clicks. Not empty calls.",
+  tagline: "Auto glass marketing measured in jobs. Not clicks. Not empty calls.",
   description:
-    "The only marketing agency built exclusively for auto glass repair & replacement shops. We turn your shop from invisible to fully booked with local SEO, Google Ads, and high-converting websites.",
+    "A marketing agency built for auto glass repair & replacement shops: local SEO for the Map Pack, search and AI answers, plus Google Ads and websites, with your Map Pack position tracked weekly.",
   email: "matt@autoglassmarketingpros.com",
   phone: "(855) 712-8500",
   // We answer texts fast — outreach CTAs point to SMS, not a phone call.
@@ -140,12 +140,12 @@ export const stages = [
   {
     n: "03",
     name: "Growing",
-    desc: "Strong call volume, optimized conversions, and a calendar that fills itself.",
+    desc: "Calls come in steadily. The work shifts to converting more of them and tracking which channels bring paying jobs.",
   },
   {
     n: "04",
     name: "Dominant",
-    desc: "You're the shop drivers find first. Consistent, high-quality jobs on repeat.",
+    desc: "Strong visibility across Maps, search, ads and AI answers. The work is holding that position and shaping your job mix.",
   },
 ];
 

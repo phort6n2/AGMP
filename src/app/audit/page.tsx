@@ -9,12 +9,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Free Auto Glass Marketing Audit",
   description:
-    "Get a free marketing audit for your auto glass shop — Map Pack position, reviews, website, and AI visibility. See exactly where you're losing jobs.",
+    "Get a free marketing audit for your auto glass shop: Map Pack position, reviews, website, and AI visibility. See exactly where you're losing jobs.",
   alternates: { canonical: "/audit" },
   openGraph: {
     title: "Free Auto Glass Marketing Audit",
     description:
-      "See exactly where your auto glass shop is losing jobs — Map Pack, reviews, website, and AI visibility. Free, no obligation.",
+      "See exactly where your auto glass shop is losing jobs: Map Pack, reviews, website, and AI visibility. Free, no obligation.",
     url: `${site.url}/audit`,
     type: "website",
   },
@@ -24,21 +24,21 @@ const steps = [
   {
     n: "01",
     title: "Get your free marketing audit",
-    body: "We analyze your Google Business Profile, Map Pack position, reviews, website, and AI visibility — and show you where jobs are slipping away.",
+    body: "We analyze your Google Business Profile, Map Pack position, reviews, website, and AI visibility, and show you where jobs are slipping away.",
   },
   {
     n: "02",
-    title: "Schedule your strategy call",
-    body: "A focused 30-minute phone call — no Zoom, no Google Meet — to walk through the findings and what they mean for your shop. No jargon, no pressure.",
+    title: "Talk it through on a strategy call",
+    body: "A focused 30-minute phone call, not a video meeting, to walk through the findings and what they mean for your shop. No jargon, no pressure.",
   },
   {
     n: "03",
     title: "Receive your custom growth plan",
-    body: "A clear plan — Local SEO, Google Ads, or both — built around your market, your margins, and your calendar.",
+    body: "A clear plan for Local SEO, Google Ads, or both, built around your market, your margins, and your calendar.",
   },
   {
     n: "04",
-    title: "Launch and start booking jobs",
+    title: "Launch and keep score",
     body: "We put it to work and keep score on the only number that matters: paying jobs on your calendar.",
   },
 ];
@@ -63,14 +63,14 @@ export default function AuditPage() {
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-300">
                 In 60 seconds, get a free audit of your shop&apos;s online
-                presence — Map Pack position, reviews, website, and whether
+                presence: Map Pack position, reviews, website, and whether
                 ChatGPT and Google&apos;s AI even know you exist. Built only for
                 auto glass shops.
               </p>
               <ul className="mt-7 space-y-3">
                 {[
                   "No cost, no obligation, no contract",
-                  "Built for auto glass — we know insurance, steering & calibration",
+                  "Built for auto glass: we know insurance, steering & calibration",
                   "A real person reviews it, not just a robot",
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3">
@@ -131,7 +131,7 @@ export default function AuditPage() {
               {
                 icon: IconChart,
                 title: "Measured in jobs",
-                body: "We look at what turns into booked installs — not vanity metrics.",
+                body: "We look at what turns into booked installs, not vanity metrics.",
               },
               {
                 icon: IconCheck,

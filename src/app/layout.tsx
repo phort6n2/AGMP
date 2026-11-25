@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: "Auto Glass Marketing Agency | More Booked Jobs | AGMP",
-    template: `%s — ${site.name}`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: site.url,
-    title: `${site.name} — More Auto Glass Jobs, Not Clicks`,
+    title: `${site.name} | More Auto Glass Jobs, Not Clicks`,
     description: site.description,
     siteName: site.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — More Auto Glass Jobs, Not Clicks`,
+    title: `${site.name} | More Auto Glass Jobs, Not Clicks`,
     description: site.description,
   },
   robots: { index: true, follow: true },

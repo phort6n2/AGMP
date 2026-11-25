@@ -10,7 +10,7 @@ import {
 const channels = [
   { icon: IconMap, label: "Google Maps", detail: "High-intent local searches" },
   { icon: IconTarget, label: "Google Ads", detail: "Ready-to-book drivers" },
-  { icon: IconSearch, label: "Organic + AI", detail: "Answers that recommend you" },
+  { icon: IconSearch, label: "Organic + AI", detail: "Search results and AI answers" },
 ];
 
 /**
@@ -69,7 +69,7 @@ export function MarketingJobFlow() {
                 Qualified call → booked job
               </p>
               <p className="text-xs text-ink-300">
-                Calls, forms, and scheduled installs tracked back to marketing.
+                Calls, forms, and booked jobs tracked back to marketing.
               </p>
             </div>
           </div>

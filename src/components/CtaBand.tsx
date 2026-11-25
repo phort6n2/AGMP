@@ -3,8 +3,8 @@ import { site } from "@/lib/site";
 import { IconMessage } from "./Icons";
 
 export function CtaBand({
-  title = "Ready to keep your bays full?",
-  subtitle = "Start with a free marketing audit — see exactly where your shop is losing jobs. Or text us and we'll take it from there. No pressure, no contracts.",
+  title = "Get your free audit",
+  subtitle = "Start with a free audit to see where your shop stands. Or text us and we'll take it from there.",
 }: {
   title?: string;
   subtitle?: string;
@@ -30,11 +30,11 @@ export function CtaBand({
                 className="inline-flex items-center gap-2 text-base font-medium text-ink-100 hover:text-white"
               >
                 <IconMessage className="h-5 w-5 text-glass-300" />
-                Text us — we reply fast
+                Text us
               </a>
             </div>
             <p className="mt-5 text-sm text-ink-300">
-              No contracts. Month-to-month. Just booked jobs.
+              Month-to-month. No long-term contract.
             </p>
           </div>
         </div>

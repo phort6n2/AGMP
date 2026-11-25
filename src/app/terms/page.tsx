@@ -19,7 +19,7 @@ export default function TermsPage() {
             <p className="text-sm text-ink-500">Last updated: July 2026</p>
             <p>
               These terms govern your use of the {site.name} website. This is a
-              starting template — please have it reviewed by a qualified
+              starting template. Please have it reviewed by a qualified
               professional before relying on it.
             </p>
             <h2 className="font-display text-xl font-bold text-white">

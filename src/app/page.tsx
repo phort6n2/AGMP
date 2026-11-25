@@ -45,24 +45,24 @@ const differentiators = [
   {
     icon: IconChart,
     title: "Jobs, not vanity metrics",
-    body: "Impressions don't pay your techs. We optimize for booked calls and scheduled installs — and report on what actually matters.",
+    body: "Impressions don't pay your techs. We optimize for booked calls and installs, and report on what actually matters.",
   },
   {
     icon: IconClock,
     title: "Systems, not monthly chores",
-    body: "Most agencies touch your account once a month. Our systems work continuously — building citations and links, keeping your profiles active, covering Reddit and Quora, and watching whether AI assistants name your shop — so improvements keep moving between reports.",
+    body: "Our systems keep working between reports: building citations and links, keeping your profiles active, covering Reddit and Quora, and watching whether AI assistants name your shop.",
   },
   {
     icon: IconBolt,
     title: "Multi-channel visibility",
-    body: "Map Pack, organic search, Google Ads, and AI answers like ChatGPT — we make sure drivers find you everywhere.",
+    body: "Map Pack, organic search, Google Ads, and AI answers like ChatGPT, worked as one system, with your Map Pack position tracked weekly.",
   },
 ];
 
 const ownerEconomics = [
   {
     title: "The job mix you actually want",
-    body: "Tell us whether the priority is replacements, profitable cash work, insurance claims, ADAS calibration, fleet, or a smarter mix. We build campaigns around capacity and margin — not raw lead volume.",
+    body: "Tell us whether the priority is replacements, profitable cash work, insurance claims, ADAS calibration, fleet, or a smarter mix. We build campaigns around capacity and margin, not raw lead volume.",
   },
   {
     title: "Your real service radius",
@@ -107,12 +107,12 @@ const faqs = [
   {
     question: "How do you track whether marketing creates real jobs?",
     answer:
-      "We track qualified calls and forms back to the campaign or search channel that created them. When your booking process or CRM supports it, those opportunities can be reconciled with scheduled installs so reporting moves beyond clicks and rankings.",
+      "We track qualified calls and forms back to the campaign or search channel that created them. When your booking process or CRM supports it, those opportunities can be reconciled with booked jobs so reporting moves beyond clicks and rankings.",
   },
   {
-    question: "Do I own my website, ad account, and data?",
+    question: "What stays with me if I leave?",
     answer:
-      "Yes. You keep the website, accounts, data, and creative built for your shop. The relationship is month-to-month, so our work has to earn the next month.",
+      "Your Google Ads campaigns are built in your own Google Ads account, and that data stays there. SEO work stays with you: articles on your site, listings, profiles and links. Ads landing pages stay on our platform and don't transfer, though they can stay hosted for a small monthly fee. A website we host can stay hosted for a small monthly fee or be transferred to you, your choice. It's month-to-month with no long-term contract, so our work has to earn the next month.",
   },
 ];
 
@@ -151,8 +151,8 @@ export default function Home() {
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-300 lg:mx-0">
                 Local SEO, Google Ads, and conversion-focused websites built only
-                for auto glass shops. We track qualified calls and scheduled
-                installs — not impressions that never reach your bays.
+                for auto glass shops. We track qualified calls and booked jobs,
+                not impressions that never reach your bays.
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
                 <Button href="/audit" size="lg" withArrow>
@@ -164,12 +164,12 @@ export default function Home() {
                 </Button>
               </div>
               <p className="mt-4 text-sm text-ink-400">
-                Free 60-second audit · or text {site.phone} — we actually answer
-                texts
+                Free 60-second audit · or text {site.phone}. We actually answer
+                texts.
               </p>
               <p className="mt-5 flex items-center justify-center gap-2 text-sm text-ink-300 lg:justify-start">
                 <IconShield className="h-4 w-4 text-glass-300" />
-                Built by auto glass marketing specialists — not a generalist agency
+                Built by auto glass marketing specialists, not a generalist agency
               </p>
             </div>
 
@@ -212,23 +212,22 @@ export default function Home() {
             <div>
               <Eyebrow>The hard truth</Eyebrow>
               <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
-                Most marketing agencies sell you everything{" "}
-                <span className="text-gradient-amber">except more jobs.</span>
+                Rankings, dashboards, awareness.{" "}
+                <span className="text-gradient-amber">None of it is a job.</span>
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-ink-300">
-                They sell you rankings you can&apos;t cash, dashboards no one
-                reads, and &quot;awareness&quot; that never turns into a
-                windshield in a bay. Meanwhile your competitors are booking the
+                Rankings you can&apos;t cash, dashboards no one reads, and
+                &quot;awareness&quot; that never turns into a windshield in a
+                bay. Meanwhile your competitors are booking the
                 jobs you should be getting.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-ink-300">
-                We do it differently. We specialize in one thing — auto glass —
-                and we measure our work by one thing: the number of paying jobs
+                We specialize in one thing, auto glass, and we measure our work by one thing: the number of paying jobs
                 on your calendar.
               </p>
               <div className="mt-8">
                 <Button href="/about" variant="outline" withArrow>
-                  Why we&apos;re different
+                  How we work
                 </Button>
               </div>
             </div>
@@ -267,7 +266,7 @@ export default function Home() {
                 <span className="text-gradient">get found &amp; get booked</span>
               </>
             }
-            subtitle="Four channels, one system — engineered to turn local drivers into scheduled installs."
+            subtitle="Four channels, one system, built to turn local drivers into booked jobs."
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2">
             {services.map((s) => {
@@ -321,10 +320,10 @@ export default function Home() {
             title={
               <>
                 From <span className="text-gradient-amber">invisible</span> to{" "}
-                <span className="text-gradient">fully booked</span>
+                <span className="text-gradient">established</span>
               </>
             }
-            subtitle="Every shop is somewhere on this path. Our job is to move you to the next stage — and keep you there."
+            subtitle="Every shop is somewhere on this path. We find where you are and work on the next stage."
           />
           <div className="mt-14 grid gap-5 md:grid-cols-4">
             {stages.map((stage, i) => (
@@ -408,7 +407,7 @@ export default function Home() {
                 <span className="text-gradient">actually makes money</span>
               </>
             }
-            subtitle="More leads is not the goal. More of the right jobs, in the right service area, at a margin and pace your team can handle — that's the goal."
+            subtitle="More leads is not the goal. More of the right jobs, in the right service area, at a margin and pace your team can handle. That's the goal."
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {ownerEconomics.map((item, index) => (
@@ -447,7 +446,7 @@ export default function Home() {
             <blockquote className="mt-5 font-display text-xl font-medium leading-relaxed text-white sm:text-2xl">
               &quot;Not impressions. Not rankings you can&apos;t cash. We show you
               which marketing created qualified calls and real booking
-              opportunities — every single month.&quot;
+              opportunities, every single month.&quot;
             </blockquote>
             <figcaption className="mt-6 text-sm text-ink-300">
               <span className="font-semibold text-white">{site.owner}</span> ·
@@ -473,10 +472,11 @@ export default function Home() {
                   <span className="text-gradient-amber">your calendar.</span>
                 </h2>
                 <p className="mt-4 max-w-lg text-lg text-ink-300">
-                  Get highly targeted paid search, stronger visibility in Google&apos;s
-                  Map Pack, and visibility in AI search — with no long-term
-                  contracts. We&apos;ll put together a quote that fits your
-                  market and your goals, and scale up as the jobs roll in.
+                  Get highly targeted paid search, Map Pack work with your
+                  position tracked weekly, and AI search visibility work,
+                  month-to-month with no long-term contract. We&apos;ll put
+                  together a quote that fits your market and your goals, and
+                  adjust it as your needs change.
                 </p>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {[

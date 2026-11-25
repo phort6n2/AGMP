@@ -2,9 +2,11 @@ import { Container, Eyebrow } from "./ui";
 import { IconShield, IconCheck } from "./Icons";
 
 const promises = [
-  "Month-to-month — cancel anytime, for any reason",
-  "No long-term contracts, ever",
-  "You own your website, ad account, and data",
+  "Month-to-month, with no long-term contract",
+  "Google Ads built in your own account, and its data stays there",
+  "SEO work stays yours if you leave: articles, listings, profiles and links",
+  "A website we host can stay hosted for a small monthly fee, or move to you",
+  "Ads landing pages stay on our platform, hosted for a small monthly fee if you want them",
   "We report on booked jobs, not vanity metrics",
 ];
 
@@ -20,17 +22,17 @@ export function Guarantee() {
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-signal/10 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <Eyebrow>Our promise to you</Eyebrow>
+              <Eyebrow>Our terms</Eyebrow>
               <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
                 The{" "}
-                <span className="text-gradient">No-Hostages Guarantee</span>
+                <span className="text-gradient">No-Hostages Terms</span>
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-ink-300">
-                We&apos;ve heard every horror story — the year-long contract, the
+                We&apos;ve heard every horror story: the year-long contract, the
                 bill for &quot;impressions,&quot; the agency that held your
-                website and ad account hostage. So we do the opposite. If
-                we&apos;re not driving jobs, you walk — and you take everything
-                with you.
+                website and ad account hostage. So we put the terms up front. If
+                we&apos;re not driving jobs, you walk, and you know exactly what
+                stays with you.
               </p>
               <span className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-signal/30 bg-signal/10 px-4 py-2 text-sm font-semibold text-signal">
                 <IconShield className="h-4 w-4" />

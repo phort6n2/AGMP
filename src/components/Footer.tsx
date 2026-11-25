@@ -56,16 +56,15 @@ export function Footer() {
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-400">
-              The only marketing agency built exclusively for auto glass repair
-              &amp; replacement shops. We keep your bays full with paying jobs —
-              not clicks.
+              A marketing agency built for auto glass repair &amp; replacement
+              shops. Marketing built only for auto glass shops.
             </p>
             <a
               href={site.smsHref}
               className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-ink-200 hover:text-white"
             >
               <IconMessage className="h-4 w-4 text-glass-300" />
-              Text us — {site.phone}
+              Text us at {site.phone}
             </a>
           </div>
 

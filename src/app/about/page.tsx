@@ -10,12 +10,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About the Agency",
   description:
-    "Auto Glass Marketing Pros is the only marketing agency built exclusively for auto glass shops. Meet the team obsessed with keeping your bays full.",
+    "Auto Glass Marketing Pros is a marketing agency built for auto glass repair & replacement shops. Meet the team behind it.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About the Agency — Auto Glass Marketing Pros",
+    title: "About the Agency | Auto Glass Marketing Pros",
     description:
-      "The only marketing agency built exclusively for auto glass repair & replacement shops.",
+      "A marketing agency built for auto glass repair & replacement shops.",
     url: `${site.url}/about`,
     type: "website",
   },
@@ -30,17 +30,17 @@ const values = [
   {
     icon: IconChart,
     title: "Accountable to jobs",
-    body: "We report on booked calls and scheduled installs — the numbers that show up in your bank account, not just your dashboard.",
+    body: "We report on booked calls and installs: the numbers that show up in your bank account, not only on your dashboard.",
   },
   {
     icon: IconClock,
     title: "Momentum first",
-    body: "We build for quick early wins that fund the compounding, long-term growth of your local presence.",
+    body: "We start with the work that tends to move first, then build the long-term growth of your local presence.",
   },
   {
     icon: IconBolt,
     title: "Straight talk",
-    body: "No jargon, no smoke. If something isn't working, we tell you and we fix it. Month-to-month keeps us honest.",
+    body: "No jargon, no smoke. If something isn't working, we tell you and change course. Month-to-month keeps us honest.",
   },
 ];
 
@@ -53,12 +53,12 @@ const timeline = [
   {
     year: "The idea",
     title: "Specialize or go home",
-    body: "We learned the business owners actually run — NAGS pricing and insurance direct-bill on one side, cash and fleet tickets on the other, OEM versus aftermarket glass, calibration liability, and safe drive-away time. Then we built a marketing framework around how drivers search for all of it — from a highway chip to a full replacement — and how shops win those jobs.",
+    body: "We learned the business owners actually run: glass pricing and insurance direct-bill on one side, cash and fleet tickets on the other, OEM versus aftermarket glass, calibration liability, and safe drive-away time. Then we built a marketing framework around how drivers search for all of it, from a highway chip to a full replacement, and how shops win those jobs.",
   },
   {
     year: "Today",
     title: "The Auto Glass Marketing Framework™",
-    body: "A repeatable system that moves shops from invisible to fully booked across Maps, search, ads, and AI — measured by paying jobs, nothing else.",
+    body: "A repeatable four-stage system for building a shop's visibility across Maps, search, ads, and AI, measured by paying jobs, nothing else.",
     href: "/framework",
     linkLabel: "See how the framework works",
   },
@@ -75,7 +75,7 @@ export default function AboutPage() {
             <span className="text-gradient">Auto glass marketing.</span>
           </>
         }
-        subtitle="Auto Glass Marketing Pros exists because auto glass shops deserve a marketing partner who actually understands their business — and is measured by the jobs they book, not the reports they send."
+        subtitle="Auto Glass Marketing Pros exists because auto glass shops deserve a marketing partner who actually understands their business and is measured by the jobs they book, not the reports they send."
       >
         <Button href="/audit" size="lg" withArrow>
           {site.ctaText}
@@ -93,11 +93,11 @@ export default function AboutPage() {
                 <span className="text-gradient">busy and profitable.</span>
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-ink-300">
-                The national chains don&apos;t just outspend you on marketing —
-                they answer the insurance claim line, run the TPA network, and
+                The national chains outspend you on marketing. They also
+                answer the insurance claim line, run the TPA network, and
                 steer your customer into their own bay before you ever get a
                 shot. You&apos;ve got a better tech and a fair price. Our job is
-                to get the driver to call you first — and to know they have the
+                to help the driver find and call you, and to know they have the
                 right to choose your shop.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-ink-300">
@@ -125,7 +125,7 @@ export default function AboutPage() {
               </div>
               <div className="mt-8 rounded-2xl border border-glass-300/20 bg-glass-500/5 p-5">
                 <p className="text-sm italic leading-relaxed text-ink-200">
-                  &quot;We&apos;re not here to bill you for busy work — we&apos;re
+                  &quot;We&apos;re not here to bill you for busy work. We&apos;re
                   here to keep your shop busy with paying jobs.&quot;
                 </p>
                 <p className="mt-3 text-sm font-semibold text-white">
@@ -152,20 +152,20 @@ export default function AboutPage() {
             <div>
               <Eyebrow>Meet the founder</Eyebrow>
               <h2 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
-                I only work with auto glass shops. Not restaurants, not dentists
-                — glass.
+                I only work with auto glass shops. Not restaurants, not dentists.
+                Glass.
               </h2>
               <div className="mt-4 space-y-4 text-lg leading-relaxed text-ink-300">
                 <p>
                   I got tired of watching good independent shops get steered out
                   of jobs by the TPAs and buried in the Map Pack by the national
-                  chains. I know NAGS pricing, I know what a calibration job is
+                  chains. I know how glass is priced, I know what a calibration job is
                   worth, and I know the cash-vs-claim math you&apos;re running in
                   your head. So I built {site.directory.name} to prove I could
-                  rank glass shops — and now I do it for shops one at a time.
+                  rank glass shops, and now I do it for shops one at a time.
                 </p>
                 <p className="text-ink-200">
-                  Text me. I answer my own messages, and text is faster — you can
+                  Text me. I answer my own messages, and text is easier: you can
                   do it between jobs. We&apos;ll start with a free audit. No
                   pitch, no contract.
                 </p>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-ink-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-glass-300"
                 >
                   <IconMessage className="h-4 w-4 text-glass-300" />
-                  Text {site.owner.split(" ")[0]} — {site.phone}
+                  Text {site.owner.split(" ")[0]} at {site.phone}
                 </a>
                 <span className="text-sm text-ink-400">
                   {site.owner} · Founder, {site.name}
@@ -256,12 +256,14 @@ export default function AboutPage() {
             </span>
             <div>
               <h3 className="font-display text-xl font-bold text-white">
-                No contracts. No hostages.
+                Month-to-month. No hostages.
               </h3>
               <p className="mt-1 text-ink-300">
-                We earn your business every single month. If we&apos;re not
-                driving jobs, you&apos;re free to walk — that&apos;s the kind of
-                accountability the industry needs more of.
+                We earn your business every single month, with no long-term
+                contract. If we&apos;re not driving jobs, you&apos;re free to
+                walk. Your Google Ads account and its data are already yours,
+                and the SEO work on your site, listings and profiles stays with
+                you.
               </p>
             </div>
           </div>

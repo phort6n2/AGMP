@@ -20,7 +20,7 @@ export default function PrivacyPage() {
             <p>
               {site.name} (&quot;we,&quot; &quot;us&quot;) respects your privacy.
               This policy explains what information we collect and how we use it.
-              This is a starting template — please have it reviewed by a
+              This is a starting template. Please have it reviewed by a
               qualified professional before relying on it.
             </p>
             <h2 className="font-display text-xl font-bold text-white">
@@ -28,8 +28,8 @@ export default function PrivacyPage() {
             </h2>
             <p>
               When you submit a contact or growth-call form, we collect the
-              details you provide — such as your name, shop name, email, and
-              phone number — so we can respond to your request.
+              details you provide, such as your name, shop name, email, and
+              phone number, so we can respond to your request.
             </p>
             <h2 className="font-display text-xl font-bold text-white">
               How we use it

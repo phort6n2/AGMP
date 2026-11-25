@@ -13,7 +13,7 @@ export function AuditHeader() {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-center px-5 sm:h-20 sm:px-8">
         <Link
           href="/"
-          aria-label={`${site.name} — back to home`}
+          aria-label={`${site.name}, back to home`}
           className="inline-flex"
         >
           <Image

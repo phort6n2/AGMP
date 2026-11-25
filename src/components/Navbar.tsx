@@ -199,7 +199,7 @@ export function Navbar() {
                 className="flex items-center gap-2 text-sm font-medium text-ink-200"
               >
                 <IconMessage className="h-4 w-4 text-glass-300" />
-                Text us — {site.phone}
+                Text us at {site.phone}
               </a>
               <Button href="/audit" size="lg" withArrow className="w-full">
                 Get Your Free Audit

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "See the proof behind Auto Glass Marketing Pros: an inspectable national shop directory, transparent measurement, and month-to-month accountability.",
   alternates: { canonical: "/reviews" },
   openGraph: {
-    title: "Results & Verifiable Proof — Auto Glass Marketing Pros",
+    title: "Results & Verifiable Proof | Auto Glass Marketing Pros",
     description:
       "Why auto glass shops trust AGMP: honest communication, deep industry focus, and month-to-month accountability.",
     url: `${site.url}/reviews`,
@@ -34,14 +34,14 @@ const proofPoints = [
   {
     icon: IconShield,
     title: "Accountability without a hostage clause",
-    body: "Our work is month-to-month, and you keep the website, accounts, data, and creative we build. Retention has to be earned through useful work and clear reporting.",
+    body: "Our work is month-to-month. Google Ads runs in your own account with your data, and SEO work stays with you if you leave. Retention has to be earned through useful work and clear reporting.",
   },
 ];
 
 const reasons = [
   "Clear, jargon-free communication",
   "Deep auto glass industry expertise",
-  "Month-to-month — no long contracts",
+  "Month-to-month, no long-term contract",
   "Real performance data you can verify",
   "One dedicated point of contact",
   "Focused on booked jobs, not clicks",
@@ -73,7 +73,7 @@ export default function ReviewsPage() {
               <span className="font-semibold text-white">No borrowed stars. No anonymous success quotes.</span>{" "}
               When we publish a client result here, it will include the market,
               timeframe, starting point, work completed, and the metric that
-              changed — with the shop&apos;s permission.
+              changed, with the shop&apos;s permission.
             </p>
           </div>
         </Container>
