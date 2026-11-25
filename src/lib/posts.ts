@@ -169,7 +169,7 @@ export const posts: Post[] = [
   },
   {
     slug: "invisible-to-fully-booked-framework",
-    title: "From Invisible to Fully Booked: The 4 Stages of Auto Glass Growth",
+    title: "From Invisible to Dominant: The 4 Stages of Auto Glass Growth",
     excerpt:
       "Every auto glass shop sits somewhere on a four-stage path. Knowing your stage is the first step to reaching the next one.",
     category: "Strategy",

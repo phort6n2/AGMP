@@ -12,7 +12,7 @@ const promises = [
 
 /**
  * A named risk-reversal guarantee built only on what's actually true
- * (no contracts, you own everything) — the thing a burned owner buys first.
+ * (month-to-month, and what stays with the shop if it leaves).
  */
 export function Guarantee() {
   return (

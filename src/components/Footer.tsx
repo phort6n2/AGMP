@@ -56,8 +56,8 @@ export function Footer() {
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-400">
-              A marketing agency built for auto glass repair &amp; replacement
-              shops. Marketing built only for auto glass shops.
+              Marketing built for auto glass repair &amp; replacement shops:
+              Local SEO, Google Ads, websites and your shop portal.
             </p>
             <a
               href={site.smsHref}
